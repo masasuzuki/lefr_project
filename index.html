@@ -27,7 +27,7 @@ section.borderNone{
 h3{
 	margin-top:10px;
 	margin-bottom:20px;
-	font-size:2em;/*30pt;*/
+	font-size:1.6em;/*30pt;*/
 }
 h4{
 	margin-top:10px;
@@ -58,18 +58,19 @@ h4{
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 }
-h3.setTitle{
+h3.containSubTitle{
 	margin-top:0px;
 }
 .questionImg{
+	min-height: 210px;
 	background-size:cover;
-	min-height:370px;
 }
 .checkList{
 	margin-left:50px;
 }
 .checkList li{
-	line-height: 40px;
+	line-height: 38px;
+	font-size:1em;
 }
 /*ここまで 基本レイアウト*/
 
@@ -99,7 +100,7 @@ h3.setTitle{
 	<div class="mainContents questionContents row">
 		<div class="col-sm-12">
 			<h4>フリーランスの方へ</h4>
-			<h3 class="setTitle">こんなお悩みはありませんか？</h3>
+			<h3 class="containSubTitle">こんなお悩みはありませんか？</h3>
 		</div>
 		<div class="col-sm-12">
 			<div class="col-xs-4">
@@ -119,10 +120,45 @@ h3.setTitle{
 	<div class="mainContents introAnkenContents row">
 		<div class="col-sm-12">
 			<section class="ankenSection detailSection">
-			torokuSection
+				<div class="row">
+					<div class="col-sm-12">
+						<h3>専任のコンサルタントがあなたの希望を実現します</h3>
+					</div>
+					<div class="col-sm-4">
+						<img src="image/dummy2.jpg" class="img-circle">
+					</div>
+					<div class="col-sm-4">
+						<img src="image/dummy3.JPG" class="img-circle">
+					</div>
+					<div class="col-sm-4">
+						<img src="image/dummy2.jpg" class="img-circle">
+					</div>
+					<div class="col-sm-12">
+						<a href="" class="btn btn-lg btn-info" style="margin:30px 0;padding:15px;">コンサルタントの詳細はこちら</a>
+					</div>
+				</div>
 			</section>
 			<section class="ankenSection charaSection">
-			charaSection
+				<div class="row">
+					<div class="col-sm-12">
+						<h3>ライブエストの3つの特徴</h3>
+					</div>
+					<div class="col-sm-4">
+						<p style="width:100%;height:150px;background-color:green;">
+							圧倒的なスピード
+						</p>
+					</div>
+					<div class="col-sm-4">
+						<p style="width:100%;height:150px;background-color:green;">
+							一貫したフォロー体制
+						</p>
+					</div>
+					<div class="col-sm-4">
+						<p style="width:100%;height:150px;background-color:green;">
+							圧倒的なスピード
+						</p>
+					</div>
+				</div>
 			</section>
 			<section class="ankenSection trendSection">
 			trendSection
