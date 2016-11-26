@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style/reset.css">
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
+<script type="text/javascript" src="/script/jquery-2.1.4.min"></script>
+<script type="text/javascript" src="/script/bootstrap.js"></script>
+<script type="text/javascript" src="/script/jquery-ui.js"></script>
+<title></title>
+<style>
+/*基本レイアウト*/
+body{
+	font-size:20px;
+	background-color:#C4E8FF;
+}
+section.ankenSection{
+	padding-top:20px;
+	padding-bottom:20px;
+	border-bottom:solid 1px silver;
+}
+section.borderNone{
+	border-bottom:none;
+}
+h3{
+	margin-top:10px;
+	margin-bottom:20px;
+	font-size:2em;/*30pt;*/
+}
+h4{
+	margin-top:10px;
+	margin-bottom:0px;
+	font-size:1.2em;/*16pt*/
+}
+/*Bootstrapカスタマイズ*/
+.jumbotron{
+	background: url('image/IMG_6930.jpg') center no-repeat;
+	background-size: cover;
+}
+.jumbotron-extend {
+    position: relative;
+    height: 100vh;
+    min-height: 300px;
+}
+.row{
+	width:80%;
+	margin:0 10% 20px;
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+}
+/*ここまで Bootstrapカスタマイズ*/
+.mainContents{
+	background-color:white;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+}
+h3.setTitle{
+	margin-top:0px;
+}
+.questionImg{
+	background-size:cover;
+	min-height:370px;
+}
+.checkList{
+	margin-left:50px;
+}
+.checkList li{
+	line-height: 40px;
+}
+/*ここまで 基本レイアウト*/
+
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+<header>
+	<div class="jumbotron jumbotron-extend">
+		<div class="container-fluid">
+		</div>
+	</div>
+</header>
+<div class="main container-fluid">
+	<div class="mainContents infoContents row">
+		<div class="col-sm-6">
+			<p>
+			infoContents
+			</p>
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-info">お問い合わせ</a>
+		</div>
+	</div>
+	<div class="mainContents questionContents row">
+		<div class="col-sm-12">
+		</div>
+		<div class="col-sm-12">
+			questionContents
+		</div>
+	</div>
+	<div class="mainContents introAnkenContents row">
+		<div class="col-sm-12">
+			<section class="ankenSection detailSection">
+			torokuSection
+			</section>
+			<section class="ankenSection charaSection">
+			charaSection
+			</section>
+			<section class="ankenSection trendSection">
+			trendSection
+			</section>
+			<section class="ankenSection caseSection borderNone">
+			caseSection
+			</section>
+			<section class="ankenSection voiceSection borderNone">
+			voiceSection
+			</section>
+			<section class="ankenSection flowSection borderNone">
+			flowSection
+			</section>
+		</div>
+	</div>
+	<div class="mainContents infoContents row">
+		<div class="col-sm-6">
+			infoContents
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-info">お問い合わせ</a>
+		</div>
+	</div>
+	<div class="mainContents introTantoContents row">
+		<div class="col-sm-12">
+			<seciton class="tantoSection1">
+			tantoSection1
+			</seciton>
+			<seciton class="tantoSection2">
+			tantoSection2
+			</seciton>
+			<seciton class="tantoSection3">
+			tantoSection3
+			</seciton>
+			<seciton class="tantoSection4">
+			tantoSection4
+			</seciton>
+		</div>
+	</div>
+	<div class="mainContents infoContents row">
+		<div class="col-sm-6">
+			infoContents
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-info">お問い合わせ</a>
+		</div>
+	</div>
+</div>
+<footer class="container-fluid">
+	<div class="row" style="background-color:green;">
+		footer
+	</div>
+</footer>
+</body>
+</html>
