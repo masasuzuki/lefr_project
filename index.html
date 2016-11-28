@@ -24,6 +24,35 @@ section.ankenSection{
 section.borderNone{
 	border-bottom:none;
 }
+.tantoSection{
+	margin-bottom:20px;
+	padding:10px;
+	width:100%;
+	height:200px;
+}
+.imgPart{
+	display:inline-block;
+	width:25%;
+	height:180px;
+	text-align:center;
+	vertical-align:top;
+}
+.textPart{
+	display:inline-block;
+	width:73%;
+	height:160px;
+	text-align:left;
+	/*vertical-align:-550%;*/
+	font-size:0.8em;
+}
+.linkPart{
+	display:inline-block;
+	float:right;
+	margin:0;
+	text-align:right;
+	width:73%;
+	height:20px;
+}
 h3{
 	margin-top:10px;
 	margin-bottom:20px;
@@ -71,6 +100,14 @@ h3.containSubTitle{
 .checkList li{
 	line-height: 38px;
 	font-size:1em;
+}
+.breadcrumb{
+	background-color:white;
+}
+.breadcrumb > li + li:before{
+	font-size:30pt;
+	font-weight:bold;
+	content: "＞";
 }
 /*ここまで 基本レイアウト*/
 
@@ -161,16 +198,89 @@ h3.containSubTitle{
 				</div>
 			</section>
 			<section class="ankenSection trendSection">
-			trendSection
+				<div class="row">
+					<div class="col-sm-12">
+						<h3>案件の傾向</h3>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:300px;background-color:pink;">
+							スキル・開発環境
+						</p>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:300px;background-color:pink;">
+							年齢
+						</p>
+					</div>
+				</div>
 			</section>
-			<section class="ankenSection caseSection borderNone">
-			caseSection
+			<section class="ankenSection caseSection">
+				<div class="row">
+					<div class="col-sm-12">
+						<h3>案件事例</h3>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:100px;background-color:yellow;">
+							事例①
+						</p>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:100px;background-color:yellow;">
+							事例②
+						</p>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:100px;background-color:yellow;">
+							事例③
+						</p>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:100px;background-color:yellow;">
+							事例④
+						</p>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:100px;background-color:yellow;">
+							事例⑤
+						</p>
+					</div>
+					<div class="col-sm-6">
+						<p style="width:100%;height:100px;background-color:yellow;">
+							事例⑥
+						</p>
+					</div>
+				</div>
 			</section>
-			<section class="ankenSection voiceSection borderNone">
-			voiceSection
+			<section class="ankenSection voiceSection">
+				<div class="row">
+					<div class="col-sm-12">
+						<h3>登録者の声</h3>
+					</div>
+					<div class="col-sm-6">
+						<div style="width:100%;height:200px;background-color:green;">
+							VOICE①
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div style="width:100%;height:200px;background-color:green;">
+							VOICE②
+						</div>
+					</div>
+				</div>
 			</section>
 			<section class="ankenSection flowSection borderNone">
-			flowSection
+				<div class="row">
+					<div class="col-sm-12">
+						<h3>ご登録から参画までの流れ</h3>
+					</div>
+					<div class="col-sm-12">
+						<ol class="breadcrumb">
+						  <li><img src="image/dummy4.JPG" class="img-circle"></li>
+						  <li><img src="image/dummy4.JPG" class="img-circle"></li>
+						  <li><img src="image/dummy4.JPG" class="img-circle"></li>
+						</ol>
+					</div>
+				</div>
 			</section>
 		</div>
 	</div>
@@ -184,18 +294,71 @@ h3.containSubTitle{
 	</div>
 	<div class="mainContents introTantoContents row">
 		<div class="col-sm-12">
-			<seciton class="tantoSection1">
-			tantoSection1
-			</seciton>
-			<seciton class="tantoSection2">
-			tantoSection2
-			</seciton>
-			<seciton class="tantoSection3">
-			tantoSection3
-			</seciton>
-			<seciton class="tantoSection4">
-			tantoSection4
-			</seciton>
+			<h3>ライブエストコンサルタント紹介</h3>
+		</div>
+		<div class="col-sm-12">
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					一緒に成長しましょう！<br/>
+					キャリアを見据えた案件を紹介します<br/>
+					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
+					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
+					<p class="linkPart">
+						<a>tantoSection1link</a>
+					</p>
+				</div>
+			</div>
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					一緒に成長しましょう！<br/>
+					キャリアを見据えた案件を紹介します<br/>
+					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
+					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
+					<p class="linkPart">
+						<a>tantoSection2link</a>
+					</p>
+				</div>
+			</div>
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					tantoSection3text<br/>
+					tantoSection3text<br/>
+					tantoSection3texttantoSection3texttantoSection3text
+					tantoSection3texttantoSection3texttantoSection3text
+					tantoSection3texttantoSection3text
+					tantoSection3texttantoSection3texttantoSection3text
+					tantoSection3texttantoSection3texttantoSection3text<br/>
+					<p class="linkPart">
+						<a>tantoSection3link</a>
+					</p>
+				</div>
+			</div>
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					tantoSection4text<br/>
+					tantoSection4text<br/>
+					tantoSection4texttantoSection4texttantoSection4text
+					tantoSection4texttantoSection4texttantoSection4text
+					tantoSection4texttantoSection4text
+					tantoSection4texttantoSection4texttantoSection4text
+					tantoSection4texttantoSection4texttantoSection4text<br/>
+					<p class="linkPart">
+						<a>tantoSection4link</a>
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="mainContents infoContents row">
@@ -208,7 +371,7 @@ h3.containSubTitle{
 	</div>
 </div>
 <footer class="container-fluid">
-	<div class="row">
+	<div class="row" style="background-color:green;">
 		footer
 	</div>
 </footer>
