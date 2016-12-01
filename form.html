@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style/reset.css">
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
+<script type="text/javascript" src="/script/jquery-2.1.4.min"></script>
+<script type="text/javascript" src="/script/bootstrap.js"></script>
+<script type="text/javascript" src="/script/jquery-ui.js"></script>
+<title></title>
+<style>
+/*基本レイアウト*/
+body{
+	font-size:20px;
+	background-color:#C4E8FF;
+}
+header{
+	margin-top:0px;
+	margin-bottom:50px;
+}
+.headContents{
+	padding:10px;
+	height:100px;	
+}
+section.ankenSection{
+	padding-top:20px;
+	padding-bottom:20px;
+	border-bottom:solid 1px silver;
+}
+section.borderNone{
+	border-bottom:none;
+}
+.tantoSection{
+	margin-bottom:20px;
+	padding:10px;
+	width:100%;
+	height:200px;
+}
+.imgPart{
+	display:inline-block;
+	width:25%;
+	height:180px;
+	text-align:center;
+	vertical-align:top;
+}
+.textPart{
+	display:inline-block;
+	width:73%;
+	height:160px;
+	text-align:left;
+	/*vertical-align:-550%;*/
+	font-size:0.8em;
+}
+.linkPart{
+	display:inline-block;
+	float:right;
+	margin:0;
+	text-align:right;
+	width:73%;
+	height:20px;
+}
+h3{
+	margin-top:10px;
+	margin-bottom:20px;
+	font-size:1.6em;/*30pt;*/
+}
+h4{
+	margin-top:10px;
+	margin-bottom:0px;
+	font-size:1.2em;/*16pt*/
+}
+/*Bootstrapカスタマイズ*/
+
+.row{
+	width:80%;
+	margin:0 10% 20px;
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+}
+/*ここまで Bootstrapカスタマイズ*/
+.mainContents{
+	background-color:white;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+}
+h3.containSubTitle{
+	margin-top:0px;
+}
+.questionImg{
+	min-height: 210px;
+	background-size:cover;
+}
+.checkList{
+	margin-left:50px;
+}
+.checkList li{
+	line-height: 38px;
+	font-size:1em;
+}
+.breadcrumb{
+	background-color:white;
+}
+.breadcrumb > li + li:before{
+	font-size:30pt;
+	font-weight:bold;
+	content: "＞";
+}
+/*ここまで 基本レイアウト*/
+
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+<header>
+	<div class="headContents container-fluid" style="background-color:white;">
+		テスト
+	</div>
+</header>
+<div class="main container-fluid">
+	<div class="mainContents infoContents row">
+		<div class="col-sm-12">
+			<h1>必要事項のご入力</h1>
+		</div>
+	</div>
+	<div class="mainContents introTantoContents row">
+		<div class="col-sm-12">
+			<h3>ライブエストコンサルタント紹介</h3>
+		</div>
+		<div class="col-sm-12">
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					一緒に成長しましょう！<br/>
+					キャリアを見据えた案件を紹介します<br/>
+					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
+					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
+					<p class="linkPart">
+						<a>tantoSection1link</a>
+					</p>
+				</div>
+			</div>
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					一緒に成長しましょう！<br/>
+					キャリアを見据えた案件を紹介します<br/>
+					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
+					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
+					<p class="linkPart">
+						<a>tantoSection2link</a>
+					</p>
+				</div>
+			</div>
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					tantoSection3text<br/>
+					tantoSection3text<br/>
+					tantoSection3texttantoSection3texttantoSection3text
+					tantoSection3texttantoSection3texttantoSection3text
+					tantoSection3texttantoSection3text
+					tantoSection3texttantoSection3texttantoSection3text
+					tantoSection3texttantoSection3texttantoSection3text<br/>
+					<p class="linkPart">
+						<a>tantoSection3link</a>
+					</p>
+				</div>
+			</div>
+			<div class="tantoSection" style="background-color:pink;">
+				<div class="imgPart">
+					<img src="image/dummy5.jpeg" height="100%">
+				</div>
+				<div class="textPart">
+					tantoSection4text<br/>
+					tantoSection4text<br/>
+					tantoSection4texttantoSection4texttantoSection4text
+					tantoSection4texttantoSection4texttantoSection4text
+					tantoSection4texttantoSection4text
+					tantoSection4texttantoSection4texttantoSection4text
+					tantoSection4texttantoSection4texttantoSection4text<br/>
+					<p class="linkPart">
+						<a>tantoSection4link</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mainContents infoContents row">
+		<div class="col-sm-6">
+			infoContents
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-info">お問い合わせ</a>
+		</div>
+	</div>
+</div>
+<footer class="container-fluid">
+	<div class="row" style="background-color:green;">
+		footer
+	</div>
+</footer>
+</body>
+</html>

@@ -80,6 +80,15 @@ h4{
 	padding-bottom:20px;
 	text-align:center;
 }
+.breadcrumb{
+	background-color:white;
+}
+.breadcrumb > li + li:before{
+	font-size:30pt;
+	font-weight:bold;
+	content: "＞";
+}
+
 /*ここまで Bootstrapカスタマイズ*/
 .mainContents{
 	background-color:white;
@@ -101,14 +110,7 @@ h3.containSubTitle{
 	line-height: 38px;
 	font-size:1em;
 }
-.breadcrumb{
-	background-color:white;
-}
-.breadcrumb > li + li:before{
-	font-size:30pt;
-	font-weight:bold;
-	content: "＞";
-}
+
 /*ここまで 基本レイアウト*/
 
 </style>
@@ -131,7 +133,7 @@ h3.containSubTitle{
 			</p>
 		</div>
 		<div class="col-sm-6">
-			<a class="btn btn-info">お問い合わせ</a>
+			<a href="form.html" class="btn btn-info">お問い合わせ</a>
 		</div>
 	</div>
 	<div class="mainContents questionContents row">
@@ -289,7 +291,7 @@ h3.containSubTitle{
 			infoContents
 		</div>
 		<div class="col-sm-6">
-			<a class="btn btn-info">お問い合わせ</a>
+			<a href="form.html" class="btn btn-info">お問い合わせ</a>
 		</div>
 	</div>
 	<div class="mainContents introTantoContents row">
@@ -366,7 +368,7 @@ h3.containSubTitle{
 			infoContents
 		</div>
 		<div class="col-sm-6">
-			<a class="btn btn-info">お問い合わせ</a>
+			<a href="form.html" class="btn btn-info">お問い合わせ</a>
 		</div>
 	</div>
 </div>
