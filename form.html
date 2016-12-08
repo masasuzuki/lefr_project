@@ -24,42 +24,18 @@ header{
 	padding:10px;
 	height:100px;	
 }
-section.ankenSection{
-	padding-top:20px;
-	padding-bottom:20px;
-	border-bottom:solid 1px silver;
-}
-section.borderNone{
-	border-bottom:none;
-}
-.tantoSection{
-	margin-bottom:20px;
-	padding:10px;
-	width:100%;
-	height:200px;
-}
-.imgPart{
-	display:inline-block;
-	width:25%;
-	height:180px;
-	text-align:center;
-	vertical-align:top;
-}
-.textPart{
-	display:inline-block;
-	width:73%;
-	height:160px;
-	text-align:left;
-	/*vertical-align:-550%;*/
+.formSection{
+	padding-top:30px;
 	font-size:0.8em;
 }
-.linkPart{
-	display:inline-block;
-	float:right;
-	margin:0;
-	text-align:right;
-	width:73%;
-	height:20px;
+.inputSection{
+	background-color:#F5F5F5;
+	border: 1px solid #696969;
+	margin:0px 20%;
+	padding:15px 0;
+}
+.privacySection{
+	margin-top:30px;
 }
 h3{
 	margin-top:10px;
@@ -71,6 +47,14 @@ h4{
 	margin-bottom:0px;
 	font-size:1.2em;/*16pt*/
 }
+h5{
+	margin:0 20%;
+	line-height:20px;
+	padding:5px;
+	background-color:pink;
+	font-size:0.7em;
+}
+
 /*Bootstrapカスタマイズ*/
 
 .row{
@@ -80,26 +64,16 @@ h4{
 	padding-bottom:20px;
 	text-align:center;
 }
+.form-group{
+	padding:0 15%;
+	text-align:left;
+}
 /*ここまで Bootstrapカスタマイズ*/
 .mainContents{
 	background-color:white;
 	border-radius:10px;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
-}
-h3.containSubTitle{
-	margin-top:0px;
-}
-.questionImg{
-	min-height: 210px;
-	background-size:cover;
-}
-.checkList{
-	margin-left:50px;
-}
-.checkList li{
-	line-height: 38px;
-	font-size:1em;
 }
 .breadcrumb{
 	background-color:white;
@@ -113,7 +87,10 @@ h3.containSubTitle{
 
 </style>
 <script type="text/javascript">
-	
+function formSubmit(){
+	document.mainform.submit();
+	alert('登録が完了しました。');
+}
 </script>
 </head>
 <body>
@@ -123,86 +100,204 @@ h3.containSubTitle{
 	</div>
 </header>
 <div class="main container-fluid">
-	<div class="mainContents infoContents row">
-		<div class="col-sm-12">
-			<h1>必要事項のご入力</h1>
-		</div>
-	</div>
 	<div class="mainContents introTantoContents row">
 		<div class="col-sm-12">
-			<h3>ライブエストコンサルタント紹介</h3>
+			<h3>必要事項のご入力</h3>
 		</div>
 		<div class="col-sm-12">
-			<div class="tantoSection" style="background-color:pink;">
-				<div class="imgPart">
-					<img src="image/dummy5.jpeg" height="100%">
-				</div>
-				<div class="textPart">
-					一緒に成長しましょう！<br/>
-					キャリアを見据えた案件を紹介します<br/>
-					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
-					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
-					<p class="linkPart">
-						<a>tantoSection1link</a>
-					</p>
-				</div>
-			</div>
-			<div class="tantoSection" style="background-color:pink;">
-				<div class="imgPart">
-					<img src="image/dummy5.jpeg" height="100%">
-				</div>
-				<div class="textPart">
-					一緒に成長しましょう！<br/>
-					キャリアを見据えた案件を紹介します<br/>
-					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
-					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
-					<p class="linkPart">
-						<a>tantoSection2link</a>
-					</p>
-				</div>
-			</div>
-			<div class="tantoSection" style="background-color:pink;">
-				<div class="imgPart">
-					<img src="image/dummy5.jpeg" height="100%">
-				</div>
-				<div class="textPart">
-					tantoSection3text<br/>
-					tantoSection3text<br/>
-					tantoSection3texttantoSection3texttantoSection3text
-					tantoSection3texttantoSection3texttantoSection3text
-					tantoSection3texttantoSection3text
-					tantoSection3texttantoSection3texttantoSection3text
-					tantoSection3texttantoSection3texttantoSection3text<br/>
-					<p class="linkPart">
-						<a>tantoSection3link</a>
-					</p>
-				</div>
-			</div>
-			<div class="tantoSection" style="background-color:pink;">
-				<div class="imgPart">
-					<img src="image/dummy5.jpeg" height="100%">
-				</div>
-				<div class="textPart">
-					tantoSection4text<br/>
-					tantoSection4text<br/>
-					tantoSection4texttantoSection4texttantoSection4text
-					tantoSection4texttantoSection4texttantoSection4text
-					tantoSection4texttantoSection4text
-					tantoSection4texttantoSection4texttantoSection4text
-					tantoSection4texttantoSection4texttantoSection4text<br/>
-					<p class="linkPart">
-						<a>tantoSection4link</a>
-					</p>
-				</div>
+			<div class="flowSection">
+				<ol class="breadcrumb">
+				  <li><img src="image/dummy4.JPG" width="100" class="img-circle"></li>
+				  <li><img src="image/dummy4.JPG" width="100" class="img-circle"></li>
+				  <li><img src="image/dummy4.JPG" width="100" class="img-circle"></li>
+				</ol>
 			</div>
 		</div>
-	</div>
-	<div class="mainContents infoContents row">
-		<div class="col-sm-6">
-			infoContents
+		<div class="col-sm-12">
+			<div class="commentSection">
+				<p>
+					まずはお気軽にご登録ください。<br/>
+					登録後、弊社コンサルタントより追ってご連絡させて頂きます。
+				</p>
+			</div>
 		</div>
-		<div class="col-sm-6">
-			<a class="btn btn-info">お問い合わせ</a>
+		<div class="col-sm-12">
+			<form action="submit.php" method="POST" name="mainform">
+				<div class="formSection">
+					<div class="inputSection">
+						<div class="form-group">
+							<label>名前</label>
+							<input name="name" type="text" class="form-control input-sm" />
+						</div>
+						<div class="form-group">
+							<label>メールアドレス</label>
+							<input name="mail" type="text" class="form-control input-sm" />
+						</div>
+						<div class="form-group">
+							<label>生まれた年</label><br/>
+							<select name="birthyear">
+							    <option value="">▼生まれた年をお選びください</option>  
+							    <option value="1995年">1995年</option>  
+							    <option value="1994年">1994年</option>  
+							    <option value="1993年">1993年</option>  
+							    <option value="1992年">1992年</option>  
+							    <option value="1991年">1991年</option>  
+							    <option value="1990年">1990年</option>  
+							    <option value="1989年">1989年</option>  
+							    <option value="1988年">1988年</option>  
+							</select>
+						</div>
+						<div class="form-group">
+							<label>居住地</label><br/>
+						    <select name="pref">  
+							    <option value="">▼都道府県をお選びください</option>  
+							    <optgroup label="北海道・東北">  
+							        <option value="北海道">北海道</option>  
+							        <option value="青森県">青森県</option>  
+							        <option value="秋田県">秋田県</option>  
+							        <option value="岩手県">岩手県</option>  
+							        <option value="山形県">山形県</option>  
+							        <option value="宮城県">宮城県</option>  
+							        <option value="福島県">福島県</option>  
+							    </optgroup>  
+							    <optgroup label="甲信越・北陸">  
+							        <option value="山梨県">山梨県</option>  
+							        <option value="長野県">長野県</option>  
+							        <option value="新潟県">新潟県</option>  
+							        <option value="富山県">富山県</option>  
+							        <option value="石川県">石川県</option>  
+							        <option value="福井県">福井県</option>  
+							    </optgroup>  
+							    <optgroup label="関東">  
+							        <option value="茨城県">茨城県</option>  
+							        <option value="栃木県">栃木県</option>  
+							        <option value="群馬県">群馬県</option>  
+							        <option value="埼玉県">埼玉県</option>  
+							        <option value="千葉県">千葉県</option>  
+							        <option value="東京都">東京都</option>  
+							        <option value="神奈川県">神奈川県</option>  
+							    </optgroup>  
+							    <optgroup label="東海">  
+							        <option value="愛知県">愛知県</option>  
+							        <option value="静岡県">静岡県</option>  
+							        <option value="岐阜県">岐阜県</option>  
+							        <option value="三重県">三重県</option>  
+							    </optgroup>  
+							    <optgroup label="関西">  
+							        <option value="大阪府">大阪府</option>  
+							        <option value="兵庫県">兵庫県</option>  
+							        <option value="京都府">京都府</option>  
+							        <option value="滋賀県">滋賀県</option>  
+							        <option value="奈良県">奈良県</option>  
+							        <option value="和歌山県">和歌山県</option>  
+							    </optgroup>  
+							    <optgroup label="中国">  
+							        <option value="岡山県">岡山県</option>  
+							        <option value="広島県">広島県</option>  
+							        <option value="鳥取県">鳥取県</option>  
+							        <option value="島根県">島根県</option>  
+							        <option value="山口県">山口県</option>  
+							    </optgroup>  
+							    <optgroup label="四国">  
+							        <option value="徳島県">徳島県</option>  
+							        <option value="香川県">香川県</option>  
+							        <option value="愛媛県">愛媛県</option>  
+							        <option value="高知県">高知県</option>  
+							    </optgroup>  
+							    <optgroup label="九州・沖縄">  
+							        <option value="福岡県">福岡県</option>  
+							        <option value="佐賀県">佐賀県</option>  
+							        <option value="長崎県">長崎県</option>  
+							        <option value="熊本県">熊本県</option>  
+							        <option value="大分県">大分県</option>  
+							        <option value="宮崎県">宮崎県</option>  
+							        <option value="鹿児島県">鹿児島県</option>  
+							        <option value="沖縄県">沖縄県</option>  
+							    </optgroup>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>経験職種</label><br/>
+							<select name="experienceJob">
+							    <option value="">▼経験職種をお選びください</option>  
+							    <option value="Webエンジニア">Webエンジニア</option>  
+							    <option value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア</option>  
+							    <option value="フロントエンドエンジニア">フロントエンドエンジニア</option>  
+							    <option value="UI/UXエンジニア">UI/UXエンジニア</option>  
+							    <option value="Webディレクター">Webディレクター</option>  
+							    <option value="Webマーケター">Webマーケター</option>  
+							    <option value="ゲームディレクター">ゲームディレクター</option>  
+								<option value="ゲームエンジニア">ゲームエンジニア</option>
+								<option value="ゲームグラフィッカー">ゲームグラフィッカー</option>
+								<option value="インフラエンジニア">インフラエンジニア</option>
+								<option value="システムエンジニア(業務系)">システムエンジニア(業務系)</option>
+								<option value="システムエンジニア(組込・制御系)">システムエンジニア(組込・制御系)</option>
+								<option value="ITコンサルタント/PM">ITコンサルタント/PM</option>
+								<option value="営業">営業</option>
+								<option value="経営企画/事業企画">経営企画/事業企画</option>
+								<option value="財務/経理">財務/経理</option>
+								<option value="人事/総務">人事/総務</option>
+								<option value="財務/経理">法務</option>
+								<option value="人事/総務">その他</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>希望職種</label><br/>
+							<select name="desireJob">
+							    <option value="">▼経験職種をお選びください</option>  
+							    <option value="Webエンジニア">Webエンジニア</option>  
+							    <option value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア</option>  
+							    <option value="フロントエンドエンジニア">フロントエンドエンジニア</option>  
+							    <option value="UI/UXエンジニア">UI/UXエンジニア</option>  
+							    <option value="Webディレクター">Webディレクター</option>  
+							    <option value="Webマーケター">Webマーケター</option>  
+							    <option value="ゲームディレクター">ゲームディレクター</option>  
+								<option value="ゲームエンジニア">ゲームエンジニア</option>
+								<option value="ゲームグラフィッカー">ゲームグラフィッカー</option>
+								<option value="インフラエンジニア">インフラエンジニア</option>
+								<option value="システムエンジニア(業務系)">システムエンジニア(業務系)</option>
+								<option value="システムエンジニア(組込・制御系)">システムエンジニア(組込・制御系)</option>
+								<option value="ITコンサルタント/PM">ITコンサルタント/PM</option>
+								<option value="営業">営業</option>
+								<option value="経営企画/事業企画">経営企画/事業企画</option>
+								<option value="財務/経理">財務/経理</option>
+								<option value="人事/総務">人事/総務</option>
+								<option value="財務/経理">法務</option>
+								<option value="人事/総務">その他</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="privacySection">
+					<h5>
+						上記事項ご入力後、個人情報保護方針をご確認いただき、<br/>問題なければチェックして送信ボタンをクリックしてください
+					</h5>
+					<p style="margin-top:10px;font-size:0.8em;line-height:40px;">
+						<input type="checkbox" name="privacy">個人情報保護方針について同意する
+						<br/>
+						<a class="btn btn-default" onClick="javascript:formSubmit()">確認画面へ進む</a>
+					</p>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-12">
+			<div class="infoSection">
+				TODOTODOTODOTODO
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="cautionSection text-left" style="padding:0 20%;font-size:0.8em">
+				<h6 style="font-weight:bold;">※お申し込みの際の注意事項</h6>
+				<p style="font-size:0.8em;">
+					下記の方は弊社の事業基盤、案件動向からご紹介が大変難しい場合があります。ご了承下さい。
+					<ul style="font-size:0.7em;padding-left:2em;">
+					    <li>IT業界または希望職種の未経験者。</li>
+					    <li>首都圏以外の勤務地を希望される方（弊社は首都圏の案件情報が中心となっております）。</li>
+					    <li>50歳以上の方(弊社は20代、30代の案件情報が中心になっております)。</li>
+					    <li>外国籍の方。</li>
+					</ul>
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
