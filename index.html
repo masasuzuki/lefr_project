@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="/script/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/script/bootstrap.js"></script>
+<script type="text/javascript" src="/script/jquery-ui.js"></script>
+<!--[if lt IE 9]>
+<script language="javascript" type="text/javascript" src="excanvas.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/script/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="/script/jqplot.pieRenderer.js"></script>
+<script type="text/javascript" src="/script/animatescroll.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
-<script type="text/javascript" src="/script/jquery-2.1.4.min"></script>
-<script type="text/javascript" src="/script/bootstrap.js"></script>
-<script type="text/javascript" src="/script/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="style/jquery.jqplot.min.css">
 <title></title>
 <style>
 /*基本レイアウト*/
 body{
-	color:#01044E;
+	color:#0048A6;
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	font-size:20px;
-	background-color:#C4E8FF;
+	background-color:#DDEBF3;
 }
 section.ankenSection{
 	padding-top:20px;
@@ -62,11 +70,15 @@ h3{
 h4{
 	margin-top:10px;
 	margin-bottom:0px;
-	font-size:1.2em;/*16pt*/
+	font-size: 0.9em;/*16pt*/
+	line-height: 30px;
+}
+h5{
+	font-size:1.1em;
 }
 /*Bootstrapカスタマイズ*/
 .jumbotron{
-	background: url('image/IMG_6930.jpg') center no-repeat;
+	background: url('image/main_dummy4.jpeg') center no-repeat;
 	background-size: cover;
 }
 .jumbotron-extend {
@@ -91,6 +103,14 @@ h4{
 }
 
 /*ここまで Bootstrapカスタマイズ*/
+
+/*jqplotプラグインのデザイン変更*/
+.jqplot-table-legend{
+	margin-bottom:0px !important;
+	font-size:0.9em;
+}
+/*ここまで jqplotプラグインのデザイン変更*/
+
 .mainContents{
 	background-color:white;
 	border-radius:10px;
@@ -116,7 +136,61 @@ h3.containSubTitle{
 
 </style>
 <script type="text/javascript">
-	
+$(function(){
+    //jqplotプラグイン定義
+    //スキル・開発環境
+    $.jqplot(
+        'jqPlot-skill',
+        [
+            [
+                [ '開発', 25 ],
+                [ 'インフラ', 25 ],
+                [ 'ヘルプデスク', 30 ],
+                [ 'キッティング', 20 ],
+                [ 'その他', 20 ],
+            ]
+        ],
+        {
+            seriesDefaults: {
+                renderer: $.jqplot.PieRenderer,
+                rendererOptions: {
+                    padding: 10,
+                    dataLabels: 'percent',
+                    showDataLabels: true,
+                    startAngle: -90,
+                }
+            },
+            legend: {
+                show: true,
+                location: 'n',
+                rendererOptions: {
+                    numberRows: 2
+                },
+            }
+        }
+    );
+    //年齢
+    $.jqplot(
+        'jqPlot-age',
+        [
+            [
+                [ 'Ａ', 50 ],
+                [ 'Ｂ', 25 ],
+                [ 'Ｃ', 24 ],
+                [ 'その他', 1 ]
+            ]
+        ],
+        {
+            seriesDefaults: {
+                renderer: $.jqplot.PieRenderer,
+                rendererOptions: {
+                    padding: 15,
+                    dataLabels: [ 'Ａ社', 'Ｂ社', 'Ｃ社', 'その他', ],
+                    showDataLabels: true
+                }
+            },
+        }
+    );});
 </script>
 </head>
 <body>
@@ -132,7 +206,7 @@ h3.containSubTitle{
 			TEL :03-xxxx-xxxx
 		</div>
 		<div class="col-sm-6">
-			<a href="form.html" class="btn btn-info">お問い合わせ</a>
+			<a href="form.html" class="btn btn-primary">お問い合わせ</a>
 		</div>
 	</div>
 	<div class="mainContents questionContents row">
@@ -172,7 +246,7 @@ h3.containSubTitle{
 						<img src="image/dummy2.jpg" class="img-circle">
 					</div>
 					<div class="col-sm-12">
-						<a href="" class="btn btn-lg btn-info" style="margin:30px 0;padding:15px;">コンサルタントの詳細はこちら</a>
+						<a onclick="$('#idIntroContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});" class="btn btn-lg btn-primary" style="margin:30px 0;padding:15px;">コンサルタントの詳細はこちら</a>
 					</div>
 				</div>
 			</section>
@@ -204,14 +278,12 @@ h3.containSubTitle{
 						<h3>案件の傾向</h3>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:300px;background-color:pink;">
-							<img width="100%" height="100%" src="image/keikou_1_dummy.png">
-						</p>
+						<h5>スキル・開発環境</h5>
+						<div id="jqPlot-skill" style="height: 110%; width: 100%;"></div>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:300px;background-color:pink;">
-							<img width="100%" height="100%" src="image/keikou_2_dummy.png">
-						</p>
+						<h5>年齢</h5>
+						<div id="jqPlot-age" style="height: 100%; width: 100%;"></div>
 					</div>
 				</div>
 			</section>
@@ -290,10 +362,10 @@ h3.containSubTitle{
 			TEL :03-xxxx-xxxx
 		</div>
 		<div class="col-sm-6">
-			<a href="form.html" class="btn btn-info">お問い合わせ</a>
+			<a href="form.html" class="btn btn-primary">お問い合わせ</a>
 		</div>
 	</div>
-	<div class="mainContents introTantoContents row">
+	<div class="mainContents introTantoContents row" id="idIntroContents">
 		<div class="col-sm-12">
 			<h3>ライブエストコンサルタント紹介</h3>
 		</div>
@@ -367,7 +439,7 @@ h3.containSubTitle{
 			TEL :03-xxxx-xxxx
 		</div>
 		<div class="col-sm-6">
-			<a href="form.html" class="btn btn-info">お問い合わせ</a>
+			<a href="form.html" class="btn btn-primary">お問い合わせ</a>
 		</div>
 	</div>
 </div>
