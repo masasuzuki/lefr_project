@@ -12,6 +12,7 @@
 <script type="text/javascript" src="/script/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="/script/jqplot.pieRenderer.js"></script>
 <script type="text/javascript" src="/script/animatescroll.min.js"></script>
+<script type="text/javascript" src="/script/main.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
@@ -23,12 +24,12 @@ body{
 	color:#222222;
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	font-size:20px;
-	background-color:#DDEBF3;
+	background-color:#2C5379;
 }
 section.ankenSection{
 	padding-top:20px;
 	padding-bottom:20px;
-	border-bottom:solid 1px silver;
+	border-bottom:solid 1px #DDEBF3;
 }
 section.borderNone{
 	border-bottom:none;
@@ -63,10 +64,12 @@ section.borderNone{
 	height:20px;
 }
 h3{
+	/*font-family: "Cormorant Garamond", serif;*/
 	margin-top:10px;
 	margin-bottom:40px;
 	color:#0048A6;
-	font-size:1.6em;/*30pt;*/
+	font-size:1.3em;/*30pt;*/
+	font-weight:normal;
 }
 h4{
 	margin-top:10px;
@@ -82,17 +85,18 @@ h5{
 
 /*Bootstrapカスタマイズ*/
 .jumbotron{
-	background: url('image/main_dummy5.jpeg') center no-repeat;
+	background: url('image/mainpic1.jpg') center no-repeat;
 	background-size: cover;
+	background-color: blue;
 }
 .jumbotron-extend {
     position: relative;
-    height: 85vh;
+    height: 100vh;
     min-height: 300px;
 }
 .row{
-	width:80%;
-	margin:0 10% 20px;
+	width:90%;
+	margin:0 5% 20px;
 	padding-top:20px;
 	padding-bottom:20px;
 	text-align:center;
@@ -145,7 +149,7 @@ h5{
 .charaSection .contentPart{
 	margin-top:10px;
 	width:100%;
-	height:200px;
+	height:160px;
 	text-align:left;
 	color:white;
 	border-radius:8px;
@@ -157,7 +161,7 @@ h5{
 	border-bottom:2px solid #D3D4D6;
 }
 .charaSection .contentPart span{
-	line-height:50px;
+	line-height:55px;
 }
 .charaSection .contentPart p{
 	padding:5px;
@@ -166,6 +170,66 @@ h5{
 
 .caseSection{
 	text-align:left;
+}
+
+.caseSection .jireiPart{
+	margin: 10px 0;
+	padding:10px 5px;
+	width:100%;
+	height:200px;
+	background-color:#F3F4F8;
+	color:#3AABD2;
+	border:1px solid #3AABD2
+}
+.caseSection .jireiPart h6{
+	text-align:left;
+	padding:5px 0;
+	margin:0 5px 10px;
+	border-bottom:2px solid #0016FF;
+}
+.caseSection .jireiPart span{
+	padding-left:5px;font-size:1.1em;
+}
+
+.caseSection .jireiPart p{
+	text-align:left;
+	line-height:18px;
+	padding:10px;
+	margin:0 15px;
+	color:black;
+	font-size:0.60em;
+	border-bottom:1px solid silver;
+}
+
+.voiceSection .voicePart{
+	width:100%;
+	height:400px;
+	text-align:left;
+	border:1px solid #e5e5e5;
+	border-radius:3px;
+}
+.voiceSection .voicePart img{
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+}
+.voiceSection .voicePart h5{
+	margin-bottom:5px;
+	padding:0px 10px;
+	color:#3AABD2;
+	font-size:0.8em;
+}
+.voiceSection .voicePart div{
+	padding:0 5px 5px;
+	text-align:left;
+	color:#95969A;
+	line-height:20px;
+	font-size:0.75em;
+}
+.voiceSection .voicePart h6{
+	color:#222222;font-size:1.0em;
+}
+.voiceSection .voicePart p{
+	font-size:0.8em;
 }
 
 h3.containSubTitle{
@@ -190,6 +254,38 @@ h3.containSubTitle{
 	/* 文字が真ん中に位置するように padding で上下の間隔を調整する。*/
 	/* 38pxの部分に「画像File」の横幅に隙間分のpxを足した数を入れる */
 }
+.footerContents {
+    background-color: #2C5379;
+    color:#fff;
+}
+.footerContents .row{
+	width:100%;
+	margin:20px 0;
+	padding:0 10px 0;
+}
+.footerContents p{
+	margin-bottom: 0;
+	font-size:0.8em;
+}
+.footerContents a{
+	color:#D3D4D6;
+}
+
+.button1 a:hover{
+    cursor:pointer;
+    text-decoration:none;
+}
+.button1 a{
+    cursor:pointer;
+    text-decoration:none;
+    font-size:13pt;
+    color:#01044E;
+    border:2px solid #01044E;
+    padding:7px 10px;
+    width:150px;
+    height:80px;
+    text-align:center;
+}
 
 /*ここまで 基本レイアウト*/
 
@@ -197,19 +293,76 @@ h3.containSubTitle{
 <script type="text/javascript">
 $(function(){
     //jqplotプラグイン定義
-    //スキル・開発環境
+    //スキル：開発
     $.jqplot(
-        'jqPlot-skill',
+        'jqPlot-skill-develop',
         [
             [
-                [ '開発', 25 ],
-                [ 'インフラ', 25 ],
-                [ 'ヘルプデスク', 30 ],
-                [ 'キッティング', 20 ],
-                [ 'その他', 20 ],
+                [ '業務系', 55 ],
+                [ 'WEB・ソーシャルゲーム系', 45 ]
             ]
         ],
         {
+        	seriesColors:['#E67B85','#97D4D9'],
+            seriesDefaults: {
+                renderer: $.jqplot.PieRenderer,
+                rendererOptions: {
+                    padding: 10,
+                    dataLabels: 'percent',
+                    showDataLabels: true,
+                    startAngle: -90,
+                }
+            },
+            legend: {
+                show: true,
+                location: 'n',
+                rendererOptions: {
+                    numberRows: 2
+                },
+            }
+        }
+    );
+    //スキル：インフラ
+    $.jqplot(
+        'jqPlot-skill-instracture',
+        [
+            [
+                [ 'サーバー', 70 ],
+                [ 'ネットワーク', 30 ]
+            ]
+        ],
+        {
+        	seriesColors:['#E67B85','#97D4D9'],
+            seriesDefaults: {
+                renderer: $.jqplot.PieRenderer,
+                rendererOptions: {
+                    padding: 10,
+                    dataLabels: 'percent',
+                    showDataLabels: true,
+                    startAngle: -90,
+                }
+            },
+            legend: {
+                show: true,
+                location: 'n',
+                rendererOptions: {
+                    numberRows: 2
+                },
+            }
+        }
+    );
+    //スキル：その他
+    $.jqplot(
+        'jqPlot-skill-another',
+        [
+            [
+                [ 'PM', 40 ],
+                [ 'キッティング', 30 ],
+                [ 'PMサポート', 30 ]
+            ]
+        ],
+        {
+        	seriesColors:['#E67B85','#97D4D9','#9CD0AC'],
             seriesDefaults: {
                 renderer: $.jqplot.PieRenderer,
                 rendererOptions: {
@@ -233,30 +386,41 @@ $(function(){
         'jqPlot-age',
         [
             [
-                [ 'Ａ', 50 ],
-                [ 'Ｂ', 25 ],
-                [ 'Ｃ', 24 ],
-                [ 'その他', 1 ]
+                [ '20代', 20 ],
+                [ '30代', 40 ],
+                [ '40代', 30 ],
+                [ '50代', 10 ]
             ]
         ],
         {
+        	seriesColors:['#E67B85','#97D4D9','#9CD0AC','#F0BD68'],
             seriesDefaults: {
                 renderer: $.jqplot.PieRenderer,
                 rendererOptions: {
-                    padding: 15,
-                    dataLabels: [ 'Ａ社', 'Ｂ社', 'Ｃ社', 'その他', ],
-                    showDataLabels: true
+                    padding: 10,
+                    dataLabels: 'percent',
+                    showDataLabels: true,
+                    startAngle: -90,
                 }
             },
+            legend: {
+                show: true,
+                location: 'n',
+                rendererOptions: {
+                    numberRows: 2
+                },
+            }
         }
-    );});
+    );
+});
 </script>
 </head>
 <body>
 <header>
-	<div class="jumbotron jumbotron-extend">
-		<div class="container-fluid text-center">
-			
+	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
+		<div style="width:100%;height:100%;color:white;" class="container-fluid text-center"><!-- background-color:#01044E;opacity:0.2; -->
+			<p style="opacity:1;margin:30vh;font-family:Lato;font-size:80px;letter-spacing: 4px;margin-bottom:0px;">LIVE EST ,INC.</p>
+			<p style="font-family:Lato;font-size:40px;letter-spacing: 3px;">フリーランス特設サイト</p>
 		</div>
 	</div>
 </header>
@@ -265,14 +429,14 @@ $(function(){
 		<div class="col-sm-6">
 			<img src="image/LE_icon.png" width="50px" height="50px">
 			<p class="telPart">
-			TEL :03-XXXX-XXXX<br/>
+			TEL :03-6907-1122<br>
 			<span>営業時間： 平日9:00〜19:00</span>
 			</p>
 		</div>
 		<div class="col-sm-6">
-			<p class="infoPart">
-				<a href="form.html" class="btn btn-success btn-lg">お問い合わせ</a>
-			</p>
+			<div class="infoPart button1">
+				<a href="form.html">無料登録はこちら</a>
+			</div>
 		</div>
 	</div>
 	<div class="mainContents questionContents row">
@@ -319,17 +483,17 @@ $(function(){
 			<section class="ankenSection charaSection">
 				<div class="row">
 					<div class="col-sm-12">
-						<h3>ライブエストの3つの特徴</h3>
+						<h3>ココがイイ！ライブエストの【３S】！</h3>
 					</div>
 					<div class="col-sm-4">
 						<div class="contentPart" style="background-color:#E67B85;">
 							<h6>
 								<img width="40px" height="40px" src="image/f_f_business_7_s256_f_business_7_0bg.jpg">
-								<span>　豊富な案件数</span>
+								<span>超絶的「SPEED」！</span>
 							</h6>
 							<p>
-								テスト<br/>
-								TODOテキストTODOテキストTODOテキスト
+								登録～お仕事までの流れや日々の対応スピードに絶対的な自信があります！<br>
+								登録した日から3日後にお仕事を開始した人もいらっしゃいます！
 							</p>
 						</div>
 					</div>
@@ -337,10 +501,10 @@ $(function(){
 						<div class="contentPart" style="background-color:#9CD0AC;">
 							<h6>
 								<img width="40px" height="40px" src="image/f_f_business_81_s256_f_business_81_0bg.jpg">
-								<span style="font-size:0.85em;">　一貫したフォロー体制</span>
+								<span>圧倒的「SERVICE」！</span>
 							</h6>
 							<p>
-								
+								一定期間の就業で特別報酬あります！<br>						また案件スライド（次案件も弊社の場合）やお友達紹介でも特別報酬！
 							</p>
 						</div>
 					</div>
@@ -348,10 +512,12 @@ $(function(){
 						<div class="contentPart" style="background-color:#97D4D9;">
 							<h6 >
 								<img width="40px" height="40px" src="image/f_f_object_130_s128_f_object_130_0bg.jpg">
-								<span>　圧倒的なスピード</span>
+								<span>絶対的「SUPPORT」！</span>
 							</h6>
 							<p>
-								
+								担当＋フォローの２名体制での完全サポート！<br>
+								お仕事に集中出来る環境全てをお任せ下さい！<br>
+								起業のご支援も可能です！
 							</p>
 						</div>
 					</div>
@@ -363,8 +529,16 @@ $(function(){
 						<h3>案件の傾向</h3>
 					</div>
 					<div class="col-sm-6">
-						<h5>スキル・開発環境</h5>
-						<div id="jqPlot-skill" style="height: 100%; width: 100%;"></div>
+						<h5>開発</h5>
+						<div id="jqPlot-skill-develop" style="height: 100%; width: 100%;"></div>
+					</div>
+					<div class="col-sm-6">
+						<h5>インフラ</h5>
+						<div id="jqPlot-skill-instracture" style="height: 100%; width: 100%;"></div>
+					</div>
+					<div class="col-sm-6">
+						<h5>その他</h5>
+						<div id="jqPlot-skill-another" style="height: 100%; width: 100%;"></div>
 					</div>
 					<div class="col-sm-6">
 						<h5>年齢</h5>
@@ -378,40 +552,70 @@ $(function(){
 						<h3>案件事例</h3>
 					</div>
 					<div class="col-sm-6">
-						<div style="padding:10px 5px;width:100%;height:200px;background-color:#F3F4F8;color:#3AABD2;border:1px solid #3AABD2">
-							<h6 style="padding:5px 0;margin:0 5px 10px;text-align:left;border-bottom:2px solid #0016FF;">
+						<div class="jireiPart">
+							<h6>
 								<img width="30px" height="30px" src="image/work1.png">
-								<span style="padding-left:5px;font-size:1.1em;">ソーシャルゲーム開発（HTML,CSS,JavaScript）</span>
+								<span>ソーシャルゲーム開発</span>
 							</h6>
-							<p style="font-size:0.65em;padding:10px;margin:0 15px;color:black;text-align:left;line-height:18px;border-bottom:1px solid silver;">金額　：</p>
-							<p style="font-size:0.65em;padding:10px;margin:0 15px;color:black;text-align:left;line-height:18px;border-bottom:1px solid silver;">勤務地：</p>
-							<p style="font-size:0.65em;padding:10px;margin:0 15px;color:black;text-align:left;line-height:18px;border-bottom:1px solid silver;">期間　：</p>
+							<p><strong>金額　：</strong>〜75万円</p>
+							<p><strong>勤務地：</strong>神泉</p>
+							<p><strong>技術　：</strong>Unity</p>
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:200px;background-color:yellow;">
-							<img width="100%" height="100%" src="image/jirei2_dummy.gif">
-						</p>
+						<div class="jireiPart">
+							<h6>
+								<img width="30px" height="30px" src="image/work1.png">
+								<span>ゲームディレクター</span>
+							</h6>
+							<p><strong>金額　：</strong>〜85万円</p>
+							<p><strong>勤務地：</strong>目黒</p>
+							<p><strong>技術　：</strong>ディレクション、進行管理、業務品質改善</p>
+						</div>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:100px;background-color:yellow;">
-							<img width="100%" height="100%" src="image/jirei3_dummy.gif">
-						</p>
+						<div class="jireiPart">
+							<h6>
+								<img width="30px" height="30px" src="image/work1.png">
+								<span>通信会社向け新サービスシステム開発</span>
+							</h6>
+							<p><strong>金額　：</strong>60万円</p>
+							<p><strong>勤務地：</strong>赤坂</p>
+							<p><strong>技術　：</strong>Java、Spring、SQL</p>
+						</div>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:100px;background-color:yellow;">
-							<img width="100%" height="100%" src="image/jirei4_dummy.gif">
-						</p>
+						<div class="jireiPart">
+							<h6>
+								<img width="30px" height="30px" src="image/work1.png">
+								<span>某信用金庫中継系システム開発</span>
+							</h6>
+							<p><strong>金額　：</strong>〜52万円</p>
+							<p><strong>勤務地：</strong>品川</p>
+							<p><strong>技術　：</strong>富士通汎用機COBOL</p>
+						</div>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:100px;background-color:yellow;">
-							<img width="100%" height="100%" src="image/jirei1_dummy.gif">
-						</p>
+						<div class="jireiPart">
+							<h6>
+								<img width="30px" height="30px" src="image/work1.png">
+								<span>ネイティブアプリ開発</span>
+							</h6>
+							<p><strong>金額　：</strong>〜70万円</p>
+							<p><strong>勤務地：</strong>渋谷</p>
+							<p><strong>技術　：</strong>iOS、Swift</p>
+						</div>
 					</div>
 					<div class="col-sm-6">
-						<p style="width:100%;height:100px;background-color:yellow;">
-							<img width="100%" height="100%" src="image/jirei2_dummy.gif">
-						</p>
+						<div class="jireiPart">
+							<h6>
+								<img width="30px" height="30px" src="image/work1.png">
+								<span>カーナビ（オーディオ系）アプリ画面開発</span>
+							</h6>
+							<p><strong>金額　：</strong>〜51万円</p>
+							<p><strong>勤務地：</strong>鴨居</p>
+							<p><strong>技術　：</strong>C、C++</p>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -421,13 +625,35 @@ $(function(){
 						<h3>登録者の声</h3>
 					</div>
 					<div class="col-sm-6">
-						<div style="width:100%;height:200px;background-color:green;">
-							<img width="100%" height="100%" src="image/voice1_dummy.gif">
+						<div class="voicePart">
+							<img width="100%" height="150px" src="image/dummy6.JPG"><br>
+							<h5>エンジニア（32歳）</h5>
+							<div>
+								<h6>８年間正社員で業務系開発のSEとして働いておりました。</h6>
+								<p>
+									ある程度技術にも自信を持てるようになり、不安もありましたがフリーランスで働こう！と思いライブエストさんにお願いしました。<br>
+									動きも非常に早く、電車通勤が苦手でエリアに関してかなりワガママを聞いてもらって感謝しております。<br>
+									報酬面やサポートも大変満足しております。<br>
+									これからも宜しくお願い致します。
+								</p>
+
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<div style="width:100%;height:200px;background-color:green;">
-							<img width="100%" height="100%" src="image/voice2_dummy.gif">
+						<div class="voicePart">
+							<img width="100%" height="150px" src="image/dummy7.jpg"><br>
+							<h5>エンジニア（52歳）</h5>
+							<div>
+								<h6>30代後半からフリーランスとしてCOBOL案件に従事しております。</h6>
+								<p>
+									年齢が50を過ぎてからどっと案件紹介が減り、困っていたところライブエストさんに出会い多々案件をご紹介頂けたことで現在無事就業しております。<br>
+									面接に強いタイプではない私に、面接までの間直接は勿論お電話でもフォローして下さり大変感謝しております。<br>
+									一度落ちても何度も案件をご紹介して下さった事も感謝です。<br>
+									これからも御社でお願いします。
+								</p>
+
+							</div>
 						</div>
 					</div>
 				</div>
@@ -452,14 +678,14 @@ $(function(){
 		<div class="col-sm-6">
 			<img src="image/LE_icon.png" width="50px" height="50px">
 			<p class="telPart">
-			TEL :03-XXXX-XXXX<br/>
+			TEL :03-6907-1122<br>
 			<span>営業時間： 平日9:00〜19:00</span>
 			</p>
 		</div>
 		<div class="col-sm-6">
-			<p class="infoPart">
-				<a href="form.html" class="btn btn-success btn-lg">お問い合わせ</a>
-			</p>
+			<div class="infoPart button1">
+				<a href="form.html">無料登録はこちら</a>
+			</div>
 		</div>
 	</div>
 	<div class="mainContents introTantoContents row" id="idIntroContents">
@@ -467,18 +693,18 @@ $(function(){
 			<h3>ライブエストコンサルタント紹介</h3>
 		</div>
 		<div class="col-sm-12">
+			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;">コンサルタント</h5>
+		</div>
+		<div class="col-sm-12">
 			<div class="tantoSection" style="border:solid 1px #CCCCCC">
 				<div class="imgPart">
 					<img src="image/dummy2.jpg" height="100%">
 				</div>
 				<div class="textPart">
-					一緒に成長しましょう！<br/>
-					キャリアを見据えた案件を紹介します<br/>
-					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
-					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
-					<p class="linkPart">
-						<a>tantoSection1link</a>
-					</p>
+					<strong style="line-height:40px;">【 橋本 】</strong><br>
+					新卒で入社し既にIT業界歴は5年以上。<br>
+					見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
+					フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
 				</div>
 			</div>
 			<div class="tantoSection" style="border:solid 1px #CCCCCC">
@@ -486,47 +712,42 @@ $(function(){
 					<img src="image/dummy3.jpg" height="100%">
 				</div>
 				<div class="textPart">
-					一緒に成長しましょう！<br/>
-					キャリアを見据えた案件を紹介します<br/>
-					人は仕事をすることによって最も成長すると考えております。単に現場に入ることが
-					目的となるのではなく、働くことを通して 皆さんが目指すキャリアに少しでも近付けるようにお手伝い させていただければと思います。<br/>
-					<p class="linkPart">
-						<a>tantoSection2link</a>
-					</p>
+					<strong style="line-height:40px;">【 大小田 】</strong><br>
+					弊社で営業➡客先常駐エンジニア➡営業復帰という経歴で、客先常駐経験者だからこその<br>
+					目線でエンジニアをサポートする営業マン。<br>
+					自身が経験したWEB業界は勿論、幅広い業界でのお仕事をご紹介出来ます！
 				</div>
 			</div>
-			<div class="tantoSection" style="background-color:pink;">
+		</div>
+		<div class="col-sm-12">
+			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;border-bottom: 1px solid #01044E;">営業サポート・フォロー</h5>
+		</div>
+		<div class="col-sm-12">
+			<div class="tantoSection" style="border:solid 1px #CCCCCC">
 				<div class="imgPart">
 					<img src="image/dummy5.jpeg" height="100%">
 				</div>
 				<div class="textPart">
-					tantoSection3text<br/>
-					tantoSection3text<br/>
-					tantoSection3texttantoSection3texttantoSection3text
-					tantoSection3texttantoSection3texttantoSection3text
-					tantoSection3texttantoSection3text
-					tantoSection3texttantoSection3texttantoSection3text
-					tantoSection3texttantoSection3texttantoSection3text<br/>
-					<p class="linkPart">
-						<a>tantoSection3link</a>
-					</p>
+					<strong style="line-height:40px;">【 石川 】</strong><br>
+					弊社代表で立ち上げ時期からフリーランスの皆様とお仕事をご一緒してきたため<br>
+					今では「ヒアリング」という名目の下フリーランスの方と飲みに行くのが趣味（笑）<br>
+					代表だからこそ出来るクライアントへの意見、フリーランスの皆様へのフォローがあり、<br>
+					安心してお仕事が出来る事間違いなし！です。<br>
+					〜 専門 〜<br>
+					ALL（案件紹介/面談同席/サポート・フォロー/コンサル）
 				</div>
 			</div>
-			<div class="tantoSection" style="background-color:pink;">
+			<div class="tantoSection" style="border:solid 1px #CCCCCC">
 				<div class="imgPart">
 					<img src="image/dummy5.jpeg" height="100%">
 				</div>
 				<div class="textPart">
-					tantoSection4text<br/>
-					tantoSection4text<br/>
-					tantoSection4texttantoSection4texttantoSection4text
-					tantoSection4texttantoSection4texttantoSection4text
-					tantoSection4texttantoSection4text
-					tantoSection4texttantoSection4texttantoSection4text
-					tantoSection4texttantoSection4texttantoSection4text<br/>
-					<p class="linkPart">
-						<a>tantoSection4link</a>
-					</p>
+					<strong style="line-height:40px;">【 高橋 】</strong><br>
+					主に就業後の状況ヒアリングを担当しております。<br>
+					現在の就業現場に対する不満・不安、業務に対する疑問等をフリーランスの皆様から<br>
+					ヒアリングし、各担当にエスカレーション。<br>
+					見た目の雰囲気からわかるように非常に話しやすい為フリーランスの<br>
+					皆様からも「高橋さん相手だと何でも話せるよ」と言ったお言葉も頂戴しております。
 				</div>
 			</div>
 		</div>
@@ -535,21 +756,33 @@ $(function(){
 		<div class="col-sm-6">
 			<img src="image/LE_icon.png" width="50px" height="50px">
 			<p class="telPart">
-			TEL :03-XXXX-XXXX<br/>
+			TEL :03-6907-1122<br>
 			<span>営業時間： 平日9:00〜19:00</span>
 			</p>
 		</div>
 		<div class="col-sm-6">
-			<p class="infoPart">
-				<a href="form.html" class="btn btn-success btn-lg">お問い合わせ</a>
-			</p>
+			<div class="infoPart button1">
+				<a href="form.html">無料登録はこちら</a>
+			</div>
 		</div>
 	</div>
 </div>
-<footer class="container-fluid">
-	<div class="row" style="background-color:green;">
-		footer
-	</div>
+<footer class="container-fluid footerContents">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h1>LIVE EST,INC.</h1>
+            <p>
+	            東京都豊島区池袋2−68−9　池袋MIBビル5F<br>
+	            TEL / FAX　03-6907-1122 / 03-6907-1123<br>
+	            <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <p class="footerCopyright">Copyright (C) 2016 LIVEEST All Rights Reserved.</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

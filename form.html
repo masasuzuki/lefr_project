@@ -6,15 +6,17 @@
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
-<script type="text/javascript" src="/script/jquery-2.1.4.min"></script>
+<link rel="stylesheet" type="text/css" href="style/smoke.min.css">
+<script type="text/javascript" src="/script/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/script/bootstrap.js"></script>
-<script type="text/javascript" src="/script/jquery-ui.js"></script>
+<script type="text/javascript" src="/script/smoke.min.js"></script>
+<script type="text/javascript" src="/script/ja.js"></script>
 <title></title>
 <style>
 /*基本レイアウト*/
 body{
 	font-size:20px;
-	background-color:#C4E8FF;
+	background-color:#DDEBF3;
 }
 header{
 	margin-top:0px;
@@ -22,8 +24,10 @@ header{
 }
 .headContents{
 	padding:10px;
-	height:100px;	
+	height:80px;
+	border-bottom:solid 1px white;
 }
+
 .formSection{
 	padding-top:30px;
 	font-size:0.8em;
@@ -32,11 +36,17 @@ header{
 	background-color:#F5F5F5;
 	border: 1px solid #696969;
 	margin:0px 20%;
-	padding:15px 0;
+	padding:15px 10%;
 }
 .privacySection{
 	margin-top:30px;
 }
+.privacySection h5{
+	font-size:0.6em;
+	font-weight:bold;
+	border: 1px solid #696969;
+}
+
 h3{
 	margin-top:10px;
 	margin-bottom:20px;
@@ -57,7 +67,7 @@ h5{
 
 /*Bootstrapカスタマイズ*/
 
-.row{
+.main .row{
 	width:80%;
 	margin:0 10% 20px;
 	padding-top:20px;
@@ -65,10 +75,15 @@ h5{
 	text-align:center;
 }
 .form-group{
-	padding:0 15%;
+	/*padding:0 15%;*/
 	text-align:left;
 }
 /*ここまで Bootstrapカスタマイズ*/
+/*smokeカスタマイズ*/
+/*.smk-select .smk-error-icon {
+    right: 18%;
+}*/
+/*ここまで smokeカスタマイズ*/
 .mainContents{
 	background-color:white;
 	border-radius:10px;
@@ -83,20 +98,117 @@ h5{
 	font-weight:bold;
 	content: "＞";
 }
+span.hissu{
+	padding:3px;
+	margin-left:10px;
+	vertical-align:15%;
+	font-size:0.6em;
+	color:white;
+	background-color:#BD3126;
+	border-radius:2px;
+}
+
+.privacyPart{
+	overflow-x:auto;
+	overflow-y:scroll;
+	height:200px;
+	padding:10px;
+	margin:0 20%;
+	line-height:20px;
+	text-align:left;
+	font-size:0.6em;
+	border: 1px solid #696969;
+	border-top:none;
+}
+.headContents img{
+	float:left;
+	margin-left:5%;
+}
+.telPart{
+	float:left;
+	margin-left:5px;
+	margin-bottom:0px;
+	padding:5px;
+	line-height:20px;
+}
+.telPart span{
+	color:#D3D4D6;
+	font-size:0.7em;
+}
+.companyNamePart{
+	margin-left:10%;
+	margin-bottom:0px;
+	padding:10px 0;
+	line-height:20px;
+	font-size:1.5em;
+}
+.companyNamePart span{
+	line-height:10px;
+	color:#D3D4D6;
+	font-size:0.4em;
+}
+.footerContents {
+	margin-top: 50px;
+    background-color: #2C5379;
+    color:#fff;
+}
+.footerContents .row{
+	width:100%;
+	margin:20px 0;
+	padding:0 10px 0;
+}
+.footerContents p{
+	margin-bottom: 0;
+	font-size:0.8em;
+}
+.footerContents a{
+	color:#D3D4D6;
+}
 /*ここまで 基本レイアウト*/
 
 </style>
 <script type="text/javascript">
-function formSubmit(){
-	document.mainform.submit();
-	alert('登録が完了しました。');
-}
+$(function(){
+	$('button').on('click', function(e){
+		
+        if ($('form[name=mainform]').smkValidate()) {
+			//個人情報同意状況確認
+			if($('input[name=checkAgree]').prop('checked')){
+				//alert('登録成功');
+				document.mainform.submit();
+			}else{
+				alert('登録する際は必ず「個人情報同意」を確認して下さい');
+				return false;
+			}
+        } else {
+            // バリデーションNGの処理
+        	return false;
+        }
+
+	});
+
+
+});
 </script>
 </head>
 <body>
 <header>
-	<div class="headContents container-fluid" style="background-color:white;">
-		テスト
+	<div class="container-fluid" style="background-color:#2C5379;color:white;">
+		<div class="headContents row">
+			<div class="col-sm-6 text-left">
+				<img src="image/LE_icon_2.png" width="50px" height="50px">
+				<p class="telPart">
+				TEL :03-6907-1122<br/>
+				<span>営業時間： 平日9:00〜19:00</span>
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<div class="companyNamePart">
+					<!--LIVE EST ,INC.
+					<span>東京都豊島区池袋2−68−9　池袋MIBビル5F</span>-->
+				</div>
+			</div>
+		</div>
 	</div>
 </header>
 <div class="main container-fluid">
@@ -122,20 +234,20 @@ function formSubmit(){
 			</div>
 		</div>
 		<div class="col-sm-12">
-			<form action="submit.php" method="POST" name="mainform">
+			<form action="submit.php" method="POST" name="mainform" data-smk-icon="glyphicon-remove-sign" novalidate>
 				<div class="formSection">
 					<div class="inputSection">
 						<div class="form-group">
-							<label>名前</label>
-							<input name="name" type="text" class="form-control input-sm" />
+							<label>名前<span class="hissu">必須</span></label>
+							<input name="name" type="text" class="form-control input-sm" required/>
 						</div>
 						<div class="form-group">
-							<label>メールアドレス</label>
-							<input name="mail" type="text" class="form-control input-sm" />
+							<label>メールアドレス<span class="hissu">必須</span></label>
+							<input name="mail" type="text" class="form-control input-sm" required />
 						</div>
 						<div class="form-group">
-							<label>生まれた年</label><br/>
-							<select name="birthyear">
+							<label>生まれた年<span class="hissu">必須</span></label><br/>
+							<select name="birthyear" class="form-control" required >
 							    <option value="">▼生まれた年をお選びください</option>  
 							    <option value="1995年">1995年</option>  
 							    <option value="1994年">1994年</option>  
@@ -148,8 +260,8 @@ function formSubmit(){
 							</select>
 						</div>
 						<div class="form-group">
-							<label>居住地</label><br/>
-						    <select name="pref">  
+							<label>居住地<span class="hissu">必須</span></label><br/>
+						    <select name="pref" class="form-control" required>  
 							    <option value="">▼都道府県をお選びください</option>  
 							    <optgroup label="北海道・東北">  
 							        <option value="北海道">北海道</option>  
@@ -217,8 +329,8 @@ function formSubmit(){
 							</select>
 						</div>
 						<div class="form-group">
-							<label>経験職種</label><br/>
-							<select name="experienceJob">
+							<label>経験職種<span class="hissu">必須</span></label><br/>
+							<select name="experienceJob" class="form-control" required>
 							    <option value="">▼経験職種をお選びください</option>  
 							    <option value="Webエンジニア">Webエンジニア</option>  
 							    <option value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア</option>  
@@ -242,9 +354,9 @@ function formSubmit(){
 							</select>
 						</div>
 						<div class="form-group">
-							<label>希望職種</label><br/>
-							<select name="desireJob">
-							    <option value="">▼経験職種をお選びください</option>  
+							<label>希望職種<span class="hissu">必須</span></label><br/>
+							<select name="desireJob" class="form-control" required>
+							    <option value="">▼希望職種をお選びください</option>  
 							    <option value="Webエンジニア">Webエンジニア</option>  
 							    <option value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア</option>  
 							    <option value="フロントエンドエンジニア">フロントエンドエンジニア</option>  
@@ -266,24 +378,48 @@ function formSubmit(){
 								<option value="人事/総務">その他</option>
 							</select>
 						</div>
+						<div class="form-group">
+							<label>フリーメッセージ</label>
+							<textarea name="free_coment" class="form-control input-sm" rows=6></textarea>
+						</div>
 					</div>
 				</div>
 				<div class="privacySection">
 					<h5>
-						上記事項ご入力後、個人情報保護方針をご確認いただき、<br/>問題なければチェックして送信ボタンをクリックしてください
+						上記事項ご入力後、個人情報保護方針をご確認いただき、<br/>同意頂ければチェックして送信ボタンをクリックしてください。
 					</h5>
-					<p style="margin-top:10px;font-size:0.8em;line-height:40px;">
-						<input type="checkbox" name="privacy">個人情報保護方針について同意する
+					<div class="privacyPart">
+						株式会社ライブエスト（以下「当社」）は、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。<br/>
 						<br/>
-						<a class="btn btn-default" onClick="javascript:formSubmit()">確認画面へ進む</a>
+						<strong>・個人情報の管理</strong><br/>
+						当社は、お客さまの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行ないます。<br/>
+						<br/>
+						<strong>・個人情報の利用目的</strong><br/>
+						お客さまからお預かりした個人情報は、当社からのご連絡や業務のご案内やご質問に対する回答として、電子メールや資料のご送付に利用致します。<br/>
+						<br/>
+						<strong>・個人情報の第三者への開示・提供の禁止</strong><br/>
+						当社は、お客さまよりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示致しません。<br/>
+						[A] お客さまの同意がある場合<br/>
+						[B] お客さまが希望されるサービスを行なうために当社が業務を委託する業者に対して開示する場合<br/>
+						[C] 法令に基づき開示することが必要である場合<br/>
+						<br/>
+						<strong>・個人情報の安全対策</strong><br/>
+						当社は、個人情報の正確性及び安全性確保のために、セキュリティに万全の対策を講じています。<br/>
+						<br/>
+						<strong>・ご本人の照会</strong><br/>
+						お客さまがご本人の個人情報の照会・修正・削除などをご希望される場合には、ご本人であることを確認の上、対応させて頂きます。<br/>
+						<br/>
+						<strong>・法令、規範の遵守と見直し</strong><br/>
+						当社は、保有する個人情報に関して適用される日本の法令、その他規範を遵守するとともに、<br/>
+						本ポリシーの内容を適宜見直し、その改善に努めます。<br/>
+					</div>
+					<p style="margin-top:10px;font-size:0.8em;line-height:40px;">
+						<input type="checkbox" name="checkAgree">個人情報保護方針について同意する
+						<br/>
+						<button type="submit" class="btn btn-default">送信</button>
 					</p>
 				</div>
 			</form>
-		</div>
-		<div class="col-sm-12">
-			<div class="infoSection">
-				TODOTODOTODOTODO
-			</div>
 		</div>
 		<div class="col-sm-12">
 			<div class="cautionSection text-left" style="padding:0 20%;font-size:0.8em">
@@ -301,10 +437,22 @@ function formSubmit(){
 		</div>
 	</div>
 </div>
-<footer class="container-fluid">
-	<div class="row" style="background-color:green;">
-		footer
-	</div>
+<footer class="container-fluid footerContents">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h1>LIVE EST,INC.</h1>
+            <p>
+	            東京都豊島区池袋2−68−9　池袋MIBビル5F<br>
+	            TEL / FAX　03-6907-1122 / 03-6907-1123<br>
+	            <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <p class="footerCopyright">Copyright (C) 2016 LIVEEST All Rights Reserved.</p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
