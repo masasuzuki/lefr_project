@@ -21,7 +21,7 @@
 <style>
 /*基本レイアウト*/
 body{
-	color:#222222;
+	color:#01044E;
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	font-size:20px;
 	background-color:#2C5379;
@@ -67,36 +67,41 @@ h3{
 	/*font-family: "Cormorant Garamond", serif;*/
 	margin-top:10px;
 	margin-bottom:40px;
-	color:#0048A6;
+	color:#2C5379;
 	font-size:1.3em;/*30pt;*/
 	font-weight:normal;
 }
 h4{
 	margin-top:10px;
 	margin-bottom:0px;
-	color:#0048A6;
+	color:#2C5379;
 	font-size: 0.9em;/*16pt*/
 	line-height: 30px;
 }
 h5{
-	color:#0048A6;
+	color:#2C5379;
 	font-size:1.1em;
 }
 
 /*Bootstrapカスタマイズ*/
 .jumbotron{
-	background: url('image/mainpic1.jpg') center no-repeat;
+	background: url('image/startup.jpg') center no-repeat;
 	background-size: cover;
-	background-color: blue;
 }
 .jumbotron-extend {
     position: relative;
     height: 100vh;
     min-height: 300px;
+    margin-bottom:0px;
+}
+.container-fluid{
+	padding-left:0px;
+	padding-right:0px;	
 }
 .row{
-	width:90%;
-	margin:0 5% 20px;
+	width:100%;
+	margin-left:0px;
+	margin-right:0px;
 	padding-top:20px;
 	padding-bottom:20px;
 	text-align:center;
@@ -120,11 +125,36 @@ h5{
 /*ここまで jqplotプラグインのデザイン変更*/
 
 .mainContents{
-	background-color:white;
+	padding-top:50px;
+	padding-bottom:50px;
+/*
 	border-radius:10px;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
+*/
 }
+
+.infoContents{
+	background-color:#FBFCF7;
+}
+.questionContents{
+	background-color:#2C5379;
+}
+.detailContents{
+	background-color:#EDEDE7;
+}
+.charaContents{
+	background-color:#FBFCF7;
+}
+.trendContents{
+	background-color:#2C5379;
+}
+.caseContents{
+	background-color:#FBFCF7;
+}
+
+
+
 .infoContents img{
 	float:left;
 	margin-left:25%;
@@ -146,52 +176,52 @@ h5{
 	padding:5px 0;
 }
 
-.charaSection .contentPart{
+.charaContents .contentPart{
 	margin-top:10px;
-	width:100%;
+	width:80%;
 	height:160px;
 	text-align:left;
-	color:white;
+	color:#2C5379;
 	border-radius:8px;
+	margin-left: 10%;
+	margin-right: 10%;
 }
-.charaSection .contentPart h6{
+.charaContents .contentPart h6{
 	margin:0 5px;
 	white-space: nowrap;
 	font-size:0.8em;
 	border-bottom:2px solid #D3D4D6;
 }
-.charaSection .contentPart span{
+.charaContents .contentPart span{
 	line-height:55px;
 }
-.charaSection .contentPart p{
+.charaContents .contentPart p{
 	padding:5px;
 	font-size:0.6em;
 }
 
-.caseSection{
-	text-align:left;
-}
-
-.caseSection .jireiPart{
+.caseContents .jireiPart{
 	margin: 10px 0;
-	padding:10px 5px;
-	width:100%;
+	padding:10px 5px 30px;
+	width:90%;
 	height:200px;
 	background-color:#F3F4F8;
-	color:#3AABD2;
-	border:1px solid #3AABD2
+	color:#08233E;
+	border:1px solid #3AABD2;
+	margin-left: 5%;
+	margin-right: 5%;
 }
-.caseSection .jireiPart h6{
+.caseContents .jireiPart h6{
 	text-align:left;
 	padding:5px 0;
 	margin:0 5px 10px;
 	border-bottom:2px solid #0016FF;
 }
-.caseSection .jireiPart span{
+.caseContents .jireiPart span{
 	padding-left:5px;font-size:1.1em;
 }
 
-.caseSection .jireiPart p{
+.caseContents .jireiPart p{
 	text-align:left;
 	line-height:18px;
 	padding:10px;
@@ -246,6 +276,7 @@ h3.containSubTitle{
 	/* 右にインデントされてる部分を無効化する。 */
 }
 .checkList li{
+	color:white;
 	line-height: 45px;
 	font-size:0.9em;
 	list-style: none;
@@ -255,7 +286,7 @@ h3.containSubTitle{
 	/* 38pxの部分に「画像File」の横幅に隙間分のpxを足した数を入れる */
 }
 .footerContents {
-    background-color: #2C5379;
+    background-color: #2C5379;/*#DDEBF3*/
     color:#fff;
 }
 .footerContents .row{
@@ -288,7 +319,57 @@ h3.containSubTitle{
 }
 
 /*ここまで 基本レイアウト*/
+h3{
+	font-family:"Roboto Slab";
+	/*font-family:Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif;*/
+    position: relative;
+    color: white;
+    font-size: 1.3em;
+    margin: 0 0 1.5em;
+    padding: 0.5em 0.5em 0.5em 1.7em;
+}
+ 
+h3:after{
+	top: 2.4em;
+    content: "";
+    position: absolute;
+    background:#97D4D9;
+    height: 4px;
+    width: 60px;
+    border-radius: 3px;
+    /*transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);*/
+}
+.questionContents h3:after{
+    left: 10.5em;
+}
+.detailContents h3{
+	color:#01044E;
+}
+.caseContents h3{
+	color:#01044E;
+}
+.detailContents h3:after{
+    left: 22.5em;
 
+}
+.charaContents h3{
+	color:#01044E;
+}
+.charaContents h3:after{
+    left: 22.5em;
+}
+
+.trendContents h3:after{
+    left: 23.25em;
+}
+
+.caseContents h3:after{
+    left: 23.25em;
+}
 </style>
 <script type="text/javascript">
 $(function(){
@@ -418,7 +499,7 @@ $(function(){
 <body>
 <header>
 	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
-		<div style="width:100%;height:100%;color:white;" class="container-fluid text-center"><!-- background-color:#01044E;opacity:0.2; -->
+		<div style="color:white;width:100%;height:100%;background-color:gray;opacity:0.8;" class="container-fluid text-center"><!--  -->
 			<p style="opacity:1;margin:30vh;font-family:Lato;font-size:80px;letter-spacing: 4px;margin-bottom:0px;">LIVE EST ,INC.</p>
 			<p style="font-family:Lato;font-size:40px;letter-spacing: 3px;">フリーランス特設サイト</p>
 		</div>
@@ -440,9 +521,13 @@ $(function(){
 		</div>
 	</div>
 	<div class="mainContents questionContents row">
-		<div class="col-sm-12">
+		<div class="col-sm-3">
+		</div>
+		<div class="col-sm-6">
 			<h4>フリーランスの方へ</h4>
 			<h3 class="containSubTitle">こんなお悩みはありませんか？</h3>
+		</div>
+		<div class="col-sm-3">
 		</div>
 		<div class="col-sm-12">
 			<div class="col-xs-4">
@@ -459,166 +544,158 @@ $(function(){
 			</div>			
 		</div>
 	</div>
-	<div class="mainContents introAnkenContents row">
+	<div class="mainContents detailContents row">
 		<div class="col-sm-12">
-			<section class="ankenSection detailSection">
-				<div class="row">
-					<div class="col-sm-12">
-						<h3>専任のコンサルタントがあなたの希望を実現します</h3>
-					</div>
-					<div class="col-sm-4">
-						<img src="image/dummy2.jpg" class="img-circle">
-					</div>
-					<div class="col-sm-4">
-						<img src="image/dummy3.JPG" class="img-circle">
-					</div>
-					<div class="col-sm-4">
-						<img src="image/dummy2.jpg" class="img-circle">
-					</div>
-					<div class="col-sm-12">
-						<a onclick="$('#idIntroContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});" class="btn btn-lg btn-success" style="margin:30px 0;padding:15px;">コンサルタントの詳細はこちら</a>
-					</div>
-				</div>
-			</section>
-			<section class="ankenSection charaSection">
-				<div class="row">
-					<div class="col-sm-12">
-						<h3>ココがイイ！ライブエストの【３S】！</h3>
-					</div>
-					<div class="col-sm-4">
-						<div class="contentPart" style="background-color:#E67B85;">
-							<h6>
-								<img width="40px" height="40px" src="image/f_f_business_7_s256_f_business_7_0bg.jpg">
-								<span>超絶的「SPEED」！</span>
-							</h6>
-							<p>
-								登録～お仕事までの流れや日々の対応スピードに絶対的な自信があります！<br>
-								登録した日から3日後にお仕事を開始した人もいらっしゃいます！
-							</p>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="contentPart" style="background-color:#9CD0AC;">
-							<h6>
-								<img width="40px" height="40px" src="image/f_f_business_81_s256_f_business_81_0bg.jpg">
-								<span>圧倒的「SERVICE」！</span>
-							</h6>
-							<p>
-								一定期間の就業で特別報酬あります！<br>						また案件スライド（次案件も弊社の場合）やお友達紹介でも特別報酬！
-							</p>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="contentPart" style="background-color:#97D4D9;">
-							<h6 >
-								<img width="40px" height="40px" src="image/f_f_object_130_s128_f_object_130_0bg.jpg">
-								<span>絶対的「SUPPORT」！</span>
-							</h6>
-							<p>
-								担当＋フォローの２名体制での完全サポート！<br>
-								お仕事に集中出来る環境全てをお任せ下さい！<br>
-								起業のご支援も可能です！
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="ankenSection trendSection">
-				<div class="row">
-					<div class="col-sm-12">
-						<h3>案件の傾向</h3>
-					</div>
-					<div class="col-sm-6">
-						<h5>開発</h5>
-						<div id="jqPlot-skill-develop" style="height: 100%; width: 100%;"></div>
-					</div>
-					<div class="col-sm-6">
-						<h5>インフラ</h5>
-						<div id="jqPlot-skill-instracture" style="height: 100%; width: 100%;"></div>
-					</div>
-					<div class="col-sm-6">
-						<h5>その他</h5>
-						<div id="jqPlot-skill-another" style="height: 100%; width: 100%;"></div>
-					</div>
-					<div class="col-sm-6">
-						<h5>年齢</h5>
-						<div id="jqPlot-age" style="height: 100%; width: 100%;"></div>
-					</div>
-				</div>
-			</section>
-			<section class="ankenSection caseSection">
-				<div class="row">
-					<div class="col-sm-12">
-						<h3>案件事例</h3>
-					</div>
-					<div class="col-sm-6">
-						<div class="jireiPart">
-							<h6>
-								<img width="30px" height="30px" src="image/work1.png">
-								<span>ソーシャルゲーム開発</span>
-							</h6>
-							<p><strong>金額　：</strong>〜75万円</p>
-							<p><strong>勤務地：</strong>神泉</p>
-							<p><strong>技術　：</strong>Unity</p>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="jireiPart">
-							<h6>
-								<img width="30px" height="30px" src="image/work1.png">
-								<span>ゲームディレクター</span>
-							</h6>
-							<p><strong>金額　：</strong>〜85万円</p>
-							<p><strong>勤務地：</strong>目黒</p>
-							<p><strong>技術　：</strong>ディレクション、進行管理、業務品質改善</p>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="jireiPart">
-							<h6>
-								<img width="30px" height="30px" src="image/work1.png">
-								<span>通信会社向け新サービスシステム開発</span>
-							</h6>
-							<p><strong>金額　：</strong>60万円</p>
-							<p><strong>勤務地：</strong>赤坂</p>
-							<p><strong>技術　：</strong>Java、Spring、SQL</p>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="jireiPart">
-							<h6>
-								<img width="30px" height="30px" src="image/work1.png">
-								<span>某信用金庫中継系システム開発</span>
-							</h6>
-							<p><strong>金額　：</strong>〜52万円</p>
-							<p><strong>勤務地：</strong>品川</p>
-							<p><strong>技術　：</strong>富士通汎用機COBOL</p>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="jireiPart">
-							<h6>
-								<img width="30px" height="30px" src="image/work1.png">
-								<span>ネイティブアプリ開発</span>
-							</h6>
-							<p><strong>金額　：</strong>〜70万円</p>
-							<p><strong>勤務地：</strong>渋谷</p>
-							<p><strong>技術　：</strong>iOS、Swift</p>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="jireiPart">
-							<h6>
-								<img width="30px" height="30px" src="image/work1.png">
-								<span>カーナビ（オーディオ系）アプリ画面開発</span>
-							</h6>
-							<p><strong>金額　：</strong>〜51万円</p>
-							<p><strong>勤務地：</strong>鴨居</p>
-							<p><strong>技術　：</strong>C、C++</p>
-						</div>
-					</div>
-				</div>
-			</section>
+			<div class="col-sm-12">
+				<h3>専任のコンサルタントがあなたの希望を実現します</h3>
+			</div>
+			<div class="col-sm-4">
+				<img src="image/dummy2.jpg" class="img-circle">
+			</div>
+			<div class="col-sm-4">
+				<img src="image/dummy3.JPG" class="img-circle">
+			</div>
+			<div class="col-sm-4">
+				<img src="image/dummy2.jpg" class="img-circle">
+			</div>
+			<div class="col-sm-12">
+				<a onclick="$('#idIntroContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});" class="btn btn-lg btn-success" style="margin:30px 0;padding:15px;">コンサルタントの詳細はこちら</a>
+			</div>
+		</div>
+	</div>
+	<div class="mainContents charaContents row">
+		<div class="col-sm-12">
+			<h3>ココがイイ！ライブエストの【３S】！</h3>
+		</div>
+		<div class="col-sm-4">
+			<div class="contentPart" style="background-color:#E67B85;">
+				<h6>
+					<img width="40px" height="40px" src="image/f_f_business_7_s256_f_business_7_0bg.jpg">
+					<span>超絶的「SPEED」！</span>
+				</h6>
+				<p>
+					登録～お仕事までの流れや日々の対応スピードに絶対的な自信があります！<br>
+					登録した日から3日後にお仕事を開始した人もいらっしゃいます！
+				</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="contentPart" style="background-color:#9CD0AC;">
+				<h6>
+					<img width="40px" height="40px" src="image/f_f_business_81_s256_f_business_81_0bg.jpg">
+					<span>圧倒的「SERVICE」！</span>
+				</h6>
+				<p>
+					一定期間の就業で特別報酬あります！<br>						また案件スライド（次案件も弊社の場合）やお友達紹介でも特別報酬！
+				</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="contentPart" style="background-color:#97D4D9;">
+				<h6 >
+					<img width="40px" height="40px" src="image/f_f_object_130_s128_f_object_130_0bg.jpg">
+					<span>絶対的「SUPPORT」！</span>
+				</h6>
+				<p>
+					担当＋フォローの２名体制での完全サポート！<br>
+					お仕事に集中出来る環境全てをお任せ下さい！<br>
+					起業のご支援も可能です！
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="mainContents trendContents row">
+		<div class="col-sm-12">
+			<h3>案件の傾向</h3>
+		</div>
+		<div class="col-sm-6">
+			<h5>開発</h5>
+			<div id="jqPlot-skill-develop" style="height: 100%; width: 100%;"></div>
+		</div>
+		<div class="col-sm-6">
+			<h5>インフラ</h5>
+			<div id="jqPlot-skill-instracture" style="height: 100%; width: 100%;"></div>
+		</div>
+		<div class="col-sm-6">
+			<h5>その他</h5>
+			<div id="jqPlot-skill-another" style="height: 100%; width: 100%;"></div>
+		</div>
+		<div class="col-sm-6">
+			<h5>年齢</h5>
+			<div id="jqPlot-age" style="height: 100%; width: 100%;"></div>
+		</div>
+	</div>
+	<div class="mainContents caseContents row">
+		<div class="col-sm-12">
+			<h3>案件事例</h3>
+		</div>
+		<div class="col-sm-4">
+			<div class="jireiPart">
+				<h6>
+					<img width="30px" height="30px" src="image/work1.png">
+					<span>ソーシャルゲーム開発</span>
+				</h6>
+				<p><strong>金額　：</strong>〜75万円</p>
+				<p><strong>勤務地：</strong>神泉</p>
+				<p><strong>技術　：</strong>Unity</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="jireiPart">
+				<h6>
+					<img width="30px" height="30px" src="image/work1.png">
+					<span>ゲームディレクター</span>
+				</h6>
+				<p><strong>金額　：</strong>〜85万円</p>
+				<p><strong>勤務地：</strong>目黒</p>
+				<p><strong>技術　：</strong>ディレクション、進行管理、業務品質改善</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="jireiPart">
+				<h6>
+					<img width="30px" height="30px" src="image/work1.png">
+					<span>通信会社向け新サービスシステム開発</span>
+				</h6>
+				<p><strong>金額　：</strong>60万円</p>
+				<p><strong>勤務地：</strong>赤坂</p>
+				<p><strong>技術　：</strong>Java、Spring、SQL</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="jireiPart">
+				<h6>
+					<img width="30px" height="30px" src="image/work1.png">
+					<span>某信用金庫中継系システム開発</span>
+				</h6>
+				<p><strong>金額　：</strong>〜52万円</p>
+				<p><strong>勤務地：</strong>品川</p>
+				<p><strong>技術　：</strong>富士通汎用機COBOL</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="jireiPart">
+				<h6>
+					<img width="30px" height="30px" src="image/work1.png">
+					<span>ネイティブアプリ開発</span>
+				</h6>
+				<p><strong>金額　：</strong>〜70万円</p>
+				<p><strong>勤務地：</strong>渋谷</p>
+				<p><strong>技術　：</strong>iOS、Swift</p>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="jireiPart">
+				<h6>
+					<img width="30px" height="30px" src="image/work1.png">
+					<span>カーナビ（オーディオ系）アプリ画面開発</span>
+				</h6>
+				<p><strong>金額　：</strong>〜51万円</p>
+				<p><strong>勤務地：</strong>鴨居</p>
+				<p><strong>技術　：</strong>C、C++</p>
+			</div>
+		</div>
+	</div>
 			<section class="ankenSection voiceSection">
 				<div class="row">
 					<div class="col-sm-12">
