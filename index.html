@@ -12,6 +12,7 @@
 <script type="text/javascript" src="/script/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="/script/jqplot.pieRenderer.js"></script>
 <script type="text/javascript" src="/script/animatescroll.min.js"></script>
+<script type="text/javascript" src="/script/Chart.js"></script>
 <script type="text/javascript" src="/script/main.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
@@ -126,8 +127,8 @@ h5{
 /*ここまで jqplotプラグインのデザイン変更*/
 
 .mainContents{
-	padding-top:50px;
-	padding-bottom:50px;
+	padding-top:80px;
+	padding-bottom:80px;
 /*
 	border-radius:10px;
 	-webkit-border-radius:10px;
@@ -151,6 +152,10 @@ h5{
 	background-color:#2C5379;
 }
 .caseContents{
+	background-color:#EDEDE7;
+
+}
+.voiceContents{
 	background-color:#FBFCF7;
 }
 
@@ -230,34 +235,37 @@ h5{
 	border-bottom:1px solid silver;
 }
 
-.voiceSection .voicePart{
-	width:100%;
+.voiceContents .voicePart{
+	width:70%;
+	margin-left:15%;
+	margin-right:15%;
 	height:400px;
 	text-align:left;
-	border:1px solid #e5e5e5;
+	border:1px solid #2C5379;
 	border-radius:3px;
+	background-color: white;
 }
-.voiceSection .voicePart img{
+.voiceContents .voicePart img{
 	border-top-left-radius:3px;
 	border-top-right-radius:3px;
 }
-.voiceSection .voicePart h5{
+.voiceContents .voicePart h5{
 	margin-bottom:5px;
 	padding:0px 10px;
 	color:#3AABD2;
 	font-size:0.8em;
 }
-.voiceSection .voicePart div{
+.voiceContents .voicePart div{
 	padding:0 5px 5px;
 	text-align:left;
 	color:#95969A;
 	line-height:20px;
 	font-size:0.75em;
 }
-.voiceSection .voicePart h6{
+.voiceContents .voicePart h6{
 	color:#222222;font-size:1.0em;
 }
-.voiceSection .voicePart p{
+.voiceContents .voicePart p{
 	font-size:0.8em;
 }
 
@@ -285,7 +293,7 @@ h3.containSubTitle{
 	/* 38pxの部分に「画像File」の横幅に隙間分のpxを足した数を入れる */
 }
 .footerContents {
-    background-color: #2C5379;/*#DDEBF3*/
+    background-color: #01044E;/*#DDEBF3*/
     color:#fff;
 }
 .footerContents .row{
@@ -369,6 +377,299 @@ h3:after{
 .caseContents h3:after{
     left: 23.25em;
 }
+.voiceContents h3{
+	color:#01044E;
+}
+.voiceContents h3:after{
+    left: 23.25em;
+}
+/*
+.detailContents{
+	position:relative;
+}
+
+.main .detailContents::after {
+	position: absolute;
+	content: '';
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    bottom: -2em;
+    z-index: 10;
+    background: inherit;
+}
+*/
+/*スライド式TOP_CSS*/
+.slideshow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: no-repeat 50% 50%;
+  background-size: cover;
+  -webkit-animation-name: kenburns;
+          animation-name: kenburns;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.slideshow-image:nth-child(1) {
+  -webkit-animation-name: kenburns-1;
+          animation-name: kenburns-1;
+  z-index: 3;
+}
+.slideshow-image:nth-child(2) {
+  -webkit-animation-name: kenburns-2;
+          animation-name: kenburns-2;
+  z-index: 2;
+}
+.slideshow-image:nth-child(3) {
+  -webkit-animation-name: kenburns-3;
+          animation-name: kenburns-3;
+  z-index: 1;
+}
+.slideshow-image:nth-child(4) {
+  -webkit-animation-name: kenburns-4;
+          animation-name: kenburns-4;
+  z-index: 0;
+}
+
+@-webkit-keyframes kenburns-1 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  1.5625% {
+    opacity: 1;
+  }
+  23.4375% {
+    opacity: 1;
+  }
+  26.5625% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  98.4375% {
+    opacity: 0;
+    -webkit-transform: scale(1.21176);
+            transform: scale(1.21176);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes kenburns-1 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  1.5625% {
+    opacity: 1;
+  }
+  23.4375% {
+    opacity: 1;
+  }
+  26.5625% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  98.4375% {
+    opacity: 0;
+    -webkit-transform: scale(1.21176);
+            transform: scale(1.21176);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes kenburns-2 {
+  23.4375% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  26.5625% {
+    opacity: 1;
+  }
+  48.4375% {
+    opacity: 1;
+  }
+  51.5625% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@keyframes kenburns-2 {
+  23.4375% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  26.5625% {
+    opacity: 1;
+  }
+  48.4375% {
+    opacity: 1;
+  }
+  51.5625% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@-webkit-keyframes kenburns-3 {
+  48.4375% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  51.5625% {
+    opacity: 1;
+  }
+  73.4375% {
+    opacity: 1;
+  }
+  76.5625% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@keyframes kenburns-3 {
+  48.4375% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  51.5625% {
+    opacity: 1;
+  }
+  73.4375% {
+    opacity: 1;
+  }
+  76.5625% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@-webkit-keyframes kenburns-4 {
+  73.4375% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  76.5625% {
+    opacity: 1;
+  }
+  98.4375% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes kenburns-4 {
+  73.4375% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  76.5625% {
+    opacity: 1;
+  }
+  98.4375% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  z-index: 99;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
+  padding: 1em 2em;
+  line-height: 1.5;
+}
+h1 small {
+  display: block;
+  text-transform: lowercase;
+  font-size: 0.6em;
+}
+h1 small:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: .5em;
+}
+h1 small:last-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  padding-top: .5em;
+}
+/* end スライド式TOP */
 </style>
 <script type="text/javascript">
 $(function(){
@@ -497,12 +798,26 @@ $(function(){
 </head>
 <body>
 <header>
+	<!-- スライド式 -->
 	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
-		<div style="color:white;width:100%;height:100%;background-color:gray;opacity:0.8;" class="container-fluid text-center"><!--  -->
+		<h1><span style="white-space:nowrap;">LIVE EST,Inc.</span><small>一人で戦う貴方の為に..</small></h1>
+		<!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
+		<div class="slideshow">
+		  <div class="slideshow-image" style="background-image: url('image/startup.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/pexels-photo-30342-medium.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/technology-791032__340.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/tape-595474__340.jpg')"></div>
+		</div>
+	</div>
+	<!-- ノーマルタイプ -->
+	<!--
+	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
+		<div style="color:white;width:100%;height:100%;background-color:gray;opacity:0.8;" class="container-fluid text-center">
 			<p style="opacity:1;margin:30vh;font-family:Lato;font-size:80px;letter-spacing: 4px;margin-bottom:0px;">LIVE EST ,INC.</p>
 			<p style="font-family:Lato;font-size:40px;letter-spacing: 3px;">フリーランス特設サイト</p>
 		</div>
 	</div>
+	-->
 </header>
 <div class="main container-fluid">
 	<div class="mainContents infoContents row">
@@ -523,7 +838,7 @@ $(function(){
 		<div class="col-sm-3">
 		</div>
 		<div class="col-sm-6">
-			<h4>フリーランスの方へ</h4>
+			<h4 style="color:white;">フリーランスの方へ</h4>
 			<h3 class="containSubTitle">こんなお悩みはありませんか？</h3>
 		</div>
 		<div class="col-sm-3">
@@ -695,45 +1010,45 @@ $(function(){
 			</div>
 		</div>
 	</div>
-			<section class="ankenSection voiceSection">
-				<div class="row">
-					<div class="col-sm-12">
-						<h3>登録者の声</h3>
-					</div>
-					<div class="col-sm-6">
-						<div class="voicePart">
-							<img width="100%" height="150px" src="image/dummy6.JPG"><br>
-							<h5>エンジニア（32歳）</h5>
-							<div>
-								<h6>８年間正社員で業務系開発のSEとして働いておりました。</h6>
-								<p>
-									ある程度技術にも自信を持てるようになり、不安もありましたがフリーランスで働こう！と思いライブエストさんにお願いしました。<br>
-									動きも非常に早く、電車通勤が苦手でエリアに関してかなりワガママを聞いてもらって感謝しております。<br>
-									報酬面やサポートも大変満足しております。<br>
-									これからも宜しくお願い致します。
-								</p>
+	<div class="mainContents voiceContents">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>登録者の声</h3>
+			</div>
+			<div class="col-sm-6">
+				<div class="voicePart">
+					<img width="100%" height="150px" src="image/dummy6.JPG"><br>
+					<h5>エンジニア（32歳）</h5>
+					<div>
+						<h6>８年間正社員で業務系開発のSEとして働いておりました。</h6>
+						<p>
+							ある程度技術にも自信を持てるようになり、不安もありましたがフリーランスで働こう！と思いライブエストさんにお願いしました。<br>
+							動きも非常に早く、電車通勤が苦手でエリアに関してかなりワガママを聞いてもらって感謝しております。<br>
+							報酬面やサポートも大変満足しております。<br>
+							これからも宜しくお願い致します。
+						</p>
 
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="voicePart">
-							<img width="100%" height="150px" src="image/dummy7.jpg"><br>
-							<h5>エンジニア（52歳）</h5>
-							<div>
-								<h6>30代後半からフリーランスとしてCOBOL案件に従事しております。</h6>
-								<p>
-									年齢が50を過ぎてからどっと案件紹介が減り、困っていたところライブエストさんに出会い多々案件をご紹介頂けたことで現在無事就業しております。<br>
-									面接に強いタイプではない私に、面接までの間直接は勿論お電話でもフォローして下さり大変感謝しております。<br>
-									一度落ちても何度も案件をご紹介して下さった事も感謝です。<br>
-									これからも御社でお願いします。
-								</p>
-
-							</div>
-						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+			<div class="col-sm-6">
+				<div class="voicePart">
+					<img width="100%" height="150px" src="image/dummy7.jpg"><br>
+					<h5>エンジニア（52歳）</h5>
+					<div>
+						<h6>30代後半からフリーランスとしてCOBOL案件に従事しております。</h6>
+						<p>
+							年齢が50を過ぎてからどっと案件紹介が減り、困っていたところライブエストさんに出会い多々案件をご紹介頂けたことで現在無事就業しております。<br>
+							面接に強いタイプではない私に、面接までの間直接は勿論お電話でもフォローして下さり大変感謝しております。<br>
+							一度落ちても何度も案件をご紹介して下さった事も感謝です。<br>
+							これからも御社でお願いします。
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 			<section class="ankenSection flowSection borderNone">
 				<div class="row">
 					<div class="col-sm-12">
