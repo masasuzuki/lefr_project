@@ -12,7 +12,7 @@
 <script type="text/javascript" src="/script/jquery.jqplot.min.js"></script>
 <script type="text/javascript" src="/script/jqplot.pieRenderer.js"></script>
 <script type="text/javascript" src="/script/animatescroll.min.js"></script>
-<script type="text/javascript" src="/script/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script type="text/javascript" src="/script/main.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
@@ -25,7 +25,6 @@ body{
 	color:#01044E;
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	font-size:20px;
-	background-color:#2C5379;
 }
 section.ankenSection{
 	padding-top:20px;
@@ -140,16 +139,16 @@ h5{
 	background-color:#FBFCF7;
 }
 .questionContents{
-	background-color:#2C5379;
+	background-color:#01044E;
 }
 .detailContents{
 	background-color:#EDEDE7;
 }
 .charaContents{
-	background-color:#FBFCF7;
+	background-color:#3F4F5F;
 }
 .trendContents{
-	background-color:#2C5379;
+	background-color:#01044E;
 }
 .caseContents{
 	background-color:#EDEDE7;
@@ -183,9 +182,9 @@ h5{
 .charaContents .contentPart{
 	margin-top:10px;
 	width:80%;
-	height:160px;
+	height:300px;
 	text-align:left;
-	color:#2C5379;
+	color:#FFF;
 	border-radius:8px;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -193,7 +192,7 @@ h5{
 .charaContents .contentPart h6{
 	margin:0 5px;
 	white-space: nowrap;
-	font-size:0.8em;
+	font-size:1.0em;
 	border-bottom:2px solid #D3D4D6;
 }
 .charaContents .contentPart span{
@@ -201,7 +200,7 @@ h5{
 }
 .charaContents .contentPart p{
 	padding:5px;
-	font-size:0.6em;
+	font-size:0.8em;
 }
 
 .caseContents .jireiPart{
@@ -267,6 +266,14 @@ h5{
 }
 .voiceContents .voicePart p{
 	font-size:0.8em;
+}
+.trendContents h5{
+	color:white;
+}
+.trendContents .chartArea{
+	width:90%;
+	margin-left:5%;
+	margin-right:5%;
 }
 
 h3.containSubTitle{
@@ -364,7 +371,7 @@ h3:after{
 
 }
 .charaContents h3{
-	color:#01044E;
+	color:#FFF;
 }
 .charaContents h3:after{
     left: 22.5em;
@@ -672,127 +679,10 @@ h1 small:last-child {
 /* end スライド式TOP */
 </style>
 <script type="text/javascript">
+//Chart.js defaults.global変更
+Chart.defaults.global.defaultFontColor = "#FFF";
 $(function(){
-    //jqplotプラグイン定義
-    //スキル：開発
-    $.jqplot(
-        'jqPlot-skill-develop',
-        [
-            [
-                [ '業務系', 55 ],
-                [ 'WEB・ソーシャルゲーム系', 45 ]
-            ]
-        ],
-        {
-        	seriesColors:['#E67B85','#97D4D9'],
-            seriesDefaults: {
-                renderer: $.jqplot.PieRenderer,
-                rendererOptions: {
-                    padding: 10,
-                    dataLabels: 'percent',
-                    showDataLabels: true,
-                    startAngle: -90,
-                }
-            },
-            legend: {
-                show: true,
-                location: 'n',
-                rendererOptions: {
-                    numberRows: 2
-                },
-            }
-        }
-    );
-    //スキル：インフラ
-    $.jqplot(
-        'jqPlot-skill-instracture',
-        [
-            [
-                [ 'サーバー', 70 ],
-                [ 'ネットワーク', 30 ]
-            ]
-        ],
-        {
-        	seriesColors:['#E67B85','#97D4D9'],
-            seriesDefaults: {
-                renderer: $.jqplot.PieRenderer,
-                rendererOptions: {
-                    padding: 10,
-                    dataLabels: 'percent',
-                    showDataLabels: true,
-                    startAngle: -90,
-                }
-            },
-            legend: {
-                show: true,
-                location: 'n',
-                rendererOptions: {
-                    numberRows: 2
-                },
-            }
-        }
-    );
-    //スキル：その他
-    $.jqplot(
-        'jqPlot-skill-another',
-        [
-            [
-                [ 'PM', 40 ],
-                [ 'キッティング', 30 ],
-                [ 'PMサポート', 30 ]
-            ]
-        ],
-        {
-        	seriesColors:['#E67B85','#97D4D9','#9CD0AC'],
-            seriesDefaults: {
-                renderer: $.jqplot.PieRenderer,
-                rendererOptions: {
-                    padding: 10,
-                    dataLabels: 'percent',
-                    showDataLabels: true,
-                    startAngle: -90,
-                }
-            },
-            legend: {
-                show: true,
-                location: 'n',
-                rendererOptions: {
-                    numberRows: 2
-                },
-            }
-        }
-    );
-    //年齢
-    $.jqplot(
-        'jqPlot-age',
-        [
-            [
-                [ '20代', 20 ],
-                [ '30代', 40 ],
-                [ '40代', 30 ],
-                [ '50代', 10 ]
-            ]
-        ],
-        {
-        	seriesColors:['#E67B85','#97D4D9','#9CD0AC','#F0BD68'],
-            seriesDefaults: {
-                renderer: $.jqplot.PieRenderer,
-                rendererOptions: {
-                    padding: 10,
-                    dataLabels: 'percent',
-                    showDataLabels: true,
-                    startAngle: -90,
-                }
-            },
-            legend: {
-                show: true,
-                location: 'n',
-                rendererOptions: {
-                    numberRows: 2
-                },
-            }
-        }
-    );
+
 });
 </script>
 </head>
@@ -882,7 +772,7 @@ $(function(){
 			<h3>ココがイイ！ライブエストの【３S】！</h3>
 		</div>
 		<div class="col-sm-4">
-			<div class="contentPart" style="background-color:#E67B85;">
+			<div class="contentPart" style="background-color:#FF3D67;">
 				<h6>
 					<img width="40px" height="40px" src="image/f_f_business_7_s256_f_business_7_0bg.jpg">
 					<span>超絶的「SPEED」！</span>
@@ -924,19 +814,99 @@ $(function(){
 		</div>
 		<div class="col-sm-6">
 			<h5>開発</h5>
-			<div id="jqPlot-skill-develop" style="height: 100%; width: 100%;"></div>
+			<div class="chartArea" style="width:90%;margin-left:5%;margin-right:5%;">
+				<canvas id="myChart1"></canvas>
+			</div>
+			<script>
+			var ctx = document.getElementById("myChart1").getContext('2d');
+			var myChart = new Chart(ctx, {
+			  type: 'doughnut',
+			  data: {
+			    labels: ["業務系", "WEB・ソーシャルゲーム系"],
+			    datasets: [{
+			      backgroundColor: [
+			        "#FF6384",
+			        "#36A2EB",
+			      ],
+			      data: [55, 45]
+			    }]
+			  }
+			});
+			</script>
 		</div>
 		<div class="col-sm-6">
 			<h5>インフラ</h5>
-			<div id="jqPlot-skill-instracture" style="height: 100%; width: 100%;"></div>
+			<div class="chartArea">
+				<canvas id="myChart2"></canvas>
+			</div>
+			<script>
+			var ctx = document.getElementById("myChart2").getContext('2d');
+			var myChart = new Chart(ctx, {
+			  type: 'doughnut',
+			  defaults: {
+			  	global:[{
+			  		defaultFontColor: '#FFF'
+			  	}]
+			  },
+			  data: {
+			    labels: ["サーバー", "ネットワーク"],
+			    datasets: [{
+			      backgroundColor: [
+			        "#06DB5E",
+			        "#FF6384",
+			      ],
+			      data: [70, 30]
+			    }]
+			  }
+			});
+			</script>
 		</div>
 		<div class="col-sm-6">
 			<h5>その他</h5>
-			<div id="jqPlot-skill-another" style="height: 100%; width: 100%;"></div>
+			<div class="chartArea">
+				<canvas id="myChart3"></canvas>
+			</div>
+			<script>
+			var ctx = document.getElementById("myChart3").getContext('2d');
+			var myChart = new Chart(ctx, {
+			  type: 'doughnut',
+			  data: {
+			    labels: ["PM", "キッティング", "PMサポート"],
+			    datasets: [{
+			      backgroundColor: [
+			        "#FFCE56",
+			        "#06DB5E",
+			        "#36A2EB",
+			      ],
+			      data: [40, 30, 30]
+			    }]
+			  }
+			});
+			</script>
 		</div>
 		<div class="col-sm-6">
 			<h5>年齢</h5>
-			<div id="jqPlot-age" style="height: 100%; width: 100%;"></div>
+			<div class="chartArea">
+				<canvas id="myChart4"></canvas>
+			</div>
+			<script>
+			var ctx = document.getElementById("myChart4").getContext('2d');
+			var myChart = new Chart(ctx, {
+			  type: 'doughnut',
+			  data: {
+			    labels: ["20代", "30代", "40代", "50代"],
+			    datasets: [{
+			      backgroundColor: [
+			        "#FF6384",
+			        "#36A2EB",
+			        "#FFCE56",
+			        "#06DB5E"
+			      ],
+			      data: [20, 40, 30, 10]
+			    }]
+			  }
+			});
+			</script>
 		</div>
 	</div>
 	<div class="mainContents caseContents row">
@@ -1161,7 +1131,7 @@ $(function(){
 <footer class="container-fluid footerContents">
     <div class="row">
         <div class="col-sm-12 text-left">
-            <h1>LIVE EST,INC.</h1>
+            <h2>LIVE EST,INC.</h2>
             <p>
 	            東京都豊島区池袋2−68−9　池袋MIBビル5F<br>
 	            TEL / FAX　03-6907-1122 / 03-6907-1123<br>
