@@ -108,7 +108,7 @@ h5{
 	text-align:center;
 }
 .breadcrumb{
-	background-color:white;
+	background-color:#01044E;
 }
 .breadcrumb > li + li:before{
 	font-size:30pt;
@@ -117,13 +117,6 @@ h5{
 }
 
 /*ここまで Bootstrapカスタマイズ*/
-
-/*jqplotプラグインのデザイン変更*/
-.jqplot-table-legend{
-	margin-bottom:0px !important;
-	font-size:0.9em;
-}
-/*ここまで jqplotプラグインのデザイン変更*/
 
 .mainContents{
 	padding-top:80px;
@@ -152,10 +145,15 @@ h5{
 }
 .caseContents{
 	background-color:#EDEDE7;
-
 }
 .voiceContents{
 	background-color:#FBFCF7;
+}
+.flowContents{
+	background-color:#01044E;
+}
+.introTantoContents{
+	background-color:#3F4F5F;
 }
 
 .infoContents img{
@@ -188,19 +186,6 @@ h5{
 	border-radius:8px;
 	margin-left: 10%;
 	margin-right: 10%;
-}
-.charaContents .contentPart h6{
-	margin:0 5px;
-	white-space: nowrap;
-	font-size:1.0em;
-	border-bottom:2px solid #D3D4D6;
-}
-.charaContents .contentPart span{
-	line-height:55px;
-}
-.charaContents .contentPart p{
-	padding:5px;
-	font-size:0.8em;
 }
 
 .caseContents .jireiPart{
@@ -238,7 +223,7 @@ h5{
 	width:70%;
 	margin-left:15%;
 	margin-right:15%;
-	height:400px;
+	height:200px;
 	text-align:left;
 	border:1px solid #2C5379;
 	border-radius:3px;
@@ -367,14 +352,14 @@ h3:after{
 	color:#01044E;
 }
 .detailContents h3:after{
-    left: 22.5em;
+    left: 23.25em;
 
 }
 .charaContents h3{
 	color:#FFF;
 }
 .charaContents h3:after{
-    left: 22.5em;
+    left: 23.25em;
 }
 
 .trendContents h3:after{
@@ -388,6 +373,12 @@ h3:after{
 	color:#01044E;
 }
 .voiceContents h3:after{
+    left: 23.25em;
+}
+.flowContents h3:after{
+    left: 23.25em;
+}
+.introTantoContents h3:after{
     left: 23.25em;
 }
 /*
@@ -677,6 +668,53 @@ h1 small:last-child {
   padding-top: .5em;
 }
 /* end スライド式TOP */
+
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
+
+/* The following is all you really need for the effect to work */
+.backbox {
+  font-family: "Josefin Slab";
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: white;
+  width: 75%;
+  position: relative;
+  left: 12.5%;
+  top: 3rem;
+  text-align: center;
+  padding: 0.0625rem;
+  position: relative;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMiLz48c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+}
+.backbox:before {
+  width: 100%;
+  height: 0.125rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(40%, rgba(255, 255, 255, 0.8)), color-stop(60%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
+}
+.backbox:after {
+  width: 100%;
+  height: 0.125rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(40%, rgba(255, 255, 255, 0.8)), color-stop(60%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
+}
+
 </style>
 <script type="text/javascript">
 //Chart.js defaults.global変更
@@ -769,43 +807,35 @@ $(function(){
 	</div>
 	<div class="mainContents charaContents row">
 		<div class="col-sm-12">
-			<h3>ココがイイ！ライブエストの【３S】！</h3>
+			<h3>ココがイイ！ライブエストの【３S】</h3>
 		</div>
-		<div class="col-sm-4">
-			<div class="contentPart" style="background-color:#FF3D67;">
-				<h6>
-					<img width="40px" height="40px" src="image/f_f_business_7_s256_f_business_7_0bg.jpg">
-					<span>超絶的「SPEED」！</span>
-				</h6>
-				<p>
+		<div class="col-sm-12">
+			<div class='backbox'>
+			  <p style="margin-top:10px;margin-bottom:10px;">超絶的「<span style="color:#FF3D67;">SPEED</span>」</p>
+			</div>
+				<p style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
 					登録～お仕事までの流れや日々の対応スピードに絶対的な自信があります！<br>
 					登録した日から3日後にお仕事を開始した人もいらっしゃいます！
 				</p>
-			</div>
 		</div>
-		<div class="col-sm-4">
-			<div class="contentPart" style="background-color:#9CD0AC;">
-				<h6>
-					<img width="40px" height="40px" src="image/f_f_business_81_s256_f_business_81_0bg.jpg">
-					<span>圧倒的「SERVICE」！</span>
-				</h6>
-				<p>
-					一定期間の就業で特別報酬あります！<br>						また案件スライド（次案件も弊社の場合）やお友達紹介でも特別報酬！
+		<div class="col-sm-12">
+			<div class='backbox'>
+			  <p style="margin-top:10px;margin-bottom:10px;">圧倒的「<span style="color:#00CC55;">SERVICE</span>」</p>
+			</div>
+				<p style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
+					一定期間の就業で特別報酬あります！<br>
+					また案件スライド（次案件も弊社の場合）やお友達紹介でも特別報酬！
 				</p>
-			</div>
 		</div>
-		<div class="col-sm-4">
-			<div class="contentPart" style="background-color:#97D4D9;">
-				<h6 >
-					<img width="40px" height="40px" src="image/f_f_object_130_s128_f_object_130_0bg.jpg">
-					<span>絶対的「SUPPORT」！</span>
-				</h6>
-				<p>
+		<div class="col-sm-12">
+			<div class='backbox'>
+			  <p style="margin-top:10px;margin-bottom:10px;">絶対的「<span style="color:#059BFF;">SUPPORT</span>」</p>
+			</div>
+				<p style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
 					担当＋フォローの２名体制での完全サポート！<br>
 					お仕事に集中出来る環境全てをお任せ下さい！<br>
-					起業のご支援も可能です！
+					起業のご支援も可能です！	
 				</p>
-			</div>
 		</div>
 	</div>
 	<div class="mainContents trendContents row">
@@ -986,9 +1016,8 @@ $(function(){
 				<h3>登録者の声</h3>
 			</div>
 			<div class="col-sm-6">
+				<h5 class="text-left" style="font-size:0.8em;padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;border-bottom: 1px solid #01044E;width: 80%;margin-left: 10%;margin-right: 10%;">エンジニア（32歳）</h5>
 				<div class="voicePart">
-					<img width="100%" height="150px" src="image/dummy6.JPG"><br>
-					<h5>エンジニア（32歳）</h5>
 					<div>
 						<h6>８年間正社員で業務系開発のSEとして働いておりました。</h6>
 						<p>
@@ -1002,9 +1031,8 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-sm-6">
+				<h5 class="text-left" style="font-size:0.8em;padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;border-bottom: 1px solid #01044E;width: 80%;margin-left: 10%;margin-right: 10%;">エンジニア（52歳）</h5>
 				<div class="voicePart">
-					<img width="100%" height="150px" src="image/dummy7.jpg"><br>
-					<h5>エンジニア（52歳）</h5>
 					<div>
 						<h6>30代後半からフリーランスとしてCOBOL案件に従事しております。</h6>
 						<p>
@@ -1019,20 +1047,18 @@ $(function(){
 			</div>
 		</div>
 	</div>
-			<section class="ankenSection flowSection borderNone">
-				<div class="row">
-					<div class="col-sm-12">
-						<h3>ご登録から参画までの流れ</h3>
-					</div>
-					<div class="col-sm-12">
-						<ol class="breadcrumb">
-						  <li><img src="image/dummy4.JPG" class="img-circle"></li>
-						  <li><img src="image/dummy4.JPG" class="img-circle"></li>
-						  <li><img src="image/dummy4.JPG" class="img-circle"></li>
-						</ol>
-					</div>
-				</div>
-			</section>
+	<div class="mainContents flowContents">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>ご登録から参画までの流れ</h3>
+			</div>
+			<div class="col-sm-12">
+				<ol class="breadcrumb">
+				  <li><img src="image/dummy4.JPG" class="img-circle"></li>
+				  <li><img src="image/dummy4.JPG" class="img-circle"></li>
+				  <li><img src="image/dummy4.JPG" class="img-circle"></li>
+				</ol>
+			</div>
 		</div>
 	</div>
 	<div class="mainContents infoContents row">
@@ -1054,9 +1080,9 @@ $(function(){
 			<h3>ライブエストコンサルタント紹介</h3>
 		</div>
 		<div class="col-sm-12">
-			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;">コンサルタント</h5>
+			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;color:#FFF;">コンサルタント</h5>
 		</div>
-		<div class="col-sm-12">
+		<div class="col-sm-6">
 			<div class="tantoSection" style="border:solid 1px #CCCCCC">
 				<div class="imgPart">
 					<img src="image/dummy2.jpg" height="100%">
@@ -1068,6 +1094,8 @@ $(function(){
 					フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
 				</div>
 			</div>
+		</div>
+		<div class="col-sm-6">
 			<div class="tantoSection" style="border:solid 1px #CCCCCC">
 				<div class="imgPart">
 					<img src="image/dummy3.jpg" height="100%">
@@ -1081,7 +1109,7 @@ $(function(){
 			</div>
 		</div>
 		<div class="col-sm-12">
-			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;border-bottom: 1px solid #01044E;">営業サポート・フォロー</h5>
+			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;color:#FFF;">営業サポート・フォロー</h5>
 		</div>
 		<div class="col-sm-12">
 			<div class="tantoSection" style="border:solid 1px #CCCCCC">
