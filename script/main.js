@@ -3,8 +3,8 @@ $(function(){
 	$('.button1 a').on('mouseover',function(){
 		$(this).stop().animate({
 			backgroundColor:'#00CCFF',
-			borderColor:'white',
-			color:'white'
+			borderColor:'#FFF',
+			color:'#FFF'
 		},500
 		);
 	}).on('mouseout',function(){
