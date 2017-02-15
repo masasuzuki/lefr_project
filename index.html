@@ -9,7 +9,6 @@
 <!--[if lt IE 9]>
 <script language="javascript" type="text/javascript" src="excanvas.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="/script/jqplot.pieRenderer.js"></script>
 <script type="text/javascript" src="/script/animatescroll.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script src="/script/jquery.inview.min.js"></script>
@@ -25,7 +24,7 @@
 <style>
 /*基本レイアウト*/
 body{
-	color:#01044E;
+	color:#03086A;/*0215_ワントーン明度を上げる（変更前#01044E）*/
   /*
 	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 	*/
@@ -34,25 +33,46 @@ body{
 }
 
 .tantoSection{
-	margin-bottom:20px;
-	padding:10px;
+  text-align:left;
+  vertical-align: bottom;
+  border:5px solid #03086A;
 	width:100%;
-	height:200px;
+	height:400px;
+
 }
-.imgPart{
-	display:inline-block;
-	width:25%;
-	height:180px;
-	text-align:center;
-	vertical-align:top;
+.consultant1{
+  /*background: url('image/dummy2.jpg') center no-repeat;
+  background-size:100% 100%;*/
+
 }
+.consultant2{
+  /*background: url('image/dummy3.jpg') center no-repeat;
+  background-size:100% 100%;*/
+}
+
 .textPart{
+  position:relative;
+  margin:120px 10px 0px;
+  padding-bottom:10px;
+  height:170px;
 	display:inline-block;
-	width:73%;
-	height:160px;
-	text-align:left;
 	/*vertical-align:-550%;*/
 	font-size:0.8em;
+  z-index:100;
+}
+
+.coverPart{
+  top:0;
+  left:0;
+  position:absolute;
+  background-color:#03086A;
+  width:100%;
+  height:100%;
+  opacity:0.4;
+}
+.nonCover{
+  background-color:transparent;
+  opacity:1;
 }
 
 h3{
@@ -73,7 +93,7 @@ h4{
   margin-top:10px;
   margin-bottom:0px;
   font-size:1.8em;
-  color:#00ADE4;
+  color:#374D76;
   font-weight:bold;
   font-family:'Six Caps', sans-serif;
   letter-spacing:0.1em;
@@ -116,7 +136,7 @@ h5{
 	text-align:center;
 }
 .breadcrumb{
-	background-color:#01044E;
+	background-color:#03086A;
 }
 .breadcrumb > li + li:before{
 	font-size:30pt;
@@ -136,31 +156,31 @@ h5{
 	background-color:#FBFCF7;
 }
 .questionContents{
-	background-color:#01044E;
+	background-color:#03086A;
 }
 .detailContents{
-  background:url(image/firstBG.jpg) 50% 0 no-repeat fixed;
+  background:url(image/wood-texture_00067.jpg) 50% 0 no-repeat fixed;
   color: white;
 }
 .charaContents{
-	background-color:#01044E;
+	background-color:#03086A;
 }
 .trendContents{
-	background-color:#01044E;
+	background-color:#03086A;
 }
 .caseContents{
-  background:url(image/IMG_6930.jpg) 50% 0 no-repeat fixed;
+  background:url(image/wood-texture_00067.jpg) 50% 0 no-repeat fixed;
   color: white;
 }
 .voiceContents{
-  background:url(image/firstBG.jpg) 50% 0 no-repeat fixed;
+  background:url(image/wood-texture_00067.jpg) 50% 0 no-repeat fixed;
   color: white;
 }
 .flowContents{
-	background-color:#01044E;
+	background-color:#03086A;
 }
 .introTantoContents{
-  background-color:#01044E;
+  background-color:#03086A;
   color:white;
 }
 
@@ -204,7 +224,7 @@ h5{
 	height:250px;
 	background-color:#F3F4F8;
 	color:#08233E;
-	border:5px double #01044E;
+	border:5px double #03086A;
 	margin-left: 5%;
 	margin-right: 5%;
 }
@@ -230,7 +250,7 @@ h5{
 
 .voiceContents .voicePart{
 	width:75%;
-	margin:30px 15% 0 10%;
+	margin:20px 15% 0 10%;
 	height:300px;
 	text-align:left;
 	border:1px solid #2C5379;
@@ -248,9 +268,9 @@ h5.voiceName{
   margin-left: 10%;
   margin-right: 10%;
 	padding: 0.25em 0 0.25em 0.75em;
-  border-left: 6px solid #01044E;
+  border-left: 6px solid #03086A;
   font-weight:bold;
-  color:#01044E;
+  color:#03086A;
   font-size:0.8em;
   font-weight:bold;
 }
@@ -299,7 +319,7 @@ h5.voiceName{
 	/* 38pxの部分に「画像File」の横幅に隙間分のpxを足した数を入れる */
 }
 .footerContents {
-    background-color: #01044E;/*#DDEBF3*/
+    background-color: #03086A;/*#DDEBF3*/
     color:#fff;
 }
 .footerContents .row{
@@ -323,14 +343,43 @@ h5.voiceName{
     cursor:pointer;
     text-decoration:none;
     font-size:17pt;
-    color:#01044E;
-    border:2px solid #01044E;
+    color:#03086A;
+    border:2px solid #03086A;
     padding:7px 10px;
     width:220px;
     height:160px;
     text-align:center;
 }
-
+.consulComent1{
+    position: relative;
+}
+.consulComent1:after{
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border-top: 15px solid transparent;
+    border-right: 30px solid #FFF;
+    border-bottom: 15px solid transparent;
+    border-left: 60px solid transparent;
+    top: 40%;
+    left: -90px;
+}
+.consulComent2{
+    position: relative;
+}
+.consulComent2:after{
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border-top: 15px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 60px solid #FFF;
+    top: 40%;
+    left: 96%;
+}
 /*ここまで 基本レイアウト*/
 
 
@@ -586,7 +635,7 @@ h1 {
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
-  padding: 1em 2em;
+  padding: 1em 1.5em;
   line-height: 1.5;
 }
 h1 small {
@@ -656,6 +705,8 @@ h1 small:last-child {
 //Chart.js defaults.global変更
 Chart.defaults.global.defaultFontColor = "#FFF";
 $(function(){
+
+  //フェードイン・アウトの設定
   $('.fadeIn').css('opacity', 0);
   $('.fadeIn').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
     if (isInView) {
@@ -670,6 +721,31 @@ $(function(){
   $('#caseContents').localScroll();
   $('detailContents').localScroll();
   $('#voiceContents').localScroll();
+
+  //.consultant1の画像hover設定
+  $(".consultant1 img").on("mouseover", function(){
+    $(".consultant1 img").prop('src', 'image/dummy2.JPG');
+    $(".consultant2 h6").addClass("hide");
+    $(".consultant2 img").addClass("hide");
+    $(".consulComent1").removeClass("hide");
+  }).on("mouseout", function(){
+    $(".consultant1 img").prop('src', 'image/consal_dummy_01.jpg');
+    $(".consultant2 h6").removeClass("hide");
+    $(".consultant2 img").removeClass("hide");
+    $(".consulComent1").addClass("hide");
+  });
+  //.consultant2の画像hover設定
+  $(".consultant2 img").on("mouseover", function(){
+    $(".consultant2 img").prop('src', 'image/dummy3.JPG');
+    $(".consultant1 h6").addClass("hide");
+    $(".consultant1 img").addClass("hide");
+    $(".consulComent2").removeClass("hide");
+  }).on("mouseout", function(){
+    $(".consultant2 img").prop('src', 'image/dummy7.jpg');
+    $(".consultant1 h6").removeClass("hide");
+    $(".consultant1 img").removeClass("hide");
+    $(".consulComent2").addClass("hide");
+  });
 });
 </script>
 </head>
@@ -677,7 +753,7 @@ $(function(){
 <header>
 	<!-- スライド式 -->
 	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
-		<h1><span style="font-weight:bold;white-space:nowrap;">LIVE EST,Inc.</span><small style="line-height:50px;font-weight:bold;">リクルートサイト<br><span style="font-weight:normal;font-size:0.8em;">for</span><br>フリーランス</small></h1>
+		<h1><span style="font-weight:bold;white-space:nowrap;font-size:1.1em;">LIVE EST,Inc.</span><small style="line-height:60px;font-weight:bold;font-size:0.85em;">リクルートサイト<br><span style="font-weight:normal;font-size:0.8em;">for</span><br>フリーランス</small></h1>
 		<!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 		<div class="slideshow">
 		  <div class="slideshow-image" style="background-image: url('image/startup.jpg')"></div>
@@ -732,15 +808,6 @@ $(function(){
         <h3 class="fadeIn">専任のコンサルタントにお任せを</h3>
         <h4 class="fadeIn">- Leave it to Our -</h4>
 			</div>
-			<div class="col-sm-4">
-				<img src="image/dummy2.jpg" class="fadeIn img-circle">
-			</div>
-			<div class="col-sm-4">
-				<img src="image/dummy3.JPG" class="fadeIn img-circle">
-			</div>
-			<div class="col-sm-4">
-				<img src="image/dummy2.jpg" class="fadeIn img-circle">
-			</div>
 			<div class="col-sm-12">
         <div class="fadeIn button1" style="margin-top:40px;">
 				<a onclick="$('#idIntroContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});">コンサルタントの詳細はこちら</a>
@@ -750,22 +817,21 @@ $(function(){
 	</div>
 	<div class="mainContents charaContents row">
 		<div class="col-sm-12">
-      <h4  class="subTitle" style="color:white;">ここがイイ！</h4>
-			<h3 class="fadeIn">ライブエストの<span style="color:#00ADE4;font-weight:bold;">３S</span></h3>
+			<h3 class="fadeIn">LIVEEST × <span style="font-size:1.0em;color:#00ADE4;font-weight:bold;font-family:'Josefin Slab'">3S</span></h3>
       <h4 class="fadeIn">- Three "S" -</h4>
 		</div>
 		<div class="col-sm-12">
 			<div class='backbox'>
-			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">超絶的『 <span style="font-weight:bold;color:#00ADE4;">SPEED</span> 』</p>
+			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">超絶的『 <span style="font-weight:bold;color:#FF3D67;">SPEED</span> 』</p>
 			</div>
 				<p class="fadeIn" style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
 					登録～お仕事までの流れや日々の対応スピードに絶対的な自信があります！<br>
-					登録した日から3日後にお仕事を開始した人もいらっしゃいます！
+					登録した日から翌日にお仕事を開始した人もいらっしゃいます！
 				</p>
 		</div>
 		<div class="col-sm-12">
 			<div class='backbox'>
-			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">圧倒的『 <span style="font-weight:bold;color:#00ADE4;">SERVICE</span> 』</p>
+			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">圧倒的『 <span style="font-weight:bold;color:#FFC533;">SERVICE</span> 』</p>
 			</div>
 				<p class="fadeIn" style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
 					一定期間の就業で特別報酬あります！<br>
@@ -774,7 +840,7 @@ $(function(){
 		</div>
 		<div class="col-sm-12">
 			<div class='backbox'>
-			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">絶対的『 <span style="font-weight:bold;color:#00ADE4;">SUPPORT</span> 』</p>
+			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">絶対的『 <span style="font-weight:bold;color:#00CC55;">SUPPORT</span> 』</p>
 			</div>
 				<p class="fadeIn" style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
 					担当＋フォローの２名体制での完全サポート！<br>
@@ -999,11 +1065,11 @@ $(function(){
 	<div class="mainContents flowContents">
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>ご登録から参画までの流れ</h3>
+				<h3 class="fadeIn">ご登録から参画までの流れ</h3>
         <h4 class="fadeIn">- Flow -</h4>
 			</div>
 			<div class="col-sm-12">
-				<ol class="breadcrumb">
+				<ol class="fadeIn breadcrumb">
 				  <li><img src="image/dummy4.JPG" class="img-circle"></li>
 				  <li><img src="image/dummy4.JPG" class="img-circle"></li>
 				  <li><img src="image/dummy4.JPG" class="img-circle"></li>
@@ -1027,71 +1093,63 @@ $(function(){
 	</div>
 	<div class="mainContents introTantoContents row" id="idIntroContents">
 		<div class="col-sm-12">
-			<h3>コンサルタント紹介</h3>
+			<h3 class="fadeIn">コンサルタント紹介</h3>
       <h4 class="fadeIn">- Introduction -</h4>
 		</div>
 		<div class="col-sm-12">
-			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;color:#FFF;">コンサルタント</h5>
+			<h5 class="fadeIn text-left" style="margin-bottom:20px;padding:0.25em 0 0.25em 0.75em;border-left: 6px solid #705300;color:#705300;">コンサルタント</h5>
 		</div>
-		<div class="col-sm-6">
-			<div class="tantoSection" style="border:solid 1px #CCCCCC">
-				<div class="imgPart">
-					<img src="image/dummy2.jpg" height="100%">
-				</div>
-				<div class="textPart">
-					<strong style="line-height:40px;">【 橋本 】</strong><br>
-					新卒で入社し既にIT業界歴は5年以上。<br>
-					見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
-					フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
-				</div>
+		<div class="col-sm-6" style="">
+			<div class="fadeIn tantoSection consultant1">
+        <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">橋本　有梨香　<span style="font-size:14pt;color:#a5a8fe;">- A.HASHIMOTO -</span></h6>
+				<img src="image/consal_dummy_01.jpg" width="100%" height="300px">
+        <div class="consulComent2 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;">
+          新卒で入社し既にIT業界歴は5年以上。<br>
+          見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
+          フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
+        </div>
 			</div>
 		</div>
-		<div class="col-sm-6">
-			<div class="tantoSection" style="border:solid 1px #CCCCCC">
-				<div class="imgPart">
-					<img src="image/dummy3.jpg" height="100%">
-				</div>
-				<div class="textPart">
-					<strong style="line-height:40px;">【 大小田 】</strong><br>
-					弊社で営業➡客先常駐エンジニア➡営業復帰という経歴で、客先常駐経験者だからこその<br>
-					目線でエンジニアをサポートする営業マン。<br>
-					自身が経験したWEB業界は勿論、幅広い業界でのお仕事をご紹介出来ます！
-				</div>
-			</div>
+		<div class="col-sm-6" style="margin-bottom:50px;">
+      <div class="fadeIn tantoSection consultant2">
+        <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">大小田　敏志　<span style="font-size:14pt;color:#a5a8fe;">- S.OHKODA -</span></h6>
+        <img src="image/dummy3.JPG" width="100%" height="300px">
+        <div class="consulComent1 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;">
+          新卒で入社し既にIT業界歴は5年以上。<br>
+          見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
+          フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
+        </div>
+      </div>
 		</div>
+    <!--
 		<div class="col-sm-12">
-			<h5 class="text-left" style="padding: .25em 0 .25em .75em;border-left: 6px solid #01044E;color:#FFF;">営業サポート・フォロー</h5>
+      <h5 class="fadeIn text-left" style="padding: 0.25em 0 0.25em 0.75em;border-left: 6px solid #FFF;color:#FFF;">営業サポート・フォロー</h5>
 		</div>
-		<div class="col-sm-12">
-			<div class="tantoSection" style="border:solid 1px #CCCCCC">
-				<div class="imgPart">
-					<img src="image/dummy5.jpeg" height="100%">
-				</div>
-				<div class="textPart">
-					<strong style="line-height:40px;">【 石川 】</strong><br>
-					弊社代表で立ち上げ時期からフリーランスの皆様とお仕事をご一緒してきたため<br>
-					今では「ヒアリング」という名目の下フリーランスの方と飲みに行くのが趣味（笑）<br>
-					代表だからこそ出来るクライアントへの意見、フリーランスの皆様へのフォローがあり、<br>
-					安心してお仕事が出来る事間違いなし！です。<br>
-					〜 専門 〜<br>
-					ALL（案件紹介/面談同席/サポート・フォロー/コンサル）
-				</div>
-			</div>
-			<div class="tantoSection" style="border:solid 1px #CCCCCC">
-				<div class="imgPart">
-					<img src="image/dummy5.jpeg" height="100%">
-				</div>
-				<div class="textPart">
-					<strong style="line-height:40px;">【 高橋 】</strong><br>
-					主に就業後の状況ヒアリングを担当しております。<br>
-					現在の就業現場に対する不満・不安、業務に対する疑問等をフリーランスの皆様から<br>
-					ヒアリングし、各担当にエスカレーション。<br>
-					見た目の雰囲気からわかるように非常に話しやすい為フリーランスの<br>
-					皆様からも「高橋さん相手だと何でも話せるよ」と言ったお言葉も頂戴しております。
-				</div>
-			</div>
+		<div class="col-sm-6" style="">
+      <div class="fadeIn tantoSection consultant1">
+        <div class="textPart">
+          <strong style="line-height:40px;">【 橋本 】</strong><br>
+          新卒で入社し既にIT業界歴は5年以上。<br>
+          見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
+          フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
+        </div>
+        <div class="coverPart"></div>
+      </div>
+    </div>
+    <div class="col-sm-6" style="">
+      <div class="fadeIn tantoSection consultant1">
+        <div class="textPart">
+          <strong style="line-height:40px;">【 大小田 】</strong><br>
+          弊社で営業➡客先常駐エンジニア➡営業復帰という経歴で、客先常駐経験者だからこその<br>
+          目線でエンジニアをサポートする営業マン。<br>
+          自身が経験したWEB業界は勿論、幅広い業界でのお仕事をご紹介出来ます！
+        </div>
+        <div class="coverPart"></div>
+      </div>
 		</div>
+    -->
 	</div>
+
 	<div class="mainContents infoContents row">
 		<div class="col-sm-6">
 			<img src="image/LE_icon.png" width="50px" height="50px">
