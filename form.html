@@ -15,9 +15,14 @@
 <style>
 /*基本レイアウト*/
 body{
-	font-size:20px;
-	background-color:#DDEBF3;
+	color:#03086A;/*0215_ワントーン明度を上げる（変更前#01044E）*/
+  /*
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+	*/
+  font-family:"游ゴシック体", "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "YuGothic", "Meiryo", verdana, "Osaka", "MS PGothic", Sans-Serif;
+  font-size:20px;
 }
+
 header{
 	margin-top:0px;
 	margin-bottom:50px;
@@ -66,14 +71,19 @@ h5{
 }
 
 /*Bootstrapカスタマイズ*/
-
-.main .row{
-	width:80%;
-	margin:0 10% 20px;
+.container-fluid{
+	padding-left:0px;
+	padding-right:0px;	
+}
+.row{
+	width:100%;
+	margin-left:0px;
+	margin-right:0px;
 	padding-top:20px;
 	padding-bottom:20px;
 	text-align:center;
 }
+
 .form-group{
 	/*padding:0 15%;*/
 	text-align:left;
@@ -85,10 +95,9 @@ h5{
 }*/
 /*ここまで smokeカスタマイズ*/
 .mainContents{
-	background-color:white;
-	border-radius:10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
+	padding-top:80px;
+	padding-bottom:80px;
+	letter-spacing: 0.4em;
 }
 .breadcrumb{
 	background-color:white;
@@ -149,7 +158,7 @@ span.hissu{
 }
 .footerContents {
 	margin-top: 50px;
-    background-color: #2C5379;
+	background-color:#03086A;
     color:#fff;
 }
 .footerContents .row{

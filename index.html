@@ -15,10 +15,12 @@
 <script type="text/javascript" src="/script/jquery.parallax-1.1.3.js"></script>
 <script type="text/javascript" src="/script/jquery.localscroll-1.2.7-min.js"></script>
 <script type="text/javascript" src="/script/jquery.scrollTo-1.4.2-min.js"></script>
+<script src="js/featherlight.js"></script>
 <script type="text/javascript" src="/script/main.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="style/featherlight.css">
 <link href="https://fonts.googleapis.com/css?family=Arsenal|Six+Caps" rel="stylesheet">
 <title></title>
 <style>
@@ -159,7 +161,7 @@ h5{
 	background-color:#03086A;
 }
 .detailContents{
-  background:url(image/wood-texture_00067.jpg) 50% 0 no-repeat fixed;
+  background:url(image/tim-gouw-69753.jpg) 50% 0 no-repeat fixed;
   color: white;
 }
 .charaContents{
@@ -169,11 +171,11 @@ h5{
 	background-color:#03086A;
 }
 .caseContents{
-  background:url(image/wood-texture_00067.jpg) 50% 0 no-repeat fixed;
+  background:url(image/pexels-photo-51171.jpeg) 60% 0 no-repeat fixed;
   color: white;
 }
 .voiceContents{
-  background:url(image/wood-texture_00067.jpg) 50% 0 no-repeat fixed;
+  background:url(image/pexels-photo-51171.jpeg) 50% 0 no-repeat fixed;
   color: white;
 }
 .flowContents{
@@ -233,6 +235,9 @@ h5{
 	padding:5px 0;
 	margin:0 5px 10px;
 	border-bottom:2px solid #0016FF;
+  letter-spacing: 5px;
+  font-size:0.5em;
+  font-weight:bold;
 }
 .caseContents .jireiPart span{
 	padding-left:5px;font-size:1.1em;
@@ -249,8 +254,9 @@ h5{
 }
 
 .voiceContents .voicePart{
-	width:75%;
+	width:80%;
 	margin:20px 15% 0 10%;
+  padding:10px;
 	height:300px;
 	text-align:left;
 	border:1px solid #2C5379;
@@ -268,9 +274,9 @@ h5.voiceName{
   margin-left: 10%;
   margin-right: 10%;
 	padding: 0.25em 0 0.25em 0.75em;
-  border-left: 6px solid #03086A;
+  border-left: 6px solid #FFA500;
   font-weight:bold;
-  color:#03086A;
+  color:#FFF;
   font-size:0.8em;
   font-weight:bold;
 }
@@ -348,6 +354,23 @@ h5.voiceName{
     padding:7px 10px;
     width:220px;
     height:160px;
+    text-align:center;
+    box-shadow: 5px 5px 10px gray;
+}
+.button2 a:hover{
+    cursor:pointer;
+    text-decoration:none;
+}
+.button2 a{
+    cursor:pointer;
+    text-decoration:none;
+    font-size:13pt;
+    letter-spacing:5px;
+    color:#03086A;
+    border:2px solid #FFF;
+    padding:20px 25px;
+    width:250px;
+    height:180px;
     text-align:center;
 }
 .consulComent1{
@@ -700,6 +723,73 @@ h1 small:last-child {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
 }
 
+.hoge1:after{
+    content: " ";
+    width:25px;
+    height:25px;
+    transform:scale(-1, 1);
+    position: absolute;
+    background:url(image/yajirushi04.png) no-repeat;    
+    background-size:contain;
+    top: 35%;
+    left: 100%;
+}
+.hoge2:after{
+    content: " ";
+    width:25px;
+    height:25px;
+    position: absolute;
+    transform:rotate(-90deg);
+    background:url(image/yajirushi04.png) no-repeat;    
+    background-size:contain;
+    top: 120%;
+    left: 45%;
+}
+.hoge3:after{
+    content: " ";
+    width:25px;
+    height:25px;
+    position: absolute;
+    transform:rotate(-65deg) scale(-1, 1);
+    background:url(image/yajirushi04.png) no-repeat;    
+    background-size:contain;
+    top: 120%;
+    left: 30%;
+}
+.hoge4:after{
+    content: " ";
+    width:25px;
+    height:25px;
+    position: absolute;
+    background:url(image/yajirushi04.png) no-repeat;    
+    background-size:contain;
+    top: 45%;
+    left: 0%;
+}
+.lightbox_form {
+    display: none;
+    padding: 0px;
+    width:100%;
+    height:100%;
+}
+
+.fixedButton{
+  color:#FFF;
+  position:fixed;
+  right:100px;
+  bottom:100px;
+  z-index:1000;
+}
+.fixedButton::before{
+    content: " ";
+    width:30px;
+    height:30px;
+    position: absolute;
+    background:url(image/form_logo.png) no-repeat;    
+    background-size:contain;
+    top: 0%;
+    left: 5%;
+}
 </style>
 <script type="text/javascript">
 //Chart.js defaults.global変更
@@ -710,10 +800,10 @@ $(function(){
   $('.fadeIn').css('opacity', 0);
   $('.fadeIn').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
     if (isInView) {
-      $(this).stop().animate({opacity:1}, 1000);
+      $(this).stop().animate({opacity:1}, 2500);
     }
     else {
-      $(this).stop().animate({opacity: 0}, 1000);
+      $(this).stop().animate({opacity: 0}, 2500);
     }
   });
 
@@ -750,16 +840,19 @@ $(function(){
 </script>
 </head>
 <body>
+<div class="fixedButton button2">
+  <a href="form.html" style="color:#FFF;">　無料登録はこちら</a>
+</div>
 <header>
 	<!-- スライド式 -->
 	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
 		<h1><span style="font-weight:bold;white-space:nowrap;font-size:1.1em;">LIVE EST,Inc.</span><small style="line-height:60px;font-weight:bold;font-size:0.85em;">リクルートサイト<br><span style="font-weight:normal;font-size:0.8em;">for</span><br>フリーランス</small></h1>
 		<!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 		<div class="slideshow">
-		  <div class="slideshow-image" style="background-image: url('image/startup.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/pexels-photo-30342-medium.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/technology-791032__340.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/tape-595474__340.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/top01.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/top02.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/top03.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/top04.jpeg')"></div>
 		</div>
 	</div>
 </header>
@@ -881,7 +974,7 @@ $(function(){
       <div class="fadeIn jireiPart">
         <h6>
           <img width="30px" height="30px" src="image/work1.png">
-          <span>通信会社向け新サービスシステム開発</span>
+          <span>通信会社向け新システム開発</span>
         </h6>
         <p><strong>金額　：</strong>60万円</p>
         <p><strong>勤務地：</strong>赤坂</p>
@@ -914,7 +1007,7 @@ $(function(){
       <div class="fadeIn jireiPart">
         <h6>
           <img width="30px" height="30px" src="image/work1.png">
-          <span>カーナビ（オーディオ系）アプリ画面開発</span>
+          <span>カーナビアプリ画面開発</span>
         </h6>
         <p><strong>金額　：</strong>〜51万円</p>
         <p><strong>勤務地：</strong>鴨居</p>
@@ -1068,28 +1161,70 @@ $(function(){
 				<h3 class="fadeIn">ご登録から参画までの流れ</h3>
         <h4 class="fadeIn">- Flow -</h4>
 			</div>
-      <div class="col-sm-4">
-        <div style="color:#03086A;background-color:#FFF;border-radius:300px;padding:5px;margin:20px 80px;">
-          <span style="font-weight:bold;font-size:0.7em;">STEP1</span><br>
+      <div class="fadeIn col-sm-12" style="padding-bottom:50px;border-bottom:1px double #FFF;">
+        <span style="color:#FFF;">参画まで6つのSTEP</span>
+      </div>
+      <div class="fadeIn col-sm-4 hoge1" style="margin-top:50px;padding-bottom:100px;border-bottom:1px dotted #FFF;margin-bottom:50px;">
+        <div style="font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
+          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP1</span><br>
           簡単登録<br>
-          <img src="image/step1.png" width="160px" height="160px">
+          <img src="image/step1.png" width="100px" height="100px">
+        </div>
+        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+          直接TELorMAILでも可！
         </div>
       </div>
-      <div class="col-sm-4">
-        <div style="color:#03086A;background-color:#FFF;border-radius:300px;padding:5px;margin:10px 80px;">
-          <span style="font-weight:bold;font-size:0.7em;">STEP2</span><br>
+      <div class="fadeIn col-sm-4 hoge1" style="margin-top:50px;padding-bottom:100px;border-bottom:1px dotted #FFF;margin-bottom:50px;">
+        <div style="font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
+          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP2</span><br>
           事前打ち合わせ<br>
-          <img src="image/step2.png" width="160px" height="160px">
+          <img src="image/step2.png" width="100px" height="100px">
+        </div>
+        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+          弊社コンサルタントからすぐにご連絡！
         </div>
       </div>
-      <div class="col-sm-4">
-        <div style="color:#03086A;background-color:#FFF;border-radius:300px;padding:5px;margin:10px 80px;">
-          <span style="font-weight:bold;font-size:0.7em;">STEP3</span><br>
+      <div class="fadeIn col-sm-4" style="margin-top:50px;padding-bottom:100px;border-bottom:1px dotted #FFF;margin-bottom:50px;">
+        <div style="font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
+          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP3</span><br>
           案件紹介<br>
-          <img src="image/step1.png" width="160px" height="160px">
+          <img src="image/step3.png" width="100px" height="100px">
+        </div>
+        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+          数ある優良案件をスピーディーに提案！
         </div>
       </div>
-		</div>
+      <div class="fadeIn col-sm-4 hoge1"  style="padding-bottom:100px;">
+        <div style="text-align:center;font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
+          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP4</span><br>
+          面談<br>
+          <img src="image/step4.png" width="100px" height="100px">
+        </div>
+        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+          必ず弊社コンサルタントが同行！
+        </div>
+      </div>
+      <div class="fadeIn col-sm-4 hoge1" style="padding-bottom:100px;">
+        <div style="text-align:center;font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
+          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP5</span><br>
+          条件打ち合わせ<br>
+          <img src="image/step5.png" width="100px" height="100px">
+        </div>
+        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+          報酬面などをしっかりと！
+        </div>
+      </div>
+      <div class="fadeIn col-sm-4" style="padding-bottom:100px;">
+        <div style="text-align:center;font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
+          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP6</span><br>
+          参画<br>
+          <img src="image/step6_3.png" width="100px" height="100px">
+        </div>
+        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+          当日もコンサルタントが必ず同行！
+        </div>
+      </div>
+    </div>
 	</div>
 	<div class="mainContents infoContents row">
 		<div class="col-sm-6">
@@ -1111,13 +1246,13 @@ $(function(){
       <h4 class="fadeIn">- Introduction -</h4>
 		</div>
 		<div class="col-sm-12">
-			<h5 class="fadeIn text-left" style="margin-bottom:20px;padding:0.25em 0 0.25em 0.75em;border-left: 6px solid #705300;color:#705300;">コンサルタント</h5>
+			<h5 class="fadeIn text-left" style="margin-bottom:20px;padding:0.25em 0 0.25em 0.75em;border-left: 6px solid #FFA500;color:#FFF;">コンサルタント</h5>
 		</div>
 		<div class="col-sm-6" style="">
 			<div class="fadeIn tantoSection consultant1">
         <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">橋本　有梨香　<span style="font-size:14pt;color:#a5a8fe;">- A.HASHIMOTO -</span></h6>
 				<img src="image/consal_dummy_01.jpg" width="100%" height="300px">
-        <div class="consulComent2 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;">
+        <div class="consulComent2 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:80px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
           新卒で入社し既にIT業界歴は5年以上。<br>
           見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
           フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
@@ -1128,7 +1263,7 @@ $(function(){
       <div class="fadeIn tantoSection consultant2">
         <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">大小田　敏志　<span style="font-size:14pt;color:#a5a8fe;">- S.OHKODA -</span></h6>
         <img src="image/dummy3.JPG" width="100%" height="300px">
-        <div class="consulComent1 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;">
+        <div class="consulComent1 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
           新卒で入社し既にIT業界歴は5年以上。<br>
           見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
           フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
@@ -1174,7 +1309,7 @@ $(function(){
 		</div>
 		<div class="col-sm-6">
 			<div class="infoPart button1">
-				<a href="form.html">無料登録はこちら</a>
+				<a href="#" data-featherlight="#modal1">>無料登録はこちら</a>
 			</div>
 		</div>
 	</div>
@@ -1196,5 +1331,8 @@ $(function(){
         </div>
     </div>
 </footer>
+<div class="lightbox_form" id="modal1">
+  <span>テスト</span>
+</div>
 </body>
 </html>
