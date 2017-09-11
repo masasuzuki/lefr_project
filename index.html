@@ -3,33 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="/script/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="script/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/script/bootstrap.js"></script>
 <script type="text/javascript" src="/script/jquery-ui.js"></script>
 <!--[if lt IE 9]>
 <script language="javascript" type="text/javascript" src="excanvas.min.js"></script>
 <![endif]-->
 <script type="text/javascript" src="/script/animatescroll.min.js"></script>
+<!--
+<script type="text/javascript" src="/script/library.js"></script>
+-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script src="/script/jquery.inview.min.js"></script>
 <script type="text/javascript" src="/script/jquery.parallax-1.1.3.js"></script>
 <script type="text/javascript" src="/script/jquery.localscroll-1.2.7-min.js"></script>
 <script type="text/javascript" src="/script/jquery.scrollTo-1.4.2-min.js"></script>
-<script src="js/featherlight.js"></script>
 <script type="text/javascript" src="/script/main.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="style/featherlight.css">
 <link href="https://fonts.googleapis.com/css?family=Arsenal|Six+Caps" rel="stylesheet">
-<title></title>
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+<title>株式会社ライブエスト｜フリーランスサイト</title>
 <style>
 /*基本レイアウト*/
 body{
 	color:#03086A;/*0215_ワントーン明度を上げる（変更前#01044E）*/
-  /*
-	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
-	*/
   font-family:"游ゴシック体", "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "YuGothic", "Meiryo", verdana, "Osaka", "MS PGothic", Sans-Serif;
   font-size:20px;
 }
@@ -373,9 +373,28 @@ h5.voiceName{
     height:180px;
     text-align:center;
 }
+.button3 a:hover{
+    cursor:pointer;
+    text-decoration:none;
+}
+.button3 a{
+    cursor:pointer;
+    text-decoration:none;
+    font-size:17pt;
+    color:#03086A;
+    border:2px solid #03086A;
+    padding:7px 10px;
+    width:220px;
+    height:160px;
+    text-align:center;
+    box-shadow: 5px 5px 10px gray;
+}
+
 .consulComent1{
     position: relative;
 }
+/* 20170908 コンサルタントコメント変更
+
 .consulComent1:after{
     content: ' ';
     height: 0;
@@ -388,9 +407,11 @@ h5.voiceName{
     top: 20%;
     left: -90px;
 }
+*/
 .consulComent2{
     position: relative;
 }
+/* 20170908 コンサルタントコメント変更
 .consulComent2:after{
     content: ' ';
     height: 0;
@@ -403,6 +424,7 @@ h5.voiceName{
     top: 20%;
     left: 96%;
 }
+*/
 /*ここまで 基本レイアウト*/
 
 
@@ -647,6 +669,43 @@ h5.voiceName{
 }
 h1 {
   position: absolute;
+  top: 25%;/*20170904 文字修正作業（100%より変更）*/
+  left: 30%;/*20170904 文字修正作業（100%より変更）*/
+  /* 20170904　デザイン修正作業
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  */
+  z-index: 99;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  /*
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
+  padding: 1em 1.5em;
+  */
+  padding: 0.5em 0.5em;
+  line-height: 1.5;
+}
+h1 small {
+  display: block;
+  text-transform: lowercase;
+  font-size: 0.6em;
+  color:#03086A;
+}
+/* 20170904　デザイン修正作業
+h1 small:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: .5em;
+}
+h1 small:last-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  padding-top: .5em;
+}
+*/
+.jumbotron p {
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
@@ -655,24 +714,18 @@ h1 {
   text-align: center;
   font-family: Raleway, sans-serif;
   font-weight: 300;
+  font-size:1.2em;
   text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
-  padding: 1em 1.5em;
+  border :3px solid #03086A;
+  padding: 0.5em 1em;
   line-height: 1.5;
 }
-h1 small {
-  display: block;
-  text-transform: lowercase;
-  font-size: 0.6em;
+.jumbotron a{
+  color:#03086A;
 }
-h1 small:first-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  padding-bottom: .5em;
-}
-h1 small:last-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-  padding-top: .5em;
+.jumbotron a:hover{
+  text-decoration:none;
+  cursor: pointer;
 }
 /* end スライド式TOP */
 
@@ -722,7 +775,7 @@ h1 small:last-child {
   background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
 }
-
+/*ここまで*/
 .hoge1:after{
     content: " ";
     width:25px;
@@ -798,6 +851,7 @@ $(function(){
 
   //フェードイン・アウトの設定
   $('.fadeIn').css('opacity', 0);
+  $('.fadeIn_main').css('opacity', 0);
   $('.fadeIn').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
     if (isInView) {
       $(this).stop().animate({opacity:1}, 2500);
@@ -806,35 +860,47 @@ $(function(){
       $(this).stop().animate({opacity: 0}, 2500);
     }
   });
+  $('.fadeIn_main').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+    if (isInView) {
+      $(this).stop().animate({opacity:1}, 4000);
+    }
+    else {
+      $(this).stop().animate({opacity: 0}, 4000);
+    }
+  });
 
   //パララックスの設定
   $('#caseContents').localScroll();
-  $('detailContents').localScroll();
+  $('#detailContents').localScroll();
   $('#voiceContents').localScroll();
 
   //.consultant1の画像hover設定
   $(".consultant1 img").on("mouseover", function(){
-    $(".consultant1 img").prop('src', 'image/dummy2.JPG');
+    //$(".consultant1 img").prop('src', 'image/hashimoto_hover.png');
     $(".consultant2 h6").addClass("hide");
     $(".consultant2 img").addClass("hide");
     $(".consulComent1").removeClass("hide");
+    $(".consulComent1 img").removeClass("hide");
   }).on("mouseout", function(){
-    $(".consultant1 img").prop('src', 'image/consal_dummy_01.jpg');
+    //$(".consultant1 img").prop('src', 'image/S__15974429.jpg');
     $(".consultant2 h6").removeClass("hide");
     $(".consultant2 img").removeClass("hide");
     $(".consulComent1").addClass("hide");
+    $(".consulComent1 img").addClass("hide");
   });
   //.consultant2の画像hover設定
   $(".consultant2 img").on("mouseover", function(){
-    $(".consultant2 img").prop('src', 'image/dummy3.JPG');
+    //$(".consultant2 img").prop('src', 'image/okoda_hover.png');
     $(".consultant1 h6").addClass("hide");
     $(".consultant1 img").addClass("hide");
     $(".consulComent2").removeClass("hide");
+    $(".consulComent2 img").removeClass("hide");    
   }).on("mouseout", function(){
-    $(".consultant2 img").prop('src', 'image/dummy7.jpg');
+    //$(".consultant2 img").prop('src', 'image/S__15974430.jpg');
     $(".consultant1 h6").removeClass("hide");
     $(".consultant1 img").removeClass("hide");
     $(".consulComent2").addClass("hide");
+    $(".consulComent2 img").addClass("hide");
   });
 });
 </script>
@@ -846,13 +912,17 @@ $(function(){
 <header>
 	<!-- スライド式 -->
 	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
-		<h1><span style="font-weight:bold;white-space:nowrap;font-size:1.1em;">LIVE EST,Inc.</span><small style="line-height:60px;font-weight:bold;font-size:0.85em;">リクルートサイト<br><span style="font-weight:normal;font-size:0.8em;">for</span><br>フリーランス</small></h1>
+		<h1><small class="fadeIn_main" style="font-family: 'Shadows Into Light', cursive;line-height:60px;font-weight: 100;font-size:0.85em;">FREELANCE's SITE FOR JOB<br><span style="font-weight:normal;font-size:0.8em;opacity:0;"></span>@ LIVE EST</small><a onclick="$('#idQuestionContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});" class="fadeIn_main" style="font-weight:normal;padding:1.5em;font-size:0.2em;color:#FFF;background-color:#03086A;border-radius: 1000px;opacity:0;">CHECK ▼</a></h1>
+    <!--
+    <p>
+    </p>
+    -->
 		<!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 		<div class="slideshow">
 		  <div class="slideshow-image" style="background-image: url('image/top01.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/top02.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/top03.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/top04.jpeg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/tim-gouw-69753.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/tetsuya-tomomatsu-306592.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/pexels-photo-374697.jpeg')"></div>
 		</div>
 	</div>
 </header>
@@ -871,7 +941,7 @@ $(function(){
 			</div>
 		</div>
 	</div>
-	<div class="mainContents questionContents row">
+	<div class="mainContents questionContents row" id="idQuestionContents">
 		<div class="col-sm-3">
 		</div>
 		<div class="col-sm-6">
@@ -902,7 +972,7 @@ $(function(){
         <h4 class="fadeIn">- Leave it to Our -</h4>
 			</div>
 			<div class="col-sm-12">
-        <div class="fadeIn button1" style="margin-top:40px;">
+        <div class="fadeIn button3" style="margin-top:40px;">
 				<a onclick="$('#idIntroContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});">コンサルタントの詳細はこちら</a>
         </div>
 			</div>
@@ -1251,22 +1321,32 @@ $(function(){
 		<div class="col-sm-6" style="">
 			<div class="fadeIn tantoSection consultant1">
         <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">橋本　有梨香　<span style="font-size:14pt;color:#a5a8fe;">- A.HASHIMOTO -</span></h6>
-				<img src="image/consal_dummy_01.jpg" width="100%" height="300px">
-        <div class="consulComent2 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:80px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
-          新卒で入社し既にIT業界歴は5年以上。<br>
-          見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
-          フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
+				<img src="image/S__15974429.jpg" width="100%" height="300px">
+        <!-- 20170908 コメント画像に変更
+        <div class="consulComent2 hide" style="font-size:0.7em;color:#98969A;background-color:#FFF;height:180px;margin-top:80px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
+          ITキャリアのスタートはエンジニア！その後営業職にキャリアチェンジし早2年。<br>
+          営業職にもかかわらずエンジニアとしてのスキルも未だに磨いており、当社で唯一のSALES＆ENGINEERという肩書。<br>
+          エンジニア経験があるからこそわかる皆様の気持ち。フォローも厚く、フリーランスの方と飲み行くこともしばしば。ご連絡、お待ちしております！
+        </div>
+        -->
+        <div class="consulComent2 hide" style="margin-top:40px;margin-left:10%;width:100%;height:100%;">
+          <img src="image/consal_comment_02.png" width="500px" height="300px">
         </div>
 			</div>
 		</div>
 		<div class="col-sm-6" style="margin-bottom:50px;">
       <div class="fadeIn tantoSection consultant2">
         <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">大小田　敏志　<span style="font-size:14pt;color:#a5a8fe;">- S.OHKODA -</span></h6>
-        <img src="image/dummy3.JPG" width="100%" height="300px">
+        <img src="image/S__15974430.jpg" width="100%" height="300px">
+        <!-- 20170908 コメント画像に変更
         <div class="consulComent1 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
           新卒で入社し既にIT業界歴は5年以上。<br>
           見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
           フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
+        </div>
+        -->
+        <div class="consulComent1 hide" style="margin-top:40px;margin-left:10%;width:100%;height:100%;">
+          <img src="image/consal_comment_01.png" width="500px" height="300px">
         </div>
       </div>
 		</div>
@@ -1309,7 +1389,7 @@ $(function(){
 		</div>
 		<div class="col-sm-6">
 			<div class="infoPart button1">
-				<a href="#" data-featherlight="#modal1">>無料登録はこちら</a>
+        <a href="form.html">無料登録はこちら</a>
 			</div>
 		</div>
 	</div>
@@ -1321,13 +1401,14 @@ $(function(){
             <p>
 	            東京都豊島区池袋2−68−9　池袋MIBビル5F<br>
 	            TEL / FAX　03-6907-1122 / 03-6907-1123<br>
-	            <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>
+              <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>｜
+              <a href="http://le-recruit.com" target="_blank">正社員希望の方はこちら</a>
             </p>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 text-right">
-            <p class="footerCopyright">Copyright (C) 2016 LIVEEST All Rights Reserved.</p>
+            <p class="footerCopyright">Copyright (C) 2017 LIVEEST All Rights Reserved.</p>
         </div>
     </div>
 </footer>

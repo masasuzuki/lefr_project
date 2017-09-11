@@ -36,6 +36,7 @@ header{
 .formSection{
 	padding-top:30px;
 	font-size:0.8em;
+	letter-spacing:2px;
 }
 .inputSection{
 	background-color:#F5F5F5;
@@ -126,6 +127,7 @@ span.hissu{
 	line-height:20px;
 	text-align:left;
 	font-size:0.6em;
+	letter-spacing:2px;
 	border: 1px solid #696969;
 	border-top:none;
 }
@@ -202,14 +204,16 @@ $(function(){
 </head>
 <body>
 <header>
-	<div class="container-fluid" style="background-color:#2C5379;color:white;">
+	<div class="container-fluid" style="background-color:#03086A;color:white;">
 		<div class="headContents row">
 			<div class="col-sm-6 text-left">
+				<a href="index.html" style="color:#FFF;">
 				<img src="image/LE_icon_2.png" width="50px" height="50px">
 				<p class="telPart">
 				TEL :03-6907-1122<br/>
 				<span>営業時間： 平日9:00〜19:00</span>
 				</p>
+				</a>
 			</div>
 			<div class="col-sm-6">
 				<div class="companyNamePart">
@@ -223,15 +227,13 @@ $(function(){
 <div class="main container-fluid">
 	<div class="mainContents introTantoContents row">
 		<div class="col-sm-12">
-			<h3>必要事項のご入力</h3>
+			<h3 style="font-weight: bold;">必要事項のご入力</h3>
 		</div>
 		<div class="col-sm-12">
 			<div class="flowSection">
-				<ol class="breadcrumb">
-				  <li><img src="image/dummy4.JPG" width="100" class="img-circle"></li>
-				  <li><img src="image/dummy4.JPG" width="100" class="img-circle"></li>
-				  <li><img src="image/dummy4.JPG" width="100" class="img-circle"></li>
-				</ol>
+				<!--
+				<img src="image/cinema_test2.gif" width="1000">
+				-->
 			</div>
 		</div>
 		<div class="col-sm-12">
@@ -251,8 +253,16 @@ $(function(){
 							<input name="name" type="text" class="form-control input-sm" required/>
 						</div>
 						<div class="form-group">
+							<label>氏名カナ<span class="hissu">必須</span></label>
+							<input name="name_kana" type="text" class="form-control input-sm" required/>
+						</div>
+						<div class="form-group">
 							<label>メールアドレス<span class="hissu">必須</span></label>
 							<input name="mail" type="text" class="form-control input-sm" required />
+						</div>
+						<div class="form-group">
+							<label>携帯電話番号</label>
+							<input name="mail" type="text" class="form-control input-sm" />
 						</div>
 						<div class="form-group">
 							<label>生まれた年<span class="hissu">必須</span></label><br/>
@@ -266,10 +276,29 @@ $(function(){
 							    <option value="1990年">1990年</option>  
 							    <option value="1989年">1989年</option>  
 							    <option value="1988年">1988年</option>  
+							    <option value="1987年">1987年</option>  
+							    <option value="1986年">1986年</option>  
+							    <option value="1985年">1985年</option>  
+							    <option value="1984年">1984年</option>  
+							    <option value="1983年">1983年</option>  
+							    <option value="1982年">1982年</option>  
+							    <option value="1981年">1981年</option>  
+							    <option value="1980年">1980年</option>  
+							    <option value="1979年">1979年</option>  
+							    <option value="1978年">1978年</option>  
+							    <option value="1977年">1977年</option>  
+							    <option value="1976年">1976年</option>  
+							    <option value="1975年">1975年</option>  
+							    <option value="1974年">1974年</option>  
+							    <option value="1973年">1973年</option>  
+							    <option value="1972年">1972年</option>  
+							    <option value="1971年">1971年</option>  
+							    <option value="1970年">1970年</option>  
 							</select>
 						</div>
+						<!--
 						<div class="form-group">
-							<label>居住地<span class="hissu">必須</span></label><br/>
+							<label>居住地（都道府県）<span class="hissu">必須</span></label><br/>
 						    <select name="pref" class="form-control" required>  
 							    <option value="">▼都道府県をお選びください</option>  
 							    <optgroup label="北海道・東北">  
@@ -337,30 +366,33 @@ $(function(){
 							    </optgroup>
 							</select>
 						</div>
+						-->
 						<div class="form-group">
-							<label>経験職種<span class="hissu">必須</span></label><br/>
-							<select name="experienceJob" class="form-control" required>
-							    <option value="">▼経験職種をお選びください</option>  
-							    <option value="Webエンジニア">Webエンジニア</option>  
-							    <option value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア</option>  
-							    <option value="フロントエンドエンジニア">フロントエンドエンジニア</option>  
-							    <option value="UI/UXエンジニア">UI/UXエンジニア</option>
-							    <option value="Webディレクター">Webディレクター</option> 
-							    <option value="Webマーケター">Webマーケター</option>
-							    <option value="ゲームディレクター">ゲームディレクター</option>
-								<option value="ゲームエンジニア">ゲームエンジニア</option>
-								<option value="デザイナー">デザイナー</option>
-								<option value="ネットワークエンジニア">ネットワークエンジニア</option>
-								<option value="サーバーエンジニア">サーバーエンジニア</option>
-								<option value="システムエンジニア(業務系)">システムエンジニア(業務系)</option>
-								<option value="システムエンジニア(汎用機系)">システムエンジニア(汎用機系)</option>
-								<option value="システムエンジニア(組込・制御系)">システムエンジニア(組込・制御系)</option>
-								<option value="ITコンサルタント/PM">ITコンサルタント/PM</option>
-								<option value="経営企画/事業企画">経営企画/事業企画</option>
-								<option value="財務/経理">財務/経理</option>
-								<option value="人事/総務">人事/総務</option>
-								<option value="法務">法務</option>
-								<option value="その他">その他</option>
+							<label>最寄り駅<span class="hissu">必須</span></label>
+							<input name="address" type="text" class="form-control input-sm" required />
+						</div>
+						<div class="form-group">
+							<label>経験職種</label><span class="hissu">必須</span><br/>
+							    <input type="checkbox" name="experienceJob[]" value="Webエンジニア">Webエンジニア
+							    <input type="checkbox" name="experienceJob[]" value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア<br>
+							    <input type="checkbox" name="experienceJob[]" value="フロントエンドエンジニア">フロントエンドエンジニア
+							    <input type="checkbox" name="experienceJob[]" value="UI/UXエンジニア">UI/UXエンジニア<br>
+							    <input type="checkbox" name="experienceJob[]" value="Webディレクター">Webディレクター
+							    <input type="checkbox" name="experienceJob[]" value="Webマーケター">Webマーケター<br>
+							    <input type="checkbox" name="experienceJob[]" value="ゲームディレクター">ゲームディレクター
+								<input type="checkbox" name="experienceJob[]" value="ゲームエンジニア">ゲームエンジニア　<br>
+								<input type="checkbox" name="experienceJob[]" value="デザイナー">デザイナー
+								<input type="checkbox" name="experienceJob[]" value="ネットワークエンジニア">ネットワークエンジニア<br>
+								<input type="checkbox" name="experienceJob[]" value="サーバーエンジニア">サーバーエンジニア
+								<input type="checkbox" name="experienceJob[]" value="システムエンジニア(業務系)">システムエンジニア(業務系)　<br>
+								<input type="checkbox" name="experienceJob[]" value="システムエンジニア(汎用機系)">システムエンジニア(汎用機系)
+								<input type="checkbox" name="experienceJob[]" value="システムエンジニア(組込・制御系)">システムエンジニア(組込・制御系)<br>
+								<input type="checkbox" name="experienceJob[]" value="ITコンサルタント/PM">ITコンサルタント/PM
+								<input type="checkbox" name="experienceJob[]" value="経営企画/事業企画">経営企画/事業企画<br>
+								<input type="checkbox" name="experienceJob[]" value="財務/経理">財務/経理
+								<input type="checkbox" name="experienceJob[]" value="人事/総務">人事/総務
+								<input type="checkbox" name="experienceJob[]" value="法務">法務
+								<input type="checkbox" name="experienceJob[]" value="その他">その他
 							</select>
 						</div>
 						<div class="form-group">
@@ -433,7 +465,7 @@ $(function(){
 			</form>
 		</div>
 		<div class="col-sm-12">
-			<div class="cautionSection text-left" style="padding:0 20%;font-size:0.8em">
+			<div class="cautionSection text-left" style="letter-spacing:3px;border:1px solid #03086A;margin:30px 20% 0;padding:10px;font-size:0.8em">
 				<h6 style="font-weight:bold;">※お申し込みの際の注意事項</h6>
 				<p style="font-size:0.8em;">
 					下記の方は弊社の事業基盤、案件動向からご紹介が大変難しい場合があります。ご了承下さい。
@@ -455,13 +487,14 @@ $(function(){
             <p>
 	            東京都豊島区池袋2−68−9　池袋MIBビル5F<br>
 	            TEL / FAX　03-6907-1122 / 03-6907-1123<br>
-	            <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>
+              <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>｜
+              <a href="http://le-recruit.com" target="_blank">正社員希望の方はこちら</a>
             </p>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 text-right">
-            <p class="footerCopyright">Copyright (C) 2016 LIVEEST All Rights Reserved.</p>
+            <p class="footerCopyright">Copyright (C) 2017 LIVEEST All Rights Reserved.</p>
         </div>
     </div>
 </footer>
