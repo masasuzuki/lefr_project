@@ -23,826 +23,78 @@
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="style/featherlight.css">
+<link rel="stylesheet" type="text/css" href="style/common.css">
 <link href="https://fonts.googleapis.com/css?family=Arsenal|Six+Caps" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 <title>株式会社ライブエスト｜フリーランスサイト</title>
-<style>
-/*基本レイアウト*/
-body{
-	color:#03086A;/*0215_ワントーン明度を上げる（変更前#01044E）*/
-  font-family:"游ゴシック体", "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "YuGothic", "Meiryo", verdana, "Osaka", "MS PGothic", Sans-Serif;
-  font-size:20px;
-}
 
-.tantoSection{
-  text-align:left;
-  vertical-align: bottom;
-  border:5px solid #03086A;
-	width:100%;
-	height:400px;
+<style type="text/css">
+  .picTitle small{
+    font-family: 'Shadows Into Light', cursive;
+    line-height:60px;
+    font-weight: 100;
+    font-size:0.85em;
+  }
+  a.main_check{
+    font-weight:normal;
+    padding:1.5em;
+    font-size:0.2em;
+    color:#FFF;
+    background-color:#03086A;
+    border-radius: 1000px;
+    opacity:0;
+  }
 
-}
-.consultant1{
-  /*background: url('image/dummy2.jpg') center no-repeat;
-  background-size:100% 100%;*/
+  .backbox p{
+    margin-top:10px;
+    margin-bottom:10px;
+  }
 
-}
-.consultant2{
-  /*background: url('image/dummy3.jpg') center no-repeat;
-  background-size:100% 100%;*/
-}
+  .highlight-pink{
+    font-weight:bold;
+    color:#FF3D67;
+  }
 
-.textPart{
-  position:relative;
-  margin:120px 10px 0px;
-  padding-bottom:10px;
-  height:170px;
-	display:inline-block;
-	/*vertical-align:-550%;*/
-	font-size:0.8em;
-  z-index:100;
-}
+  .highlight-yellow{
+    font-weight:bold;
+    color:#FFC533;
+  }
 
-.coverPart{
-  top:0;
-  left:0;
-  position:absolute;
-  background-color:#03086A;
-  width:100%;
-  height:100%;
-  opacity:0.4;
-}
-.nonCover{
-  background-color:transparent;
-  opacity:1;
-}
+  .highlight-green{
+    font-weight:bold;
+    color:#00CC55;
+  }
+  .descPart{
+    font-size:0.8em;
+    padding-top:50px;
+    padding-bottom:50px;
+    color:white;
+    line-height:40px;
+  }
 
-h3{
-  font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "MS PMincho", "メイリオ", Meiryo, serif;
-  /*font-family:"Roboto Slab";
-  font-family:Arial, Verdana, 'Helvetica Neue', Helvetica, sans-serif;*/
-  color: white;
-  font-size:1.6em;
-  font-weight:bold;
-  margin: 0 0 0;
-  padding: 0.5em 0.5em 0em 0.5em;
-}
-h3.containSubTitle{
-  margin-top:0px;
-}
-h4{
-  padding-bottom:60px;
-  margin-top:10px;
-  margin-bottom:0px;
-  font-size:1.8em;
-  color:#374D76;
-  font-weight:bold;
-  font-family:'Six Caps', sans-serif;
-  letter-spacing:0.1em;
-  transform: scale(1.0, 0.9);
-}
-
-h4.subTitle{
-  margin-bottom:0px;
-  padding-bottom:0px;
-  color:white;
-  font-size: 0.9em;/*16pt*/
-  font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "MS PMincho", "メイリオ", Meiryo, serif;
-}
-h5{
-  color:#2C5379;
-  font-size:1.1em;
-}
-
-/*Bootstrapカスタマイズ*/
-.jumbotron{
-	background: url('image/startup.jpg') center no-repeat;
-	background-size: cover;
-}
-.jumbotron-extend {
-    position: relative;
-    height: 100vh;
-    min-height: 300px;
-    margin-bottom:0px;
-}
-.container-fluid{
-	padding-left:0px;
-	padding-right:0px;	
-}
-.row{
-	width:100%;
-	margin-left:0px;
-	margin-right:0px;
-	padding-top:20px;
-	padding-bottom:20px;
-	text-align:center;
-}
-.breadcrumb{
-	background-color:#03086A;
-}
-.breadcrumb > li + li:before{
-	font-size:30pt;
-	font-weight:bold;
-	content: "＞";
-}
-
-/*ここまで Bootstrapカスタマイズ*/
-
-.mainContents{
-	padding-top:80px;
-	padding-bottom:80px;
-  letter-spacing: 0.4em;
-}
-
-.infoContents{
-	background-color:#FBFCF7;
-}
-.questionContents{
-	background-color:#03086A;
-}
-.detailContents{
-  background:url(image/tim-gouw-69753.jpg) 50% 0 no-repeat fixed;
-  color: white;
-}
-.charaContents{
-	background-color:#03086A;
-}
-.trendContents{
-	background-color:#03086A;
-}
-.caseContents{
-  background:url(image/pexels-photo-51171.jpeg) 60% 0 no-repeat fixed;
-  color: white;
-}
-.voiceContents{
-  background:url(image/pexels-photo-51171.jpeg) 50% 0 no-repeat fixed;
-  color: white;
-}
-.flowContents{
-	background-color:#03086A;
-}
-.introTantoContents{
-  background-color:#03086A;
-  color:white;
-}
-
-.infoContents img{
-	float:left;
-	margin-left:25%;
-}
-.telPart{
-	float:left;
-	margin-left:5px;
-	margin-bottom:0px;
-	padding:5px;
-	line-height:20px;
-  letter-spacing:0.1em;
-}
-.telPart span{
-	color:#D3D4D6;
-	font-size:0.7em;
-}
-.infoPart{
-	height:50px;
-	margin-bottom:0px;
-	padding:5px 0;
-}
-
-.charaContents .contentPart{
-	margin-top:10px;
-	width:80%;
-	height:300px;
-	text-align:left;
-	color:#FFF;
-	border-radius:8px;
-	margin-left: 10%;
-	margin-right: 10%;
-}
-
-.caseContents .jireiPart{
-	margin: 10px 0;
-	padding:10px 5px 30px;
-	width:90%;
-	height:250px;
-	background-color:#F3F4F8;
-	color:#08233E;
-	border:5px double #03086A;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-.caseContents .jireiPart h6{
-	text-align:left;
-	padding:5px 0;
-	margin:0 5px 10px;
-	border-bottom:2px solid #0016FF;
-  letter-spacing: 5px;
-  font-size:0.5em;
-  font-weight:bold;
-}
-.caseContents .jireiPart span{
-	padding-left:5px;font-size:1.1em;
-}
-
-.caseContents .jireiPart p{
-	text-align:left;
-	line-height:18px;
-	padding:10px;
-	margin:0 15px;
-	color:black;
-	font-size:0.60em;
-	border-bottom:1px solid silver;
-}
-
-.voiceContents .voicePart{
-	width:80%;
-	margin:20px 15% 0 10%;
-  padding:10px;
-	height:300px;
-	text-align:left;
-	border:1px solid #2C5379;
-	border-radius:3px;
-	background-color: white;
-
-}
-.voiceContents .voicePart img{
-	border-top-left-radius:3px;
-	border-top-right-radius:3px;
-}
-h5.voiceName{
-  width: 80%;
-	margin-bottom:5px;
-  margin-left: 10%;
-  margin-right: 10%;
-	padding: 0.25em 0 0.25em 0.75em;
-  border-left: 6px solid #FFA500;
-  font-weight:bold;
-  color:#FFF;
-  font-size:0.8em;
-  font-weight:bold;
-}
-.voiceContents .voicePart div{
-	padding:0 5px 5px;
-	text-align:left;
-	color:#95969A;
-	line-height:20px;
-	font-size:0.75em;
-}
-.voiceContents .voicePart h6{
-	color:#222222;
-  font-size:1.0em;
-  font-weight:bold;
-}
-.voiceContents .voicePart p{
-	font-size:0.8em;
-}
-.trendContents h5{
-	color:white;
-}
-.trendContents .chartArea{
-	width:90%;
-	margin-left:5%;
-	margin-right:5%;
-}
-
-.questionImg{
-	min-height: 210px;
-	background-size:cover;
-}
-.checkList{
-	margin-left:30px;
-	padding-top:5%;
-	padding-left: 0px;
-	/* 右にインデントされてる部分を無効化する。 */
-}
-.checkList li{
-	color:white;
-	line-height: 45px;
-	font-size:0.9em;
-	list-style: none;
-	background: url( image/check2.png ) left no-repeat;
-	padding: 3px 0px 3px 38px;
-	/* 文字が真ん中に位置するように padding で上下の間隔を調整する。*/
-	/* 38pxの部分に「画像File」の横幅に隙間分のpxを足した数を入れる */
-}
-.footerContents {
-    background-color: #03086A;/*#DDEBF3*/
-    color:#fff;
-}
-.footerContents .row{
-	width:100%;
-	margin:20px 0;
-	padding:0 10px 0;
-}
-.footerContents p{
-	margin-bottom: 0;
-	font-size:0.8em;
-}
-.footerContents a{
-	color:#D3D4D6;
-}
-
-.button1 a:hover{
-    cursor:pointer;
-    text-decoration:none;
-}
-.button1 a{
-    cursor:pointer;
-    text-decoration:none;
-    font-size:17pt;
+  .stepSpaceTitle{
+    font-size:0.7em;
+    width:200px;
+    height:200px;
     color:#03086A;
-    border:2px solid #03086A;
-    padding:7px 10px;
-    width:220px;
-    height:160px;
-    text-align:center;
-    box-shadow: 5px 5px 10px gray;
-}
-.button2 a:hover{
-    cursor:pointer;
-    text-decoration:none;
-}
-.button2 a{
-    cursor:pointer;
-    text-decoration:none;
-    font-size:13pt;
+    background-color:#FFF;
+    border-radius:300px;
+    padding:20px;
+    margin:50px 0px 20px;
+    display:inline-block;
+    box-shadow: 5px 5px 10px black;
+  }
+  .stepSpaceTitle span{
+    font-weight:bold;
+    font-size:0.8em;
+    font-weight:bold;
+  }
+
+  .stepSpaceDesc{
+    color:#FFF;
+    font-size:10pt;
     letter-spacing:5px;
-    color:#03086A;
-    border:2px solid #FFF;
-    padding:20px 25px;
-    width:250px;
-    height:180px;
-    text-align:center;
-}
-.button3 a:hover{
-    cursor:pointer;
-    text-decoration:none;
-}
-.button3 a{
-    cursor:pointer;
-    text-decoration:none;
-    font-size:17pt;
-    color:#03086A;
-    border:2px solid #03086A;
-    padding:7px 10px;
-    width:220px;
-    height:160px;
-    text-align:center;
-    box-shadow: 5px 5px 10px gray;
-}
-
-.consulComent1{
-    position: relative;
-}
-/* 20170908 コンサルタントコメント変更
-
-.consulComent1:after{
-    content: ' ';
-    height: 0;
-    position: absolute;
-    width: 0;
-    border-top: 15px solid transparent;
-    border-right: 30px solid #FFF;
-    border-bottom: 15px solid transparent;
-    border-left: 60px solid transparent;
-    top: 20%;
-    left: -90px;
-}
-*/
-.consulComent2{
-    position: relative;
-}
-/* 20170908 コンサルタントコメント変更
-.consulComent2:after{
-    content: ' ';
-    height: 0;
-    position: absolute;
-    width: 0;
-    border-top: 25px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 25px solid transparent;
-    border-left: 60px solid #FFF;
-    top: 20%;
-    left: 96%;
-}
-*/
-/*ここまで 基本レイアウト*/
-
-
-
-/*スライド式TOP_CSS*/
-.slideshow {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.slideshow-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: no-repeat 50% 50%;
-  background-size: cover;
-  -webkit-animation-name: kenburns;
-          animation-name: kenburns;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 16s;
-          animation-duration: 16s;
-  opacity: 1;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-.slideshow-image:nth-child(1) {
-  -webkit-animation-name: kenburns-1;
-          animation-name: kenburns-1;
-  z-index: 3;
-}
-.slideshow-image:nth-child(2) {
-  -webkit-animation-name: kenburns-2;
-          animation-name: kenburns-2;
-  z-index: 2;
-}
-.slideshow-image:nth-child(3) {
-  -webkit-animation-name: kenburns-3;
-          animation-name: kenburns-3;
-  z-index: 1;
-}
-.slideshow-image:nth-child(4) {
-  -webkit-animation-name: kenburns-4;
-          animation-name: kenburns-4;
-  z-index: 0;
-}
-
-@-webkit-keyframes kenburns-1 {
-  0% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
   }
-  1.5625% {
-    opacity: 1;
-  }
-  23.4375% {
-    opacity: 1;
-  }
-  26.5625% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  98.4375% {
-    opacity: 0;
-    -webkit-transform: scale(1.21176);
-            transform: scale(1.21176);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes kenburns-1 {
-  0% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  1.5625% {
-    opacity: 1;
-  }
-  23.4375% {
-    opacity: 1;
-  }
-  26.5625% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  98.4375% {
-    opacity: 0;
-    -webkit-transform: scale(1.21176);
-            transform: scale(1.21176);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes kenburns-2 {
-  23.4375% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  26.5625% {
-    opacity: 1;
-  }
-  48.4375% {
-    opacity: 1;
-  }
-  51.5625% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-@keyframes kenburns-2 {
-  23.4375% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  26.5625% {
-    opacity: 1;
-  }
-  48.4375% {
-    opacity: 1;
-  }
-  51.5625% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-@-webkit-keyframes kenburns-3 {
-  48.4375% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  51.5625% {
-    opacity: 1;
-  }
-  73.4375% {
-    opacity: 1;
-  }
-  76.5625% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-@keyframes kenburns-3 {
-  48.4375% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  51.5625% {
-    opacity: 1;
-  }
-  73.4375% {
-    opacity: 1;
-  }
-  76.5625% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-@-webkit-keyframes kenburns-4 {
-  73.4375% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  76.5625% {
-    opacity: 1;
-  }
-  98.4375% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes kenburns-4 {
-  73.4375% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  76.5625% {
-    opacity: 1;
-  }
-  98.4375% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-h1 {
-  position: absolute;
-  top: 25%;/*20170904 文字修正作業（100%より変更）*/
-  left: 30%;/*20170904 文字修正作業（100%より変更）*/
-  /* 20170904　デザイン修正作業
-  -webkit-transform: translate3d(-50%, -50%, 0);
-          transform: translate3d(-50%, -50%, 0);
-  */
-  z-index: 99;
-  text-align: center;
-  font-family: Raleway, sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  /*
-  background-color: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5);
-  padding: 1em 1.5em;
-  */
-  padding: 0.5em 0.5em;
-  line-height: 1.5;
-}
-h1 small {
-  display: block;
-  text-transform: lowercase;
-  font-size: 0.6em;
-  color:#03086A;
-}
-/* 20170904　デザイン修正作業
-h1 small:first-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  padding-bottom: .5em;
-}
-h1 small:last-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-  padding-top: .5em;
-}
-*/
-.jumbotron p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-          transform: translate3d(-50%, -50%, 0);
-  z-index: 99;
-  text-align: center;
-  font-family: Raleway, sans-serif;
-  font-weight: 300;
-  font-size:1.2em;
-  text-transform: uppercase;
-  border :3px solid #03086A;
-  padding: 0.5em 1em;
-  line-height: 1.5;
-}
-.jumbotron a{
-  color:#03086A;
-}
-.jumbotron a:hover{
-  text-decoration:none;
-  cursor: pointer;
-}
-/* end スライド式TOP */
-
-
-/*CharaContents サブ標題背景*/
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
-
-/* The following is all you really need for the effect to work */
-.backbox {
-  font-family: "Josefin Slab";
-  text-transform: uppercase;
-  font-size: 3rem;
-  color: white;
-  width: 75%;
-  position: relative;
-  left: 12.5%;
-  top: 3rem;
-  text-align: center;
-  padding: 0.0625rem;
-  position: relative;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMiLz48c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background-size: 100%;
-}
-.backbox:before {
-  width: 100%;
-  height: 0.125rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: "";
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(40%, rgba(255, 255, 255, 0.8)), color-stop(60%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
-  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
-}
-.backbox:after {
-  width: 100%;
-  height: 0.125rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  content: "";
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(40%, rgba(255, 255, 255, 0.8)), color-stop(60%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
-  background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
-  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
-}
-/*ここまで*/
-.hoge1:after{
-    content: " ";
-    width:25px;
-    height:25px;
-    transform:scale(-1, 1);
-    position: absolute;
-    background:url(image/yajirushi04.png) no-repeat;    
-    background-size:contain;
-    top: 35%;
-    left: 100%;
-}
-.hoge2:after{
-    content: " ";
-    width:25px;
-    height:25px;
-    position: absolute;
-    transform:rotate(-90deg);
-    background:url(image/yajirushi04.png) no-repeat;    
-    background-size:contain;
-    top: 120%;
-    left: 45%;
-}
-.hoge3:after{
-    content: " ";
-    width:25px;
-    height:25px;
-    position: absolute;
-    transform:rotate(-65deg) scale(-1, 1);
-    background:url(image/yajirushi04.png) no-repeat;    
-    background-size:contain;
-    top: 120%;
-    left: 30%;
-}
-.hoge4:after{
-    content: " ";
-    width:25px;
-    height:25px;
-    position: absolute;
-    background:url(image/yajirushi04.png) no-repeat;    
-    background-size:contain;
-    top: 45%;
-    left: 0%;
-}
-.lightbox_form {
-    display: none;
-    padding: 0px;
-    width:100%;
-    height:100%;
-}
-
-.fixedButton{
-  color:#FFF;
-  position:fixed;
-  right:100px;
-  bottom:100px;
-  z-index:1000;
-}
-.fixedButton::before{
-    content: " ";
-    width:30px;
-    height:30px;
-    position: absolute;
-    background:url(image/form_logo.png) no-repeat;    
-    background-size:contain;
-    top: 0%;
-    left: 5%;
-}
 </style>
 <script type="text/javascript">
 //Chart.js defaults.global変更
@@ -912,17 +164,13 @@ $(function(){
 <header>
 	<!-- スライド式 -->
 	<div class="jumbotron jumbotron-extend" style="padding:0px !important">
-		<h1><small class="fadeIn_main" style="font-family: 'Shadows Into Light', cursive;line-height:60px;font-weight: 100;font-size:0.85em;">FREELANCE's SITE FOR JOB<br><span style="font-weight:normal;font-size:0.8em;opacity:0;"></span>@ LIVE EST</small><a onclick="$('#idQuestionContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});" class="fadeIn_main" style="font-weight:normal;padding:1.5em;font-size:0.2em;color:#FFF;background-color:#03086A;border-radius: 1000px;opacity:0;">CHECK ▼</a></h1>
-    <!--
-    <p>
-    </p>
-    -->
+		<h1 class="picTitle"><small class="fadeIn_main">FREELANCE's SITE FOR JOB<br>@ LIVE EST</small><a onclick="$('#idQuestionContents').animatescroll({scrollSpeed:2000, easing: 'easeOutQuart'});" class="fadeIn_main main_check">CHECK ▼</a></h1>
 		<!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 		<div class="slideshow">
-		  <div class="slideshow-image" style="background-image: url('image/top01.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/tim-gouw-69753.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/tetsuya-tomomatsu-306592.jpg')"></div>
-		  <div class="slideshow-image" style="background-image: url('image/pexels-photo-374697.jpeg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/main_pic_01.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/main_pic_02.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/main_pic_03.jpg')"></div>
+		  <div class="slideshow-image" style="background-image: url('image/main_pic_04.jpeg')"></div>
 		</div>
 	</div>
 </header>
@@ -962,7 +210,7 @@ $(function(){
 					<li class="fadeIn">契約書類や事務の手続き関連が分からない</li>
 					<li class="fadeIn">スキルアップを目指せる仕事がしたい</li>
 				</ul>
-			</div>			
+			</div>
 		</div>
 	</div>
 	<div class="mainContents detailContents row">
@@ -985,27 +233,27 @@ $(function(){
 		</div>
 		<div class="col-sm-12">
 			<div class='backbox'>
-			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">超絶的『 <span style="font-weight:bold;color:#FF3D67;">SPEED</span> 』</p>
+			  <p class="fadeIn">超絶的『 <span class="highlight-pink">SPEED</span> 』</p>
 			</div>
-				<p class="fadeIn" style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
+				<p class="descPart fadeIn">
 					登録～お仕事までの流れや日々の対応スピードに絶対的な自信があります！<br>
 					登録した日から翌日にお仕事を開始した人もいらっしゃいます！
 				</p>
 		</div>
 		<div class="col-sm-12">
 			<div class='backbox'>
-			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">圧倒的『 <span style="font-weight:bold;color:#FFC533;">SERVICE</span> 』</p>
+			  <p class="fadeIn">圧倒的『 <span class="highlight-yellow">SERVICE</span> 』</p>
 			</div>
-				<p class="fadeIn" style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
+				<p class="descPart fadeIn">
 					一定期間の就業で特別報酬あります！<br>
 					また案件スライド（次案件も弊社の場合）やお友達紹介でも特別報酬！
 				</p>
 		</div>
 		<div class="col-sm-12">
 			<div class='backbox'>
-			  <p class="fadeIn" style="margin-top:10px;margin-bottom:10px;">絶対的『 <span style="font-weight:bold;color:#00CC55;">SUPPORT</span> 』</p>
+			  <p class="fadeIn">絶対的『 <span class="highlight-green">SUPPORT</span> 』</p>
 			</div>
-				<p class="fadeIn" style="font-size:0.8em;padding-top:50px;padding-bottom:50px;color:white;line-height:40px;">
+				<p class="descPart fadeIn">
 					担当＋フォローの２名体制での完全サポート！<br>
 					お仕事に集中出来る環境全てをお任せ下さい！<br>
 					起業のご支援も可能です！	
@@ -1015,7 +263,7 @@ $(function(){
   <div class="mainContents caseContents row">
     <div class="col-sm-12">
       <h3 class="fadeIn">案件事例</h3>
-      <h4 class="fadeIn" style="margin-top:10px;font-size:1.8em;color:#00ADE4;font-weight:bold;font-family:'Six Caps', sans-serif;letter-spacing:0.1em;transform: scale(1.0, 0.8);">- Case -</h4>
+      <h4 class="fadeIn">- Case -</h4>
 
     </div>
     <div class="col-sm-4">
@@ -1234,63 +482,63 @@ $(function(){
       <div class="fadeIn col-sm-12" style="padding-bottom:50px;border-bottom:1px double #FFF;">
         <span style="color:#FFF;">参画まで6つのSTEP</span>
       </div>
-      <div class="fadeIn col-sm-4 hoge1" style="margin-top:50px;padding-bottom:100px;border-bottom:1px dotted #FFF;margin-bottom:50px;">
-        <div style="font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
-          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP1</span><br>
+      <div class="fadeIn col-sm-4 stepSpace hoge1">
+        <div class="stepSpaceTitle">
+          <span>STEP1</span><br>
           簡単登録<br>
           <img src="image/step1.png" width="100px" height="100px">
         </div>
-        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+        <div class="stepSpaceDesc" class="stepSpaceDesc">
           直接TELorMAILでも可！
         </div>
       </div>
-      <div class="fadeIn col-sm-4 hoge1" style="margin-top:50px;padding-bottom:100px;border-bottom:1px dotted #FFF;margin-bottom:50px;">
-        <div style="font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
-          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP2</span><br>
+      <div class="fadeIn col-sm-4 stepSpace hoge1">
+        <div class="stepSpaceTitle">
+          <span>STEP2</span><br>
           事前打ち合わせ<br>
           <img src="image/step2.png" width="100px" height="100px">
         </div>
-        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+        <div class="stepSpaceDesc">
           弊社コンサルタントからすぐにご連絡！
         </div>
       </div>
-      <div class="fadeIn col-sm-4" style="margin-top:50px;padding-bottom:100px;border-bottom:1px dotted #FFF;margin-bottom:50px;">
-        <div style="font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
-          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP3</span><br>
+      <div class="fadeIn col-sm-4 stepSpace">
+        <div class="stepSpaceTitle">
+          <span>STEP3</span><br>
           案件紹介<br>
           <img src="image/step3.png" width="100px" height="100px">
         </div>
-        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+        <div class="stepSpaceDesc">
           数ある優良案件をスピーディーに提案！
         </div>
       </div>
-      <div class="fadeIn col-sm-4 hoge1"  style="padding-bottom:100px;">
-        <div style="text-align:center;font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
-          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP4</span><br>
+      <div class="fadeIn col-sm-4 stepSpace hoge1"  style="padding-bottom:100px;">
+        <div class="stepSpaceTitle" style="text-align:center;">
+          <span>STEP4</span><br>
           面談<br>
           <img src="image/step4.png" width="100px" height="100px">
         </div>
-        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+        <div class="stepSpaceDesc">
           必ず弊社コンサルタントが同行！
         </div>
       </div>
-      <div class="fadeIn col-sm-4 hoge1" style="padding-bottom:100px;">
-        <div style="text-align:center;font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
-          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP5</span><br>
+      <div class="fadeIn col-sm-4 stepSpace hoge1" style="padding-bottom:100px;">
+        <div class="stepSpaceTitle">
+          <span>STEP5</span><br>
           条件打ち合わせ<br>
           <img src="image/step5.png" width="100px" height="100px">
         </div>
-        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+        <div class="stepSpaceDesc">
           報酬面などをしっかりと！
         </div>
       </div>
-      <div class="fadeIn col-sm-4" style="padding-bottom:100px;">
-        <div style="text-align:center;font-size:0.7em;width:200px;height:200px;color:#03086A;background-color:#FFF;border-radius:300px;padding:20px;margin:50px 0px 20px;display:inline-block;box-shadow: 5px 5px 10px black;">
-          <span style="font-weight:bold;font-size:0.8em;font-weight:bold;">STEP6</span><br>
+      <div class="fadeIn col-sm-4 stepSpace" style="padding-bottom:100px;">
+        <div class="stepSpaceTitle">
+          <span>STEP6</span><br>
           参画<br>
           <img src="image/step6_3.png" width="100px" height="100px">
         </div>
-        <div style="color:#FFF;font-size:10pt;letter-spacing:5px;">
+        <div class="stepSpaceDesc">
           当日もコンサルタントが必ず同行！
         </div>
       </div>
@@ -1318,7 +566,7 @@ $(function(){
 		<div class="col-sm-12">
 			<h5 class="fadeIn text-left" style="margin-bottom:20px;padding:0.25em 0 0.25em 0.75em;border-left: 6px solid #FFA500;color:#FFF;">コンサルタント</h5>
 		</div>
-		<div class="col-sm-6" style="">
+		<div class="col-sm-6">
 			<div class="fadeIn tantoSection consultant1">
         <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">橋本　有梨香　<span style="font-size:14pt;color:#a5a8fe;">- A.HASHIMOTO -</span></h6>
 				<img src="image/S__15974429.jpg" width="100%" height="300px">
@@ -1350,33 +598,6 @@ $(function(){
         </div>
       </div>
 		</div>
-    <!--
-		<div class="col-sm-12">
-      <h5 class="fadeIn text-left" style="padding: 0.25em 0 0.25em 0.75em;border-left: 6px solid #FFF;color:#FFF;">営業サポート・フォロー</h5>
-		</div>
-		<div class="col-sm-6" style="">
-      <div class="fadeIn tantoSection consultant1">
-        <div class="textPart">
-          <strong style="line-height:40px;">【 橋本 】</strong><br>
-          新卒で入社し既にIT業界歴は5年以上。<br>
-          見た目に似合わずガツガツ系の営業スタイルで、クライアントからの信頼は抜群！<br>
-          フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
-        </div>
-        <div class="coverPart"></div>
-      </div>
-    </div>
-    <div class="col-sm-6" style="">
-      <div class="fadeIn tantoSection consultant1">
-        <div class="textPart">
-          <strong style="line-height:40px;">【 大小田 】</strong><br>
-          弊社で営業➡客先常駐エンジニア➡営業復帰という経歴で、客先常駐経験者だからこその<br>
-          目線でエンジニアをサポートする営業マン。<br>
-          自身が経験したWEB業界は勿論、幅広い業界でのお仕事をご紹介出来ます！
-        </div>
-        <div class="coverPart"></div>
-      </div>
-		</div>
-    -->
 	</div>
 
 	<div class="mainContents infoContents row">
