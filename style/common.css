@@ -105,11 +105,11 @@ h5{
 	background-color:#03086A;
 }
 .caseContents{
-  background:url(/image/pexels-photo-51171.jpeg) 60% 0 no-repeat fixed;
+  background:url(/image/background_01.jpeg) 60% 0 no-repeat fixed;
   color: white;
 }
 .voiceContents{
-  background:url(/image/pexels-photo-51171.jpeg) 50% 0 no-repeat fixed;
+  background:url(/image/background_01.jpeg) 50% 0 no-repeat fixed;
   color: white;
 }
 .flowContents{
@@ -253,7 +253,7 @@ h5.voiceName{
 	line-height: 45px;
 	font-size:0.9em;
 	list-style: none;
-	background: url( /image/check2.png ) left no-repeat;
+	background: url( /image/check.png ) left no-repeat;
 	padding: 3px 0px 3px 38px;
 	/* 文字が真ん中に位置するように padding で上下の間隔を調整する。*/
 	/* 38pxの部分に「画像File」の横幅に隙間分のpxを足した数を入れる */
@@ -723,7 +723,7 @@ h1 small:last-child {
     height:25px;
     transform:scale(-1, 1);
     position: absolute;
-    background:url(/image/yajirushi04.png) no-repeat;    
+    background:url(/image/yajirushi.png) no-repeat;    
     background-size:contain;
     top: 35%;
     left: 100%;
@@ -734,7 +734,7 @@ h1 small:last-child {
     height:25px;
     position: absolute;
     transform:rotate(-90deg);
-    background:url(/image/yajirushi04.png) no-repeat;    
+    background:url(/image/yajirushi.png) no-repeat;    
     background-size:contain;
     top: 120%;
     left: 45%;
@@ -745,7 +745,7 @@ h1 small:last-child {
     height:25px;
     position: absolute;
     transform:rotate(-65deg) scale(-1, 1);
-    background:url(/image/yajirushi04.png) no-repeat;    
+    background:url(/image/yajirushi.png) no-repeat;    
     background-size:contain;
     top: 120%;
     left: 30%;
@@ -755,7 +755,7 @@ h1 small:last-child {
     width:25px;
     height:25px;
     position: absolute;
-    background:url(/image/yajirushi04.png) no-repeat;    
+    background:url(/image/yajirushi.png) no-repeat;    
     background-size:contain;
     top: 45%;
     left: 0%;
