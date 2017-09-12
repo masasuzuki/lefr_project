@@ -176,7 +176,49 @@ span.hissu{
 	color:#D3D4D6;
 }
 /*ここまで 基本レイアウト*/
+.fbBtn{
+	letter-spacing: 2px;
+	background-color: #3b5898;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 14px;
+	text-decoration: none;
+	vertical-align: middle;
+	margin-right:20%;
+	margin-bottom: 24px;
+	width: auto;
+	float: right;
+}
+.fbBtn:hover{
+	color:#FFF;
+	cursor:pointer;
+	background-color: #4766AB;
+	text-decoration-line: none;
+}
+.fbBtn:focus{
+	color:#FFF;
+	cursor:pointer;
+	background-color: #4766AB;
+	text-decoration-line: none;
+}
 
+.fbBtn img{
+	vertical-align: middle;
+	width: 20px;
+	height: auto;
+}
+
+.fbBtn span{
+	margin-left: 4px;
+	border-left: 1px solid rgb(115, 128, 150);
+	padding-left: 12px;
+}
 </style>
 <script type="text/javascript">
 $(function(){
@@ -195,14 +237,52 @@ $(function(){
             // バリデーションNGの処理
         	return false;
         }
-
 	});
-
-
 });
 </script>
 </head>
 <body>
+<script>
+
+function fb_login() {
+    FB.login(function(res) {
+        if(typeof(res) == "object" && typeof(res.authResponse) == "object") {
+            //ログインしている場合の処理
+            alert("FaceBook登録内容が反映されました。");
+			FB.api('/me?fields=id,name,email,gender', function(res) {
+        		console.dir(res);
+        		$('input[name=name]').val(res.name);
+        		$('input[name=mail]').val(res.email);
+   			});
+			//パーミッション状況の取得
+			//FB.api('/1158748994268835/permissions', function(res) {
+        	//	console.dir(res);
+   			//});
+        } else {
+            //ログインしていない場合の処理
+            alert("ログインしていません。再度ログインしてください。");
+        }
+    },
+    { scope: 'email' }//これがないとレスポンス内容にemail情報が含まれない
+    );
+};
+
+$(function(){
+    $.ajax( {
+        "dataType": "script",
+        "cache": true,
+        "url": "//connect.facebook.net/ja_JP/sdk.js",
+        "success": function() {
+        	console.log('成功');
+            FB.init( {
+                appId: "133499473936233",
+                version: "v2.10",
+            } );
+
+        },
+    } );
+} );
+</script>
 <header>
 	<div class="container-fluid" style="background-color:#03086A;color:white;">
 		<div class="headContents row">
@@ -245,6 +325,11 @@ $(function(){
 			</div>
 		</div>
 		<div class="col-sm-12">
+			<div class="socialBtnSpace">
+				<a class="fbBtn" href="javascript:fb_login();"><img src="image/fb_logo.png"><span>facebookログイン</span></a>
+			</div>
+		</div>
+		<div class="col-sm-12">
 			<form action="submit.php" method="POST" name="mainform" data-smk-icon="glyphicon-remove-sign" novalidate>
 				<div class="formSection">
 					<div class="inputSection">
@@ -262,7 +347,7 @@ $(function(){
 						</div>
 						<div class="form-group">
 							<label>携帯電話番号</label>
-							<input name="mail" type="text" class="form-control input-sm" />
+							<input name="tel_mobile" type="text" class="form-control input-sm" />
 						</div>
 						<div class="form-group">
 							<label>生まれた年<span class="hissu">必須</span></label><br/>
@@ -373,7 +458,7 @@ $(function(){
 						</div>
 						<div class="form-group">
 							<label>経験職種</label><span class="hissu">必須</span><br/>
-							    <input type="checkbox" name="experienceJob[]" value="Webエンジニア">Webエンジニア
+							    <input type="checkbox" name="experienceJob[]" value="Webエンジニア"/>Webエンジニア
 							    <input type="checkbox" name="experienceJob[]" value="スマートフォンアプリエンジニア">スマートフォンアプリエンジニア<br>
 							    <input type="checkbox" name="experienceJob[]" value="フロントエンドエンジニア">フロントエンドエンジニア
 							    <input type="checkbox" name="experienceJob[]" value="UI/UXエンジニア">UI/UXエンジニア<br>
