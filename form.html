@@ -228,7 +228,9 @@ $(function(){
 			//個人情報同意状況確認
 			if($('input[name=checkAgree]').prop('checked')){
 				//alert('登録成功');
-				document.mainform.submit();
+				if(confirm('ご登録内容に間違いはありませんか？\nこの内容で送信します。')){
+					document.mainform.submit();
+				}
 			}else{
 				alert('登録する際は必ず「個人情報同意」を確認して下さい');
 				return false;

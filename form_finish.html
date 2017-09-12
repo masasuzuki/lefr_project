@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style/reset.css">
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="style/smoke.min.css">
+<script type="text/javascript" src="/script/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/script/bootstrap.js"></script>
+<script type="text/javascript" src="/script/smoke.min.js"></script>
+<script type="text/javascript" src="/script/ja.js"></script>
+<title></title>
+<style>
+/*基本レイアウト*/
+body{
+	color:#03086A;/*0215_ワントーン明度を上げる（変更前#01044E）*/
+  /*
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+	*/
+  font-family:"游ゴシック体", "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "YuGothic", "Meiryo", verdana, "Osaka", "MS PGothic", Sans-Serif;
+  font-size:20px;
+}
+
+header{
+	margin-top:0px;
+	margin-bottom:50px;
+}
+.headContents{
+	padding:10px;
+	height:80px;
+	border-bottom:solid 1px white;
+}
+
+.formSection{
+	padding-top:30px;
+	font-size:0.8em;
+	letter-spacing:2px;
+}
+.inputSection{
+	background-color:#F5F5F5;
+	border: 1px solid #696969;
+	margin:0px 20%;
+	padding:15px 10%;
+}
+.privacySection{
+	margin-top:30px;
+}
+.privacySection h5{
+	font-size:0.6em;
+	font-weight:bold;
+	border: 1px solid #696969;
+}
+
+h3{
+	margin-top:10px;
+	margin-bottom:20px;
+	font-size:1.6em;/*30pt;*/
+}
+h4{
+	margin-top:10px;
+	margin-bottom:0px;
+	font-size:1.2em;/*16pt*/
+}
+h5{
+	margin:0 20%;
+	line-height:20px;
+	padding:5px;
+	background-color:pink;
+	font-size:0.7em;
+}
+
+/*Bootstrapカスタマイズ*/
+.container-fluid{
+	padding-left:0px;
+	padding-right:0px;	
+}
+.row{
+	width:100%;
+	margin-left:0px;
+	margin-right:0px;
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+.form-group{
+	/*padding:0 15%;*/
+	text-align:left;
+}
+/*ここまで Bootstrapカスタマイズ*/
+/*smokeカスタマイズ*/
+/*.smk-select .smk-error-icon {
+    right: 18%;
+}*/
+/*ここまで smokeカスタマイズ*/
+.mainContents{
+	padding-top:80px;
+	padding-bottom:80px;
+	letter-spacing: 0.4em;
+}
+.breadcrumb{
+	background-color:white;
+}
+.breadcrumb > li + li:before{
+	font-size:30pt;
+	font-weight:bold;
+	content: "＞";
+}
+span.hissu{
+	padding:3px;
+	margin-left:10px;
+	vertical-align:15%;
+	font-size:0.6em;
+	color:white;
+	background-color:#BD3126;
+	border-radius:2px;
+}
+
+.privacyPart{
+	overflow-x:auto;
+	overflow-y:scroll;
+	height:200px;
+	padding:10px;
+	margin:0 20%;
+	line-height:20px;
+	text-align:left;
+	font-size:0.6em;
+	letter-spacing:2px;
+	border: 1px solid #696969;
+	border-top:none;
+}
+.headContents img{
+	float:left;
+	margin-left:5%;
+}
+.telPart{
+	float:left;
+	margin-left:5px;
+	margin-bottom:0px;
+	padding:5px;
+	line-height:20px;
+}
+.telPart span{
+	color:#D3D4D6;
+	font-size:0.7em;
+}
+.companyNamePart{
+	margin-left:10%;
+	margin-bottom:0px;
+	padding:10px 0;
+	line-height:20px;
+	font-size:1.5em;
+}
+.companyNamePart span{
+	line-height:10px;
+	color:#D3D4D6;
+	font-size:0.4em;
+}
+.footerContents {
+	margin-top: 50px;
+	background-color:#03086A;
+    color:#fff;
+}
+.footerContents .row{
+	width:100%;
+	margin:20px 0;
+	padding:0 10px 0;
+}
+.footerContents p{
+	margin-bottom: 0;
+	font-size:0.8em;
+}
+.footerContents a{
+	color:#D3D4D6;
+}
+/*ここまで 基本レイアウト*/
+.fbBtn{
+	letter-spacing: 2px;
+	background-color: #3b5898;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 14px;
+	text-decoration: none;
+	vertical-align: middle;
+	margin-right:20%;
+	margin-bottom: 24px;
+	width: auto;
+	float: right;
+}
+.fbBtn:hover{
+	color:#FFF;
+	cursor:pointer;
+	background-color: #4766AB;
+	text-decoration-line: none;
+}
+.fbBtn:focus{
+	color:#FFF;
+	cursor:pointer;
+	background-color: #4766AB;
+	text-decoration-line: none;
+}
+
+.fbBtn img{
+	vertical-align: middle;
+	width: 20px;
+	height: auto;
+}
+
+.fbBtn span{
+	margin-left: 4px;
+	border-left: 1px solid rgb(115, 128, 150);
+	padding-left: 12px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$('button').on('click', function(e){
+		
+        if ($('form[name=mainform]').smkValidate()) {
+			//個人情報同意状況確認
+			if($('input[name=checkAgree]').prop('checked')){
+				//alert('登録成功');
+				document.mainform.submit();
+			}else{
+				alert('登録する際は必ず「個人情報同意」を確認して下さい');
+				return false;
+			}
+        } else {
+            // バリデーションNGの処理
+        	return false;
+        }
+	});
+});
+</script>
+</head>
+<body>
+<header>
+	<div class="container-fluid" style="background-color:#03086A;color:white;">
+		<div class="headContents row">
+			<div class="col-sm-6 text-left">
+				<a href="index.html" style="color:#FFF;">
+				<img src="image/LE_icon_2.png" width="50px" height="50px">
+				<p class="telPart">
+				TEL :03-6907-1122<br/>
+				<span>営業時間： 平日9:00〜19:00</span>
+				</p>
+				</a>
+			</div>
+			<div class="col-sm-6">
+				<div class="companyNamePart">
+					<!--LIVE EST ,INC.
+					<span>東京都豊島区池袋2−68−9　池袋MIBビル5F</span>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="main container-fluid">
+	<div class="mainContents introTantoContents row">
+		<div class="col-sm-12">
+			<h3 style="font-weight: bold;">応募を受け付けました。</h3>
+		</div>
+		<div class="col-sm-12">
+			<div class="commentSection">
+				<p>
+					ご登録ありがとう御座います。<br/>
+					確認後、弊社コンサルタントより追ってご連絡させて頂きます。
+				</p>
+				<a class="btn btn-default" onClick="javascript:window.open('about:blank','_self').close();"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> 閉じる</a>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="container-fluid footerContents">
+    <div class="row">
+        <div class="col-sm-12 text-left">
+            <h1>LIVE EST,INC.</h1>
+            <p>
+	            東京都豊島区池袋2−68−9　池袋MIBビル5F<br>
+	            TEL / FAX　03-6907-1122 / 03-6907-1123<br>
+              <a href="http://live-est.com/#about_us" target="_blank">会社概要はこちら</a>｜
+              <a href="http://le-recruit.com" target="_blank">正社員希望の方はこちら</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <p class="footerCopyright">Copyright (C) 2017 LIVEEST All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
