@@ -2,7 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="SES,個人事業主,フリーランス,IT,IT企業,池袋,ベンチャー,採用,プログラマ,サーバー,ネットワーク,事務,営業">
+<meta name="description" content="株式会社ライブエストという社名は「LIVE（生きている）」と「EST（最上級表現の-est）」を組み合わせ、【最高に生きている＝最高に人生を楽しんでいる】という意味を込めています。">
 <link rel="stylesheet" type="text/css" href="style/reset.css">
 <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
@@ -11,7 +14,10 @@
 <script type="text/javascript" src="/script/bootstrap.js"></script>
 <script type="text/javascript" src="/script/smoke.min.js"></script>
 <script type="text/javascript" src="/script/ja.js"></script>
-<title></title>
+<!--[if lt IE 9]>
+<script language="javascript" type="text/javascript" src="excanvas.min.js"></script>
+<![endif]-->
+<title>株式会社ライブエスト｜フリーランスサイト</title>
 <style>
 /*基本レイアウト*/
 body{
@@ -191,6 +197,7 @@ span.hissu{
 	text-decoration: none;
 	vertical-align: middle;
 	margin-right:20%;
+	margin-top:20px;
 	margin-bottom: 24px;
 	width: auto;
 	float: right;
@@ -230,6 +237,8 @@ $(function(){
 				//alert('登録成功');
 				if(confirm('ご登録内容に間違いはありませんか？\nこの内容で送信します。')){
 					document.mainform.submit();
+				}else{
+					return false;
 				}
 			}else{
 				alert('登録する際は必ず「個人情報同意」を確認して下さい');

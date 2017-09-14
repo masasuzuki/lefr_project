@@ -281,7 +281,7 @@ h5.voiceName{
 .button1 a{
     cursor:pointer;
     text-decoration:none;
-    font-size:17pt;
+    font-size:1.2em;
     color:#03086A;
     border:2px solid #03086A;
     padding:7px 10px;
@@ -297,7 +297,7 @@ h5.voiceName{
 .button2 a{
     cursor:pointer;
     text-decoration:none;
-    font-size:13pt;
+    font-size:0.7em;
     letter-spacing:5px;
     color:#03086A;
     border:2px solid #FFF;
@@ -313,7 +313,7 @@ h5.voiceName{
 .button3 a{
     cursor:pointer;
     text-decoration:none;
-    font-size:17pt;
+    font-size:1.3em;
     color:#03086A;
     border:2px solid #03086A;
     padding:7px 10px;
@@ -324,7 +324,11 @@ h5.voiceName{
 }
 
 .consulComent1{
-    position: relative;
+  position: relative;
+  margin-top:40px;
+  margin-left:10%;
+  width:100%;
+  height:100%;
 }
 /* 20170908 コンサルタントコメント変更
 
@@ -342,7 +346,11 @@ h5.voiceName{
 }
 */
 .consulComent2{
-    position: relative;
+  position: relative;
+  margin-top:40px;
+  margin-left:10%;
+  width:100%;
+  height:100%;
 }
 /* 20170908 コンサルタントコメント変更
 .consulComent2:after{
@@ -709,6 +717,11 @@ h1 small:last-child {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0));
 }
 /*ここまで*/
+.border_zone1{
+  padding-bottom:50px;
+  border-bottom:1px double #FFF;
+}
+
 .stepSpace{
   margin-top:50px;
   padding-bottom:100px;
@@ -783,3 +796,82 @@ h1 small:last-child {
     top: 0%;
     left: 5%;
 }
+
+  .picTitle small{
+    font-family: 'Shadows Into Light', cursive;
+    line-height:60px;
+    font-weight: 100;
+    font-size:0.85em;
+  }
+  a.main_check{
+    font-weight:normal;
+    padding:1.5em;
+    font-size:0.2em;
+    color:#FFF;
+    background-color:#03086A;
+    border-radius: 1000px;
+    opacity:0;
+  }
+
+  .backbox p{
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+
+  .highlight-pink{
+    font-weight:bold;
+    color:#FF3D67;
+  }
+
+  .highlight-yellow{
+    font-weight:bold;
+    color:#FFC533;
+  }
+
+  .highlight-green{
+    font-weight:bold;
+    color:#00CC55;
+  }
+  .descPart{
+    font-size:0.8em;
+    padding-top:50px;
+    padding-bottom:50px;
+    color:white;
+    line-height:40px;
+  }
+
+  .stepSpaceTitle{
+    font-size:0.7em;
+    width:200px;
+    height:200px;
+    color:#03086A;
+    background-color:#FFF;
+    border-radius:300px;
+    padding:20px;
+    margin:50px 0px 20px;
+    display:inline-block;
+    box-shadow: 5px 5px 10px black;
+  }
+  .stepSpaceTitle span{
+    font-weight:bold;
+    font-size:0.8em;
+    font-weight:bold;
+  }
+
+  .stepSpaceDesc{
+    color:#FFF;
+    font-size:10pt;
+    letter-spacing: 3px;
+  }
+  .tantoSection h6{
+    padding-bottom:10px;
+    border-bottom:1px solid #FFF;
+    font-size:18pt;
+  }
+  .tantoSection span{
+    font-size:10pt;
+    color:#a5a8fe;
+  }
+  .comment_sm{
+    display:none;
+  }

@@ -2,17 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="script/jquery-2.1.4.min.js"></script>
+<meta name="keywords" content="SES,個人事業主,フリーランス,IT,IT企業,池袋,ベンチャー,採用,プログラマ,サーバー,ネットワーク,事務,営業">
+<meta name="description" content="株式会社ライブエストという社名は「LIVE（生きている）」と「EST（最上級表現の-est）」を組み合わせ、【最高に生きている＝最高に人生を楽しんでいる】という意味を込めています。">
+<script type="text/javascript" src="/script/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="/script/bootstrap.js"></script>
 <script type="text/javascript" src="/script/jquery-ui.js"></script>
 <!--[if lt IE 9]>
 <script language="javascript" type="text/javascript" src="excanvas.min.js"></script>
 <![endif]-->
 <script type="text/javascript" src="/script/animatescroll.min.js"></script>
-<!--
-<script type="text/javascript" src="/script/library.js"></script>
--->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <script src="/script/jquery.inview.min.js"></script>
 <script type="text/javascript" src="/script/jquery.parallax-1.1.3.js"></script>
@@ -24,83 +24,16 @@
 <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="style/featherlight.css">
 <link rel="stylesheet" type="text/css" href="style/common.css">
+<link rel="stylesheet" type="text/css" href="style/pad_common.css" media="screen and (min-width:768px) and (max-width:1200px)">
+<link rel="stylesheet" type="text/css" href="style/mobile_common.css" media="screen and (max-width:768px)">
 <link href="https://fonts.googleapis.com/css?family=Arsenal|Six+Caps" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 <title>株式会社ライブエスト｜フリーランスサイト</title>
 
-<style type="text/css">
-  .picTitle small{
-    font-family: 'Shadows Into Light', cursive;
-    line-height:60px;
-    font-weight: 100;
-    font-size:0.85em;
-  }
-  a.main_check{
-    font-weight:normal;
-    padding:1.5em;
-    font-size:0.2em;
-    color:#FFF;
-    background-color:#03086A;
-    border-radius: 1000px;
-    opacity:0;
-  }
-
-  .backbox p{
-    margin-top:10px;
-    margin-bottom:10px;
-  }
-
-  .highlight-pink{
-    font-weight:bold;
-    color:#FF3D67;
-  }
-
-  .highlight-yellow{
-    font-weight:bold;
-    color:#FFC533;
-  }
-
-  .highlight-green{
-    font-weight:bold;
-    color:#00CC55;
-  }
-  .descPart{
-    font-size:0.8em;
-    padding-top:50px;
-    padding-bottom:50px;
-    color:white;
-    line-height:40px;
-  }
-
-  .stepSpaceTitle{
-    font-size:0.7em;
-    width:200px;
-    height:200px;
-    color:#03086A;
-    background-color:#FFF;
-    border-radius:300px;
-    padding:20px;
-    margin:50px 0px 20px;
-    display:inline-block;
-    box-shadow: 5px 5px 10px black;
-  }
-  .stepSpaceTitle span{
-    font-weight:bold;
-    font-size:0.8em;
-    font-weight:bold;
-  }
-
-  .stepSpaceDesc{
-    color:#FFF;
-    font-size:10pt;
-    letter-spacing:5px;
-  }
-</style>
 <script type="text/javascript">
 //Chart.js defaults.global変更
 Chart.defaults.global.defaultFontColor = "#FFF";
 $(function(){
-
   //フェードイン・アウトの設定
   $('.fadeIn').css('opacity', 0);
   $('.fadeIn_main').css('opacity', 0);
@@ -126,34 +59,43 @@ $(function(){
   $('#detailContents').localScroll();
   $('#voiceContents').localScroll();
 
-  //.consultant1の画像hover設定
-  $(".consultant1 img").on("mouseover", function(){
-    //$(".consultant1 img").prop('src', 'image/hashimoto_hover.png');
-    $(".consultant2 h6").addClass("hide");
-    $(".consultant2 img").addClass("hide");
-    $(".consulComent1").removeClass("hide");
-    $(".consulComent1 img").removeClass("hide");
-  }).on("mouseout", function(){
-    //$(".consultant1 img").prop('src', 'image/S__15974429.jpg');
-    $(".consultant2 h6").removeClass("hide");
-    $(".consultant2 img").removeClass("hide");
-    $(".consulComent1").addClass("hide");
-    $(".consulComent1 img").addClass("hide");
-  });
-  //.consultant2の画像hover設定
-  $(".consultant2 img").on("mouseover", function(){
-    //$(".consultant2 img").prop('src', 'image/okoda_hover.png');
-    $(".consultant1 h6").addClass("hide");
-    $(".consultant1 img").addClass("hide");
-    $(".consulComent2").removeClass("hide");
-    $(".consulComent2 img").removeClass("hide");    
-  }).on("mouseout", function(){
-    //$(".consultant2 img").prop('src', 'image/S__15974430.jpg');
-    $(".consultant1 h6").removeClass("hide");
-    $(".consultant1 img").removeClass("hide");
-    $(".consulComent2").addClass("hide");
-    $(".consulComent2 img").addClass("hide");
-  });
+  //スマホ（SP）の場合だけ
+    //.consultant1の画像hover設定    
+    $("img.consultant1Img").on("mouseover", function(){
+      if (window.matchMedia('(min-width:1024px)').matches) {
+        //$(".consultant1Img").prop('src', 'image/hashimoto_hover.png');
+        $(".consultant2 h6").addClass("hide");
+        $("img.consultant2Img").addClass("hide");
+        $(".consulComent1").removeClass("hide");
+        $(".consulComent1 img").removeClass("hide");
+      }
+    }).on("mouseout", function(){
+      if (window.matchMedia('(min-width:1024px)').matches) {
+        //$(".consultant1Img").prop('src', 'image/S__15974429.jpg');
+        $(".consultant2 h6").removeClass("hide");
+        $("img.consultant2Img").removeClass("hide");
+        $(".consulComent1").addClass("hide");
+        $(".consulComent1 img").addClass("hide");
+      }
+    });
+    //.consultant2の画像hover設定
+    $("img.consultant2Img").on("mouseover", function(){
+      if (window.matchMedia('(min-width:1024px)').matches) {
+        //$(".consultant2Img").prop('src', 'image/okoda_hover.png');
+        $(".consultant1 h6").addClass("hide");
+        $("img.consultant1Img").addClass("hide");
+        $(".consulComent2").removeClass("hide");
+        $(".consulComent2 img").removeClass("hide");
+      }
+    }).on("mouseout", function(){
+      if (window.matchMedia('(min-width:1024px)').matches) {
+        //$(".consultant2Img").prop('src', 'image/S__15974430.jpg');
+        $(".consultant1 h6").removeClass("hide");
+        $("img.consultant1Img").removeClass("hide");
+        $(".consulComent2").addClass("hide");
+        $(".consulComent2 img").addClass("hide");
+      }
+    });
 });
 </script>
 </head>
@@ -199,10 +141,10 @@ $(function(){
 		<div class="col-sm-3">
 		</div>
 		<div class="col-sm-12">
-			<div class="col-xs-4">
+			<div class="col-sm-3 hidden-xs">
 				<img src="image/question_human.png" class="fadeIn questionImg img-responsive">
 			</div>
-			<div class="col-xs-8">
+			<div class="col-sm-9 col-xs-12">
 				<ul class="checkList text-left">
 					<li class="fadeIn">なかなか報酬金額が上がらない</li>
 					<li class="fadeIn">信頼できるエージェントに巡り会えない</li>
@@ -479,7 +421,7 @@ $(function(){
 				<h3 class="fadeIn">ご登録から参画までの流れ</h3>
         <h4 class="fadeIn">- Flow -</h4>
 			</div>
-      <div class="fadeIn col-sm-12" style="padding-bottom:50px;border-bottom:1px double #FFF;">
+      <div class="border_zone1 fadeIn col-sm-12">
         <span style="color:#FFF;">参画まで6つのSTEP</span>
       </div>
       <div class="fadeIn col-sm-4 stepSpace hoge1">
@@ -512,7 +454,7 @@ $(function(){
           数ある優良案件をスピーディーに提案！
         </div>
       </div>
-      <div class="fadeIn col-sm-4 stepSpace hoge1"  style="padding-bottom:100px;">
+      <div class="fadeIn col-sm-4 stepSpace hoge1">
         <div class="stepSpaceTitle" style="text-align:center;">
           <span>STEP4</span><br>
           面談<br>
@@ -522,7 +464,7 @@ $(function(){
           必ず弊社コンサルタントが同行！
         </div>
       </div>
-      <div class="fadeIn col-sm-4 stepSpace hoge1" style="padding-bottom:100px;">
+      <div class="fadeIn col-sm-4 stepSpace hoge1">
         <div class="stepSpaceTitle">
           <span>STEP5</span><br>
           条件打ち合わせ<br>
@@ -532,7 +474,7 @@ $(function(){
           報酬面などをしっかりと！
         </div>
       </div>
-      <div class="fadeIn col-sm-4 stepSpace" style="padding-bottom:100px;">
+      <div class="fadeIn col-sm-4 stepSpace">
         <div class="stepSpaceTitle">
           <span>STEP6</span><br>
           参画<br>
@@ -568,8 +510,11 @@ $(function(){
 		</div>
 		<div class="col-sm-6">
 			<div class="fadeIn tantoSection consultant1">
-        <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">橋本　有梨香　<span style="font-size:14pt;color:#a5a8fe;">- A.HASHIMOTO -</span></h6>
-				<img src="/image/consal_01.jpg" width="100%" height="300px">
+        <h6>橋本　有梨香　<span>- A.HASHIMOTO -</span></h6>
+				<img class="consultant1Img" src="/image/consal_01.jpg" width="100%" height="300px">
+        <div class="comment_sm">
+          <img src="/image/consalComent_hashimoto_sm.png" width="280px">
+        </div>
         <!-- 20170908 コメント画像に変更
         <div class="consulComent2 hide" style="font-size:0.7em;color:#98969A;background-color:#FFF;height:180px;margin-top:80px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
           ITキャリアのスタートはエンジニア！その後営業職にキャリアチェンジし早2年。<br>
@@ -577,15 +522,18 @@ $(function(){
           エンジニア経験があるからこそわかる皆様の気持ち。フォローも厚く、フリーランスの方と飲み行くこともしばしば。ご連絡、お待ちしております！
         </div>
         -->
-        <div class="consulComent2 hide" style="margin-top:40px;margin-left:10%;width:100%;height:100%;">
-          <img src="image/consal_comment_02.png" width="500px" height="300px">
+        <div class="consulComent2 hide">
+          <img src="image/consal_comment_02.png" width="450px" height="300px">
         </div>
 			</div>
 		</div>
 		<div class="col-sm-6" style="margin-bottom:50px;">
       <div class="fadeIn tantoSection consultant2">
-        <h6 style="padding-bottom:10px;border-bottom:1px solid #FFF;font-size:18pt;">大小田　敏志　<span style="font-size:14pt;color:#a5a8fe;">- S.OHKODA -</span></h6>
-        <img src="image/consal_02.jpg" width="100%" height="300px">
+        <h6>大小田　敏志　<span>- S.OHKODA -</span></h6>
+        <img class="consultant2Img" src="image/consal_02.jpg" width="100%" height="300px">
+        <div class="comment_sm">
+          <img src="/image/consalComent_okoda_sm.png" width="280px">
+        </div>
         <!-- 20170908 コメント画像に変更
         <div class="consulComent1 hide" style="color:#98969A;background-color:#FFF;height:180px;margin-top:100px;margin-bottom:100px;padding:10px;border:1px solid #00ADE4;border-radius:5px;box-shadow: 5px 5px 10px black;">
           新卒で入社し既にIT業界歴は5年以上。<br>
@@ -593,8 +541,8 @@ $(function(){
           フリーランスの皆様からの評判も非常に高いTOP営業ウーマン。
         </div>
         -->
-        <div class="consulComent1 hide" style="margin-top:40px;margin-left:10%;width:100%;height:100%;">
-          <img src="image/consal_comment_01.png" width="500px" height="300px">
+        <div class="consulComent1 hide">
+          <img src="image/consal_comment_01.png" width="450px" height="300px">
         </div>
       </div>
 		</div>
@@ -628,13 +576,10 @@ $(function(){
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 text-right">
+        <div class="col-sm-12 text-right">
             <p class="footerCopyright">Copyright (C) 2017 LIVEEST All Rights Reserved.</p>
         </div>
     </div>
 </footer>
-<div class="lightbox_form" id="modal1">
-  <span>テスト</span>
-</div>
 </body>
 </html>
