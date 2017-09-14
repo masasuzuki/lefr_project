@@ -108,7 +108,7 @@ h5{
   color: white;
 }
 .voiceContents{
-  background:url(/image/background_01.jpeg) 50% 0 no-repeat fixed;
+  background:url(/image/background_01.jpeg) 60% 0 no-repeat fixed;
   color: white;
 }
 .flowContents{
@@ -242,7 +242,7 @@ h5.voiceName{
 	background-size:cover;
 }
 .checkList{
-	margin-left:30px;
+	margin-left:10%;
 	padding-top:5%;
 	padding-left: 0px;
 	/* 右にインデントされてる部分を無効化する。 */
@@ -874,4 +874,15 @@ h1 small:last-child {
   }
   .comment_sm{
     display:none;
+  }
+  @media screen and (min-width:1400px){
+    h1{
+      left: 35%;
+    }
+    .caseContents{
+      background:url(/image/background_01_bg.jpeg) 50% 0 no-repeat fixed;
+    }
+    .voiceContents{
+      background:url(/image/background_01_bg.jpeg) 50% 0 no-repeat fixed;
+    }
   }

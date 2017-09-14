@@ -2,11 +2,12 @@
 body{
   font-size:13px;
 }
+
 .mainContents{
   letter-spacing: 0.2em;
 }
 .infoContents img{
-  margin-left:10%;
+  margin-left:15%;
 }
 .telPart{
   min-height:100px;
@@ -16,11 +17,20 @@ h3.containSubTitle{
   font-size:1.0em;
 }
 .checkList{
-  margin-left:0px
+  margin-left:20%;
 }
 .checkList li{
   line-height: 22px;
   font-size: 0.7em;
+}
+.detailContents{
+  background:url(/image/main_pic_02_sm.jpg) 50% 0 no-repeat;
+}
+.caseContents{
+  background:url(/image/background_01_sm.jpeg) 60% 0;
+}
+.voiceContents{
+  background:url(/image/background_01_sm.jpeg) 60% 0 no-repeat;
 }
 .button3 a{
   font-size:0.9em;
@@ -82,4 +92,28 @@ h3.containSubTitle{
 }
 .voiceContents .voicePart{
   height:250px;
+}
+.voiceContents .voicePart h6 {
+  font-size: 1.1em;
+}
+.voiceContents .voicePart p {
+  letter-spacing:2px;
+  line-height:18px;
+  font-size: 1.0em;
+}
+.consultant1{
+  max-width:400px;
+}
+.consultant2{
+  max-width:400px;
+}
+@media screen and (max-width:768px){
+  h1{
+    left: 30%;
+  }
+}
+@media screen and (max-width:400px){
+  h1{
+    left: 10%;
+  }
 }
