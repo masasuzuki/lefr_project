@@ -1,0 +1,211 @@
+/*基本レイアウト*/
+body{
+	color:#03086A;
+	font-family:"游ゴシック体", "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "YuGothic", "Meiryo", verdana, "Osaka", "MS PGothic", Sans-Serif;
+	font-size:20px;
+}
+
+header{
+	margin-top:0px;
+	margin-bottom:50px;
+}
+.headContents{
+	padding:10px;
+	height:80px;
+}
+
+.formSection{
+	padding-top:30px;
+	font-size:0.8em;
+	letter-spacing:2px;
+}
+.inputSection{
+	background-color:#F5F5F5;
+	border: 1px solid #696969;
+	margin:0px 20%;
+	padding:15px 10%;
+}
+.privacySection{
+	margin-top:30px;
+}
+.privacySection h5{
+	font-size:0.6em;
+	letter-spacing: 5px;
+	font-weight:bold;
+	border: 1px solid #696969;
+}
+
+h3{
+	margin-top:10px;
+	margin-bottom:20px;
+	font-size:1.6em;/*30pt;*/
+}
+h4{
+	margin-top:10px;
+	margin-bottom:0px;
+	font-size:1.2em;/*16pt*/
+}
+h5{
+	margin:0 20%;
+	line-height:20px;
+	padding:5px;
+	background-color:pink;
+	font-size:0.7em;
+}
+
+/*Bootstrapカスタマイズ*/
+.container-fluid{
+	padding-left:0px;
+	padding-right:0px;	
+}
+.row{
+	width:100%;
+	margin-left:0px;
+	margin-right:0px;
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+.form-group{
+	/*padding:0 15%;*/
+	text-align:left;
+}
+/*ここまで Bootstrapカスタマイズ*/
+/*smokeカスタマイズ*/
+/*.smk-select .smk-error-icon {
+    right: 18%;
+}*/
+/*ここまで smokeカスタマイズ*/
+.mainContents{
+	padding-top:80px;
+	padding-bottom:80px;
+	letter-spacing: 0.4em;
+}
+.breadcrumb{
+	background-color:white;
+}
+.breadcrumb > li + li:before{
+	font-size:30pt;
+	font-weight:bold;
+	content: "＞";
+}
+span.hissu{
+	padding:3px;
+	margin-left:10px;
+	vertical-align:15%;
+	font-size:0.6em;
+	color:white;
+	background-color:#BD3126;
+	border-radius:2px;
+}
+
+.privacyPart{
+	overflow-x:auto;
+	overflow-y:scroll;
+	height:200px;
+	padding:10px;
+	margin:0 20%;
+	line-height:20px;
+	text-align:left;
+	font-size:0.6em;
+	letter-spacing:2px;
+	border: 1px solid #696969;
+	border-top:none;
+}
+.headContents img{
+	float:left;
+	margin-left:5%;
+}
+.telPart{
+	float:left;
+	margin-left:5px;
+	margin-bottom:0px;
+	padding:5px;
+	line-height:20px;
+}
+.telPart span{
+	color:#D3D4D6;
+	font-size:0.7em;
+}
+.companyNamePart{
+	margin-left:10%;
+	margin-bottom:0px;
+	padding:10px 0;
+	line-height:20px;
+	font-size:1.5em;
+}
+.companyNamePart span{
+	line-height:10px;
+	color:#D3D4D6;
+	font-size:0.4em;
+}
+.footerContents {
+	margin-top: 50px;
+	background-color:#03086A;
+    color:#fff;
+}
+.footerContents .row{
+	width:100%;
+	margin:20px 0;
+	padding:0 10px 0;
+}
+.footerContents p{
+	margin-bottom: 0;
+	font-size:0.8em;
+}
+.footerContents a{
+	color:#D3D4D6;
+}
+/*ここまで 基本レイアウト*/
+.fbBtn{
+	letter-spacing: 2px;
+	background-color: #3b5898;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 14px;
+	text-decoration: none;
+	vertical-align: middle;
+	margin-right:20%;
+	margin-top:20px;
+	margin-bottom: 24px;
+	width: auto;
+	float: right;
+}
+.fbBtn:hover{
+	color:#FFF;
+	cursor:pointer;
+	background-color: #4766AB;
+	text-decoration-line: none;
+}
+.fbBtn:focus{
+	color:#FFF;
+	cursor:pointer;
+	background-color: #4766AB;
+	text-decoration-line: none;
+}
+
+.fbBtn img{
+	vertical-align: middle;
+	width: 20px;
+	height: auto;
+}
+
+.fbBtn span{
+	margin-left: 4px;
+	border-left: 1px solid rgb(115, 128, 150);
+	padding-left: 12px;
+}
+.cautionSection{
+	letter-spacing:3px;
+	border:1px solid #03086A;
+	margin:30px 20% 0;
+	padding:10px;
+	font-size:0.8em 
+}

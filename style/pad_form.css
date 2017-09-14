@@ -1,0 +1,33 @@
+/*基本レイアウト*/
+body{
+  font-size:18px;
+}
+header{
+  padding-bottom:0px;
+}
+.mainContents{
+  padding-top:0px;
+}
+
+h3{
+  font-size: 1.3em;  
+}
+.commentSection{
+  font-size:0.8em;
+}
+.fbBtn{
+  margin-bottom:0px;
+}
+.form-group{
+  font-size:0.8em;
+}
+.privacySection h5{
+  letter-spacing: 4px;
+}
+.privacyPart{
+  letter-spacing: 1px;
+}
+.cautionSection{
+  letter-spacing:1px;
+}
+

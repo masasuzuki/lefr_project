@@ -1,0 +1,47 @@
+/*基本レイアウト*/
+body{
+  font-size:13px;
+}
+.mainContents{
+  padding-top:0px;
+}
+header{
+  padding-bottom:0px;
+}
+.commentSection{
+  font-size:0.8em;
+  letter-spacing: 2px;
+}
+.fbBtn {
+  font-size: 0.8em;
+  padding: 3px 7px;
+}
+.inputSection{
+  margin:0 10%;
+}
+.form-control{
+  font-size:1.1em;
+  height: 24px;
+}
+.input-sm{
+  height: 20px;
+}
+.form-group{
+  font-size:0.8em;
+}
+
+.privacySection h5{
+  letter-spacing: 2px;
+  line-height: 15px;
+  margin: 0 10%;
+}
+.privacyPart{
+  line-height: 15px;
+  height: 150px;
+  margin: 0 10%;
+}
+
+.cautionSection{
+  letter-spacing:1px;
+  margin: 30px 10% 0;
+}
