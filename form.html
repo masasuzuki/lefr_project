@@ -60,10 +60,6 @@ function fb_login() {
         		$('input[name=name]').val(res.name);
         		$('input[name=mail]').val(res.email);
    			});
-			//パーミッション状況の取得
-			//FB.api('/1158748994268835/permissions', function(res) {
-        	//	console.dir(res);
-   			//});
         } else {
             //ログインしていない場合の処理
             alert("ログインしていません。再度ログインしてください。");
