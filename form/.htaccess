@@ -1,0 +1,5 @@
+SetEnvIf Referer "^http://www\.le-freelance\.com/form\.html" ref_ok
+SetEnvIf Referer "^$" ref_ok
+order deny,allow
+deny from all
+allow from env=ref_ok
